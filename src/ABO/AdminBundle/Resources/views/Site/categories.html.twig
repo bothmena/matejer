@@ -1,0 +1,10 @@
+{% extends "ABOAdminBundle::dashBase.html.twig" %}
+
+{% block title %}ABOAdminBundle:Site:categories{% endblock %}
+
+{% block content %}
+    <h1>Welcome to the Site:categories page</h1>
+    {% for category in categories %}
+    	{{ category.slug }}: {{ category.name }}<br />
+    {% endfor %}
+{% endblock %}

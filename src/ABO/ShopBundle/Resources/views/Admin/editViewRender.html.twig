@@ -1,0 +1,112 @@
+{% if type == 'general' %}
+    <table class="table table-bordered table-hover">
+        <tbody>
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_shop.name'|trans }}</b></td>
+                <td class="col-xs-7 col-md-9">{{ shop.name }}</td>
+            </tr>
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_shop.slogan'|trans }}</b></td>
+                <td class="col-xs-7 col-md-9">{{ shop.slogan }}</td>
+            </tr>
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_currency.currency'|trans }}</b></td>
+                <td class="col-xs-7 col-md-9">{{ shop.transExCurrency|trans }}</td>
+            </tr>
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_shop.inscriptionDate'|trans }}</b></td>
+                <td class="col-xs-7 col-md-9">{{ shop.inscriptionDate|date('d/m/Y') }}</td>
+            </tr>
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_shop.description'|trans }}</b></td>
+                <td class="col-xs-7 col-md-9">{{ shop.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% elseif type == 'address' %}
+    <table class="table table-bordered table-hover">
+        <tbody>
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_place.country'|trans }}</b></td>
+                <td class="col-xs-7 col-md-9">{{ shop.address.countryTrans|trans }}</td>
+            </tr>
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_place.state'|trans }}</b></td>
+                <td class="col-xs-7 col-md-9">{{ shop.address.state }}</td>
+            </tr>
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_place.city'|trans }}</b></td>
+                <td class="col-xs-7 col-md-9">{{ shop.address.city }}</td>
+            </tr>
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_place.street'|trans }}</b>
+                <td class="col-xs-7 col-md-9">{{ shop.address.street }}</td>
+            </tr>
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_place.postalCode'|trans }}</b>
+                <td class="col-xs-7 col-md-9">{{ shop.address.postalCode }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% elseif type == 'contact' %}
+    <table class="table table-bordered table-hover">
+        <tbody>
+            {% if emails is empty %}
+                <tr>
+                    <td class="col-xs-5 col-md-3"><b>{{ 'matejer_email.emails'|trans }}</b></td>
+                    <td class="col-xs-7 col-md-9">{{ 'matejer_email.no_email_shop'|trans }}</td>
+                </tr>
+            {% else %}
+                {% for email in emails %}
+                    {% if loop.first %}
+                        <tr>
+                            <td class="col-xs-5 col-md-3"><b>{{ 'matejer_email.emails'|trans }}</b></td>
+                            <td class="col-xs-7 col-md-9">
+                                {% if email.confirmed %}
+                                    <i class="fa fa-check-circle text-success pull-right font-large"></i> {{ email.email }}
+                                {% else %}
+                                    <div confirm-email email="{{ email.email }}" id-email="{{ email.id }}"></div>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td class="col-xs-5 col-md-3"></td>
+                            <td class="col-xs-7 col-md-9">
+                                {% if email.confirmed %}
+                                    <i class="fa fa-check-circle text-success pull-right font-large"></i> {{ email.email }}
+                                {% else %}
+                                    <div confirm-email email="{{ email.email }}" id-email="{{ email.id }}"></div>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_shop.website'|trans }}</b></td>
+                <td class="col-xs-7 col-md-9">{{ shop.website }}</td>
+            </tr>
+            {% if phones is empty %}
+                <tr>
+                    <td class="col-xs-5 col-md-3"><b>{{ 'matejer_phone.shop_phones'|trans }}</b></td>
+                    <td class="col-xs-7 col-md-9">{{ 'matejer_phone.no_phone_shop'|trans }}</td>
+                </tr>
+            {% else %}
+                {% for phone in phones %}
+                    {% if loop.first %}
+                        <tr>
+                            <td class="col-xs-5 col-md-3"><b>{{ 'matejer_phone.shop_phones'|trans }}</b></td>
+                            <td class="col-xs-7 col-md-9">({{ phone.phoneCode }}) {{ phone.subscriber }}</td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td class="col-xs-5 col-md-3"></td>
+                            <td class="col-xs-7 col-md-9">({{ phone.phoneCode }}) {{ phone.subscriber }}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+{% endif %}

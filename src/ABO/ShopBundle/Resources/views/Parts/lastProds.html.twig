@@ -1,0 +1,18 @@
+<table class="table table-hover">
+    <tbody>
+    <tr>
+        <th>{{ 'matejer_product.reference_name'|trans }}</th>
+        <th>{{ 'matejer_offer.price'|trans }}</th>
+        <th>{{ 'matejer_offer.discount'|trans }}</th>
+        <th>{{ 'matejer_main.date'|trans }}</th>
+    </tr>
+    {% for prod in products %}
+        <tr>
+            <td><a href="{{ path('abo_shop_product_product',{'slug': shop.slug, 'slug_prod': prod.categoryProduct.product.slug}) }}">{{ prod.categoryProduct.fullname }}</a></td>
+            <td>{{ prod.price|number_format(2, '.', ',') }} {{ shop.transCurrency|trans }}</td>
+            <td>{{ prod.discount|number_format(2, '.') }} %</td>
+            <td>{{ prod.date|date('d/m/Y') }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

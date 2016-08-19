@@ -1,0 +1,19 @@
+<table class="table table-hover">
+    <tbody>
+    <tr>
+        <th>{{ 'matejer_main.user'|trans }}</th>
+        <th>{{ 'matejer_review.rate'|trans }}</th>
+        <th>{{ 'matejer_main.date'|trans }}</th>
+    </tr>
+    {% for review in reviews %}
+        <tr>
+            <td>{{ review.user.fullname }}</td>
+            <td><span rate-star rate-value="{{ review.rate.value }}"></span></td>
+            <td>{{ review.date|date('d/m/Y') }}</td>
+        </tr>
+        <tr>
+            <td colspan="3">{{ review.rate.comment }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

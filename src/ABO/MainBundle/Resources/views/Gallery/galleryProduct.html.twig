@@ -1,0 +1,26 @@
+<div data-stat="success"><div class="injection" data-id="gallery_products">
+    {% if prods is empty %}
+        <div class="col-xs-12">
+            <div class="callout callout-warning box-shadow" role="alert" style="margin-top: 10px;">
+                <i class="fa fa-ban"></i> {{ 'gallery_page.no_product_search'|trans({'%search%': search}) }}
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="callout callout-success box-shadow" role="alert">
+                {{ 'gallery_page.stips.title'|trans }}<br>
+                <i class="fa fa-lightbulb-o"></i> {{ 'gallery_page.stips.one'|trans }}<br>
+                <i class="fa fa-lightbulb-o"></i> {{ 'gallery_page.stips.two'|trans }}<br>
+                <i class="fa fa-lightbulb-o"></i> {{ 'gallery_page.stips.three'|trans }}<br>
+                <i class="fa fa-lightbulb-o"></i> {{ 'gallery_page.stips.four'|trans }}<br>
+                <i class="fa fa-lightbulb-o"></i> {{ 'gallery_page.stips.five'|trans }}
+            </div>
+        </div>
+    {% else %}
+        <div class="row-fluid">
+            {% for prod in prods %}
+                {{ render_esi(url('abo_main_card_product', { 'id': prod.id })) }}
+            {% endfor %}
+        </div>
+        {{ knp_pagination_render(prods) }}
+    {% endif %}
+</div></div>

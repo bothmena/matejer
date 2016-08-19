@@ -1,0 +1,34 @@
+{% extends "ABOTrademarkBundle::dashBase.html.twig" %}
+
+{% block title %}{{ 'page.new_arrangement.h2'|trans({'%tm%': trademark.name }) }}{% endblock %}
+{% block options %}options = {select: true, checkbox: true};{% endblock %}
+
+{% block content %}
+    <div class="row" style="margin-top: 25px;">
+        <div class="col-xs-12 col-md-offset-3 col-md-6">
+            <div class="box box-success box-shadow">
+                <div class="box-header">
+                    <h3 class="box-title">{{ 'New Arrangement'|trans }}</h3>
+                </div>
+	            {% form_theme form ':Form:abo_form_simple.html.twig' %}
+	            {{ form_start(form, {'action': form.vars.action, 'method': 'POST' }) }}
+	            <div class="box-body">
+		            {{ form_row(form.name) }}
+		            {{ form_row(form.description) }}
+		            {{ form_row(form.category) }}
+		            {{ form_row(form.parent) }}
+		            <div class="row-fluid" style="margin-top: 10px;">
+			            <label class="btn btn-default btn-flat btn-block" style="margin-top: 3px;text-align: left;">
+				            {{ form_widget(form.toProduct) }} This arrangement could be linked to products.
+			            </label>
+			            {{ form_errors(form.toProduct) }}
+		            </div>
+	            </div>
+	            <div class="box-footer">
+		            <button type="submit" id='submit' class="btn btn-warning btn-flat medium-btn pull-right">{{ 'matejer_main.save_btn'|trans }}</button>
+	            </div>
+	            {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "ABOTrademarkBundle::dashBase.html.twig" %}
+
+{% block title %}ABOTrademarkBundle:Show:home{% endblock %}
+{% block options %}options = {select: true, token: true};{% endblock %}
+
+{% block content %}
+    <div class="row" ng-controller="SpecificationController">
+        {{ form_start(form, { 'method': 'POST', 'action': form.vars.action }) }}
+            <div class="col-xs-12">
+                <div class="box box-warning box-shadow">
+                    <div class="box-header">
+                        <h3 class="box-title">{{ 'matejer_product.specification'| trans }}</h3>
+                    </div>
+                    <div spec-control fullname="{{ form.ficheProduct.vars.prototype.vars.full_name }}" >
+	                    <div class="row-fluid" style="margin-top: 10px;">
+							<a class="btn btn-link" href="{{ prod.generalSpecs.source }}" target="_blank">Source</a>
+	                    </div>
+	                    <div class="row-fluid" style="margin-top: 10px;">
+		                    {{ form_label(form.language) }}
+		                    {{ form_widget(form.language) }}
+		                    {{ form_errors(form.language) }}
+	                    </div>
+	                    {{ form_widget(form.ficheProduct) }}
+                    </div>
+                </div>
+            </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

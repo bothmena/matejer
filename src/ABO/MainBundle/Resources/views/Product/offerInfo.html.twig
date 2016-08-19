@@ -1,0 +1,112 @@
+<div class="col-xs-12 col-md-4">
+    <div class="box box-{[{theme}]} box-shadow">
+        <div class="box-header">
+            <h3 class="box-title">{{ 'matejer_offer.price'| trans }}</h3>
+        </div>
+        <div class="box-body no-padding">
+            <table class="table table-hover">
+                <tbody>
+                    <tr><td>
+                        {% if offer.discount > 0 %}
+                            <span class="text-danger" style="text-decoration: line-through;">{{ offer.price | number_format(2,'.',' ') }}</span>
+                            <span class="text-success">{{ (offer.price - offer.price*offer.discount/100) | number_format(2,'.',',') }} {{ offer.shop.transCurrency|trans}}</span>
+                        {% else %}
+                            {{ offer.price | number_format(2,'.',' ') }} {{ offer.shop.transCurrency|trans}}
+                        {% endif %}
+                    </td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="col-xs-12 col-md-4">
+    <div class="box box-{[{theme}]} box-shadow">
+        <div class="box-header">
+            <h3 class="box-title">{{ 'matejer_offer.warranty'| trans }}</h3>
+        </div>
+        <div class="box-body no-padding">
+            <table class="table table-hover">
+                <tbody>
+                    <tr><td>{{ 'matejer_offer.warranty_choice'|transchoice(offer.warranty) }}</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="col-xs-12 col-md-4">
+    <div class="box box-{[{theme}]} box-shadow">
+        <div class="box-header">
+            <h3 class="box-title">{{ 'matejer_offer.availability'| trans }}</h3>
+        </div>
+        <div class="box-body no-padding">
+            <table class="table table-hover">
+                <tbody>
+                <tr><td><i class='fa {{ offer.classAvailability }}'></i> {{ offer.transAvailability|trans }}</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="col-xs-12 col-md-4">
+    <div class="box box-{[{theme}]} box-shadow">
+        <div class="box-header">
+            <h3 class="box-title">{{ 'matejer_collection.collections'| trans }}</h3>
+        </div>
+        <div class="box-body no-padding">
+            <table class="table table-hover">
+                <tbody>
+                {% for col in prodCols %}
+                    <tr><td>{{ col.collection.name }}</td></tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="col-xs-12 col-md-4">
+    <div class="box box-{[{theme}]} box-shadow">
+        <div class="box-header">
+            <h3 class="box-title">{{ 'matejer_offer.discount'| trans }}</h3>
+        </div>
+        <div class="box-body no-padding">
+            <table class="table table-hover">
+                <tbody>
+                <tr><td>{{ 'matejer_offer.discount_choice'|transchoice(offer.discount) }}</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="col-xs-12 col-md-4">
+    <div class="box box-{[{theme}]} box-shadow">
+        <div class="box-header">
+            <h3 class="box-title">{{ 'matejer_offer.payment'|trans }}</h3>
+        </div>
+        <div class="box-body no-padding">
+            <table class="table table-striped">
+                <tbody>
+                <tr>
+                    <th>{{ 'matejer_offer.payment_detail.advance'|trans }}</th>
+                    <th>{{ 'matejer_offer.payment_detail.per_month'|trans }}</th>
+                    <th>{{ 'matejer_offer.payment_detail.months'|trans }}</th>
+                </tr>
+                {% if prodPays is empty %}
+                    <tr>
+                        <td colspan="3">{{ 'matejer_offer.no_payment'|trans }}</td>
+                    </tr>
+                {% else %}
+                    {% set price = offer.price - offer.price * offer.discount/100 %}
+                    {% for payment in prodPays %}
+                        <tr>
+                            <td>{{ (payment.payment.advance * price / 100)|number_format(2,'.',' ') }} {{ offer.shop.transCurrency|trans }}</td>
+                            {% set rest = price - payment.payment.advance * price / 100 %}
+                            <td>{{ (rest / payment.payment.month)|number_format(2,'.',' ') }} {{ offer.shop.transCurrency|trans }}</td>
+                            <td>{{ payment.payment.month }}</td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

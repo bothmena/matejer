@@ -1,0 +1,9 @@
+<div style="height: 420px;" class="col-xs-12 no-padding" ng-show="trailer">
+    {% if genSpecs.videoSite == 'youtube' %}
+        <iframe frameborder="0" width="900" height="420" ng-src="https://www.youtube.com/embed/{{ genSpecs.video }}" allowfullscreen></iframe>
+    {% elseif genSpecs.videoSite == 'vimeo' %}
+        <iframe frameborder="0" width="900" height="420" ng-src="//player.vimeo.com/video/{{ genSpecs.video }}" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    {% elseif genSpecs.videoSite == 'dailymotion' %}
+        <iframe frameborder="0" width="900" height="420" ng-src="//www.dailymotion.com/embed/video/{{ genSpecs.video }}" allowfullscreen></iframe>
+    {% endif %}
+</div>

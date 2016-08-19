@@ -1,0 +1,28 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{'page.new_tm.title'|trans}}{% endblock %}
+
+{% block contenu %}
+    <div class="row-fluid">
+        <div class="col-xs-12 col-offset-md-3 col-md-6" style="margin-top: 25px;">
+            <div class="box box-primary box-shodow">
+                <div class="box-header">
+                    <h3 class="box-title"><i class="fa fa-line-chart"></i> {{'page.new_tm.h3'|trans}}</h3>
+                </div>
+                <div class="box-body">
+                    {% form_theme form ':Form:abo_form_inline.html.twig' %}
+                    {{ form_start(form, {'attr': {'id': 'offerForm'} }) }}
+                        {{ form_row(form.name) }}
+                        {{ form_row(form.slogan) }}
+                        {{ form_row(form.description) }}
+                        {{ form_row(form.file) }}
+                        {{ form_row(form._token) }}
+                        <div class="row-fluid" style="margin-top: 40px;">
+                            <input type="submit" class="btn btn-success btn-block" value="{{ 'matejer_main.submit_btn'| trans }}" />
+                        </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

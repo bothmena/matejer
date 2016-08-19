@@ -1,0 +1,73 @@
+<section class="sidebar">
+	<img src="{{ get_image(trademark.image.source, 'dash_logo', trademark.image.gcs) }}" class="img-responsible bg-gray-light" alt="User Image" style="height: 200px;width: 230px">
+    {#<form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Search...">
+            <span class="input-group-btn">
+            	<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </form>#}
+    <ul class="sidebar-menu">
+    	<li>
+            <a href="{{ path('abo_trademark_show_home', {'slug': trademark.slug}) }}"><i class="fa fa-trademark"></i><span>{{ trademark.name }}</span></a>
+        </li>
+        <li>
+            <a href="{{ path('abo_trademark_product_allproducts', {'slug': trademark.slug}) }}"><i class="fa fa-tags"></i><span>{{ 'All Products'|trans }}</span></a>
+        </li>
+        <li>
+            <a href="#"><i class="fa fa-cubes"></i><span>{{ 'Arrangements'|trans }}</span><i class="fa pull-right fa-angle-left"></i></a>                
+            <ul class="treeview-menu menu_level_1">
+                {% if arrangements is empty %}
+                    <li><a href="#"><i class="fa fa-angle-double-right"></i>{{ 'No set product arrangements'|trans }}</a></li>
+                {% else %}
+                    {% for key,val in arrangements %}
+                        {% if val|length == 1 %}
+                            <li><a href="{{ path('abo_trademark_product_prodbyarrangement', {'slug': trademark.slug, 'slug_arr': val[0].slug }) }}"><i class="fa fa-angle-double-right"></i>{{ val[0].name }}</a></li>
+                        {% else %}
+                            <li class="treeview">
+                                <a href="#"><i class="fa fa-angle-double-right"></i>{{ val[0].name }}</a>
+                                <ul class="treeview-menu menu_level_2">
+                                    {% for arr in val %}
+                                        {% if not loop.first %}
+                                            <li><a href="{{ path('abo_trademark_product_prodbyarrangement', {'slug': trademark.slug, 'slug_arr': arr.slug }) }}"><i class="fa fa-angle-right"></i>{{ arr.name }}</a></li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </ul>
+        </li>
+        <li>
+            <a href="#"><i class="fa fa-sitemap"></i><span>{{ 'Categories'|trans }}</span><i class="fa pull-right fa-angle-left"></i></a>                
+            <ul class="treeview-menu menu_level_1">
+                {% if categories is empty %}
+                    <li><a href="#"><i class="fa fa-angle-double-right"></i>{{ 'No set categories yet'|trans }}</a></li>
+                {% else %}
+                    {% for cat in categories %}
+                        <li><a href="{{ path('abo_trademark_product_prodbycategory', {'slug': trademark.slug, 'slug_cat': cat.category.slug }) }}"><i class="fa fa-angle-double-right"></i>{% set cat_trans = 'matejer_category.' ~ cat.category.slug %}{{ cat_trans|trans }}</a></li>
+                    {% endfor %}
+                {% endif %}
+            </ul>
+        </li>
+        <li>
+            <a href="#"><i class="fa fa-cogs"></i><span>{{ 'Settings'|trans }}</span><i class="fa pull-right fa-angle-left"></i></a>                
+            <ul class="treeview-menu menu_level_1">
+                <li><a href="{{ path('abo_trademark_admin_setting', {'slug': trademark.slug }) }}"><i class="fa fa-angle-double-right"></i>{{ 'Basic Settings'|trans }}</a></li>
+                <li><a href="{{ path('abo_trademark_admin_setcategories', {'slug': trademark.slug }) }}"><i class="fa fa-angle-double-right"></i>{{ 'Categories Settings'|trans }}</a></li>
+                <li><a href="{{ path('abo_trademark_admin_arrangement', {'slug': trademark.slug }) }}"><i class="fa fa-angle-double-right"></i>{{ 'New Arragement'|trans }}</a></li>
+                <li><a href="{{ path('abo_trademark_admin_feature', {'slug': trademark.slug }) }}"><i class="fa fa-angle-double-right"></i>{{ 'New Feature'|trans }}</a></li>
+                <li><a href="{{ path('abo_trademark_product_preadd', {'slug': trademark.slug}) }}"><i class="fa fa-angle-double-right"></i><span>{{ 'New Product'|trans }}</span></a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="{{ path('abo_trademark_show_reviews', {'slug': trademark.slug}) }}"><i class="fa fa-edit"></i><span>{{ 'Reviews' |trans }}</span></a>
+        </li>
+        <li>
+            <a href="{{ path('abo_trademark_show_about', {'slug': trademark.slug}) }}"><i class="fa fa-info-circle"></i><span>{{ 'About '~trademark.name |trans }}</span></a>
+        </li>
+    </ul>
+</section>
+

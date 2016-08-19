@@ -1,0 +1,21 @@
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "{{ catProd.product.nameOrReference }}",
+        "image": "{{ absolute_url(asset(catProd.image.source)) }}",
+        "category": "{{ catProd.category.translatable|trans }}",
+        "description": "{{ descGS(catProd.generalSpecs, 350) }}",
+        "url": "{{ url('abo_main_product_product', {'slug': trademark.slug, 'slug_prod': catProd.product.slug}) }}",
+        "brand": {
+            "@type": "Thing",
+            "name": "{{ catProd.brand }}"{#,
+            "url": "http://www.example.com/ACME"#}
+        }{% if catProd.rateStat.valueNb > 0 %},
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "{{ catProd.rateStat.value }}",
+            "reviewCount": "{{ catProd.rateStat.valueNb }}"
+        }{% endif %}
+    }
+</script>

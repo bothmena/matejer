@@ -1,0 +1,339 @@
+<?php
+
+namespace ABO\TrademarkBundle\Entity;
+
+use ABO\MainBundle\Entity\Address;
+use ABO\MainBundle\Entity\RateStat;
+use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * Trademark
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ * @UniqueEntity(fields={"folder","name"})
+ */
+class Trademark
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="ABO\MainBundle\Entity\RateStat",cascade={"persist","remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $rateStat;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="ABO\MainBundle\Entity\Image",cascade={"persist","remove"})
+     */
+    private $image;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="ABO\MainBundle\Entity\Address",cascade={"persist","remove"})
+     */
+    private $address;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=61, unique=true)
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 60,
+     *      minMessage = "Trademark name must be at least {{ limit }} characters long",
+     *      maxMessage = "Trademark name cannot be longer than {{ limit }} characters",
+     * )
+     */
+    private $name;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="slogan", type="string", length=255)
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 255,
+     *      minMessage = "Trademark name must be at least {{ limit }} characters long",
+     *      maxMessage = "Trademark name cannot be longer than {{ limit }} characters",
+     * )
+     */
+    private $slogan;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=true)
+     */
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @Gedmo\Slug(fields={"name"})
+     * @ORM\Column(length=80, unique=true)
+     */
+    private $slug;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="folder", type="string", length=255, unique=true)
+     */
+    private $folder;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="inscriptionDate", type="datetime")
+     * @Assert\Date(),
+     */
+    private $inscriptionDate;
+
+    public function __construct() {
+        
+        $this->rateStat = new RateStat();
+        $this->address = new Address();
+        $this->inscriptionDate = new \DateTime();
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+    
+    public function getClassName() {
+        
+        return 'TrademarkEntity';
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Trademark
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set slogan
+     *
+     * @param string $slogan
+     *
+     * @return Trademark
+     */
+    public function setSlogan($slogan)
+    {
+        $this->slogan = $slogan;
+
+        return $this;
+    }
+
+    /**
+     * Get slogan
+     *
+     * @return string
+     */
+    public function getSlogan()
+    {
+        return $this->slogan;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Trademark
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     *
+     * @return Trademark
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Set folder
+     *
+     * @param string $folder
+     *
+     * @return Trademark
+     */
+    public function setFolder($folder)
+    {
+        $this->folder = $folder;
+
+        return $this;
+    }
+
+    /**
+     * Get folder
+     *
+     * @return string
+     */
+    public function getFolder()
+    {
+        return $this->folder;
+    }
+
+    /**
+     * Set rateStat
+     *
+     * @param \ABO\MainBundle\Entity\RateStat $rateStat
+     *
+     * @return Trademark
+     */
+    public function setRateStat(RateStat $rateStat)
+    {
+        $this->rateStat = $rateStat;
+
+        return $this;
+    }
+
+    /**
+     * Get rateStat
+     *
+     * @return \ABO\MainBundle\Entity\RateStat
+     */
+    public function getRateStat()
+    {
+        return $this->rateStat;
+    }
+
+    /**
+     * Set image
+     *
+     * @param \ABO\MainBundle\Entity\Image $image
+     *
+     * @return Trademark
+     */
+    public function setImage(\ABO\MainBundle\Entity\Image $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \ABO\MainBundle\Entity\Image
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set address
+     *
+     * @param \ABO\MainBundle\Entity\Address $address
+     *
+     * @return Trademark
+     */
+    public function setAddress(\ABO\MainBundle\Entity\Address $address = null)
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * Get address
+     *
+     * @return \ABO\MainBundle\Entity\Address
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * Set inscriptionDate
+     *
+     * @param \DateTime $inscriptionDate
+     *
+     * @return Trademark
+     */
+    public function setInscriptionDate($inscriptionDate)
+    {
+        $this->inscriptionDate = $inscriptionDate;
+
+        return $this;
+    }
+
+    /**
+     * Get inscriptionDate
+     *
+     * @return \DateTime
+     */
+    public function getInscriptionDate()
+    {
+        return $this->inscriptionDate;
+    }
+}

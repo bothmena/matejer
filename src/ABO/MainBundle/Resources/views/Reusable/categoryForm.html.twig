@@ -1,0 +1,10 @@
+{% form_theme form ':Form:abo_form_category.html.twig' %}
+
+{{ form_start(form, { 'method': 'POST' }) }}
+    <div class="box-body">
+        {{ form_widget(form) }}
+    </div>
+    <div class="box-footer">
+    	<input type="submit" value="{{ 'category_setting_page.save_cats'|trans }}" class="btn btn-success pull-right btn-flat"/>
+    </div>
+{{ form_end(form) }}

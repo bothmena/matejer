@@ -1,0 +1,77 @@
+{%- block form_row -%}
+    {% if name == 'file' or name == 'files' %}
+        <div class="row-fluid input-file-cont" data-label="{{ label|trans }}" style="margin-top: 10px;">
+            {{ form_widget(form) }}
+        </div>
+        <div class="row-fluid well box-shadow" id="{{ attr['well'] }}" style="margin-top: 5px;"></div>
+    {% elseif name == 'birthday' %}
+        <div class="row-fluid" style="font-weight: bold;margin-top: 10px;"><i class="fa fa-angle-double-right"></i> {{ 'matejer_user.birthday'|trans }}</div>
+        <div class="row-fluidv" style="margin-top: 5px;">
+            <span class="col-xs-4" style="padding: 0 !important;">
+                {{- form_widget(form.children.day) -}}
+            </span>
+            <span class="col-xs-4" style="padding: 0 !important;">
+                {{- form_widget(form.children.month) -}}
+            </span>
+            <span class="col-xs-4" style="padding: 0 !important;">
+                {{- form_widget(form.children.year) -}}
+            </span>
+        </div>
+    {% else %}
+    	{{- form_label(form) -}}
+        {{- form_widget(form) -}}
+	    {{- form_errors(form) -}}
+    {% endif %}
+{%- endblock form_row -%}
+{%- block textarea_widget -%}
+    <div class="input-group">
+        <span class="input-group-btn">
+            <a class="btn btn-default" style="width: 180px;height: 114px;line-height: 102px;" >Description</a>
+        </span>
+        <textarea {{ block('widget_attributes') }} style='resize: none;'>{{ value }}</textarea>
+    </div>
+{%- endblock textarea_widget -%}
+
+{%- block form_errors -%}
+    {%- if errors|length > 0 -%}
+        <div class="form_errors" style="margin: 5px 0;">
+            <div class="callout callout-danger box-shadow" style="margin: 5px 0;">
+                {%- for error in errors -%}
+                    <p><i class="fa fa-minus-circle"></i> {{ error.message }}</p>
+                {%- endfor -%}
+            </div>
+        </div>
+    {%- endif -%}
+{%- endblock form_errors -%}
+
+{%- block form_widget_simple -%}
+    {%- set type = type|default('text') -%}
+    {% if attr['has-addon'] is defined %}
+        <div class="input-group">
+            <input type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}>
+            <span class="input-group-addon" id="{{ attr['aria-describedby'] }}">{{ attr['data-addon']|trans }}</span>
+        </div>
+    {% else %}
+        <input type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+    {% endif %}
+{%- endblock form_widget_simple -%}
+
+{%- block choice_widget_collapsed -%}
+    {%- if required and placeholder is none and not placeholder_in_choices and not multiple -%}
+        {% set required = false %}
+    {%- endif -%}
+    <select {{ block('widget_attributes') }} class="form-control" {% if multiple %} multiple="multiple"{% endif %}>
+        {%- if placeholder is not none -%}
+            <option value=""{% if required and value is empty %} selected="selected"{% endif %}>{{ placeholder != '' ? placeholder|trans({}, translation_domain) }}</option>
+        {%- endif -%}
+        {%- if preferred_choices|length > 0 -%}
+            {% set options = preferred_choices %}
+            {{- block('choice_widget_options') -}}
+            {%- if choices|length > 0 and separator is not none -%}
+                <option disabled="disabled">{{ separator }}</option>
+            {%- endif -%}
+        {%- endif -%}
+        {%- set options = choices -%}
+        {{- block('choice_widget_options') -}}
+    </select>
+{%- endblock choice_widget_collapsed -%}

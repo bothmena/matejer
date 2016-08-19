@@ -1,0 +1,98 @@
+user:
+    password:
+        mismatch: Password mismatch
+        regex: Password must contain at least one number, one uppercase and one lowercase character
+        length_min: Password must be at least {{ limit }} characters long
+        length_max: Password cannot be longer than {{ limit }} characters
+    folder:
+        unique_entity: This value is already used
+    firstname:
+        length_min: Your first name must be at least {{ limit }} characters long
+        length_max: Your first name cannot be longer than {{ limit }} characters
+    lastname:
+        length_min: Your last name must be at least {{ limit }} characters long
+        length_max: Your last name cannot be longer than {{ limit }} characters
+    email:
+        email: The email '{{ value }}' is not a valid email.
+        unique_entity: This email is already used.
+    birthday:
+        date: This value is not a valid date.
+    gender:
+        choice: Please select a valid gender.
+    language:
+        length: Language is a 2 characters length word
+    terms:
+        unchecked: You must read & accept our terms of use to register
+        
+image:
+    entity:
+        choice: Please select a valid entity.
+        
+phone_user:
+    subscriber: 
+        unique: This phone number is taken by another user.
+        
+phone_shop:
+    subscriber: 
+        unique: This phone number is taken by another shop.
+        
+email_shop:
+    email: 
+        unique: This email is taken by another shop.
+        
+email_trademark:
+    email: 
+        unique: This email is taken by another brand.
+        
+shop_review:
+    value:
+        not_null: Overall satisfaction rate is required.
+        range: Rate value should be between 1 and 5.
+    comment:
+        length_max: Your Opinion/Comment should be less than {{ limit }} characters.
+prod_review:
+    value:
+        not_null: Overall satisfaction rate is required.
+        range: Rate value should be between 1 and 5.
+    comment:
+        length_max: Your Opinion/Comment should be less than 500 charachters long.
+fiche_product:
+    name:
+        length_min: Product specification name must be at least {{ limit }} characters long.
+        length_max: Product specification name can not be longer than {{ limit }} characters.
+    value:
+        length_min: Product specification value can not be blank.
+        length_max: Product specification value can not be longer than {{ limit }} characters.
+    group:
+        length_min: Product specification group name can not be blank.
+        length_max: Product specification group name can not be longer than {{ limit }} characters.
+    language:
+        choice: Given language is not available.
+general_spec:
+    description:
+    source:
+        url: The give url '{{ value }}' does not seem to be a valid url
+    videoSite:
+        choice: Please select a valid video host
+    video:
+        true: The video id is not valid, note that youtube's video id is a 11 characters long string, vimeo's is an integer and dailymotion's is a 6 or 9 characters long string
+collection:
+    isparent:
+        level_3: This collection can not be a parent collection, a collection can have 3 children collections which the least one should not be a parent.
+address:
+    state:
+        length:
+            min: State name must be at least {{ limit }} characters long.
+            max: State name can not be longer than {{ limit }} characters.
+    city:
+        length:
+            min: City name must be at least {{ limit }} characters long.
+            max: City name can not be longer than {{ limit }} characters.
+    street:
+        length:
+            min: Address must be at least {{ limit }} characters long.
+            max: Address can not be longer than {{ limit }} characters.
+    postalCode:
+        length:
+            min: Postal code must be at least {{ limit }} characters long.
+            max: Postal code can not be longer than {{ limit }} characters.

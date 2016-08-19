@@ -1,0 +1,81 @@
+{% extends "ABOTrademarkBundle::dashBase.html.twig" %}
+
+{% block title %}ABOTrademarkBundle:Show:home{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="col-xs-12 col-md-4" style="margin-top: 10px;">
+            <div class="box box-info box-shadow">
+                <div class="box-header">
+                    <h3 class="box-title">{{ 'Trademark categories'|trans }}</h3>
+                </div>
+                <div class="list-group">
+					{% for tmCat in tmCategories %}
+                        {% set cat = 'matejer_category.' ~ tmCat.category.slug %}
+                        <a type="button" class="list-group-item abo_remove_category" data-id="{{ tmCat.id }}" id="deletable-{{ tmCat.id }}">{{ cat|trans }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-8" style="margin-top: 10px;">
+            <div class="box box-success box-shadow">
+                <div class="box-header">
+                    <h3 class="box-title">{{ 'Add new category'|trans }}</h3>
+                </div>
+                {% include 'ABOMainBundle:Reusable:categoryForm.html.twig' with {'form': form} %}
+            </div>
+        </div>
+        {% embed '::modal.html.twig' with {size: 'sm', close: 'hide', spin: false} %}
+            {% block sm_modal_header %}
+                {{ 'category_setting_page.modal_title'|trans }}
+            {% endblock %}
+            {% block sm_modal_body %}
+                <p id="modal_delete_msg"></p>
+                <div class="alert alert-warning" role="alert">
+                    <strong><i class="fa fa-lightbulb-o"></i> {{ 'category_setting_page.info_alert'|trans }}</strong>
+                </div>
+            {% endblock %}
+            {% block sm_modal_footer %}
+                <button type="button" id="actionConfirm" class="btn btn-primary">{{ 'matejer_main.confirm_btn'|trans }}</button>
+            {% endblock %}
+        {% endembed %}
+        <div id="remove_me">
+            <span id="delete_url" class="hidden"></span>
+        </div>
+        <script>
+            var dltUrl = $('#delete_url').attr('data-url');
+            //$('#remove_me').remove();
+            var  delete_msg = "{{ 'category_setting_page.confirm_delete'|trans }}";
+            $('.abo_remove_category').click(function(){CofirmModal($(this))})
+            function CofirmModal(element){
+                var msg = delete_msg.replace('__category__',element.html());
+                var id = element.attr('data-id');
+                $('#modal_delete_msg').html(msg);
+                $('#mySmModal').modal('show');
+                $('#actionConfirm').on('click.'+id,function(){
+                    deleteItem(id);
+                });
+                $('body').on('hidden.bs.modal', '.modal', function () {
+                    $('#actionConfirm').off('click.'+id);
+                });
+            }
+            function deleteItem(id){
+                hideModal('mySmModal');
+                $.ajax({
+                    url: dltUrl.replace('1234567890',id),
+                    method: 'post',
+                    dataType: 'json',
+                    error: function(){
+                        alert('an error has occured, please retry later.');
+                    },
+                    success: function(data){
+                        if(data['stat'] === 'success')
+                            $('#deletable-'+id).remove();
+                        else
+                            alert(data['error']);
+                    }
+                })
+            }
+        </script>
+    </div>
+{% endblock %}

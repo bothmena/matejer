@@ -1,0 +1,8 @@
+{{ form_start(form, {'attr': {'class': 'form-inline pull-right', 'role': 'form'}}) }}
+    <div class="form-group inline-lang">
+        {{ form_widget(form.language, {'attr': {'class': 'form-control input-sm __language'}}) }}
+    </div>
+    <button type="submit" class="btn btn-flat footer-btnd">
+        <span class="fa fa-arrow-right" style="font-size: 16px"></span>
+    </button>
+{{ form_end(form) }}

@@ -1,0 +1,32 @@
+<section class="sidebar">
+    <img src="{% if user.image == null %}{{ user.profileImg }}{% else %}{{ get_image(user.image.source, 'dash_logo', user.image.gcs) }}{% endif %}" style="height: 200px;width: 230px" class="img-responsible bg-gray-light" alt="User Image">
+    <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Search...">
+            <span class="input-group-btn">
+            	<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <ul class="sidebar-menu">
+        <li>
+            <a href="{{ path('abo_admin_admin_dashboard') }}">Dashboard</a>
+        </li>
+        <li>
+            <a href="{{ path('abo_admin_admin_alltrademark') }}">All Trademarks</a>
+        </li>
+        <li>
+            <a href="{{ path('abo_admin_admin_addtrademark') }}">New Trademark</a>
+        </li>
+        <li>
+            <a href="{{ path('abo_admin_admin_allshop') }}">All Shops</a>
+        </li>
+        <li>
+            <a href="{{ path('abo_admin_admin_alluser') }}">All Users</a>
+        </li>
+        <li>
+            <a href="{{ path('abo_admin_admin_allproduct') }}">All Products</a>
+        </li>
+    </ul>
+</section>
+

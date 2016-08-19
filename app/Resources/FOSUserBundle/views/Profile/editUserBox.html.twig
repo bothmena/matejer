@@ -1,0 +1,37 @@
+
+<div class="box box-primary box-shadow">
+    <div class="box-body box-profile">
+        <img class="profile-user-img img-responsive img-circle" src="{{ get_image(user.image.source, 'avatar', user.image.gcs) }}">
+        <h3 class="profile-username text-center">{{ user.name }}</h3>
+        <div ng-show="!uploadImage">    
+            <p class="text-muted text-center">{{ 'user_profile_edit.member_since'|trans }}: {{ user.inscriptionDate|date('d/m/Y') }}</p>
+            <ul class="list-group list-group-unbordered">
+                <li class="list-group-item">
+                    <b>{{ 'user_profile_edit.flw_shops'|trans }}</b> <a class="pull-right">{{ userShopsNb }}</a>
+                </li>
+                <li class="list-group-item">
+                    <b>{{ 'user_profile_edit.fav_prods'|trans }}</b> <a class="pull-right">{{ productsNb }}</a>
+                </li>
+                <li class="list-group-item">
+                    <b>{{ 'user_profile_edit.pref_cats'|trans }}</b> <a class="pull-right">{{ categoriesNb }}</a>
+                </li>
+            </ul>
+            <button type="button" ng-click="uploadImage = true;" class="btn btn-primary btn-flat btn-block">{{ 'user_profile_edit.change_pic'|trans }}</button>
+        </div>
+        <div ng-show="uploadImage">
+            {% form_theme form ':Form:abo_registration_form.html.twig' %}
+            {{ form_start(form, {'action': form.vars.action , 'method': 'POST' }) }}
+                {{ form_row(form.image.file) }}
+                <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                    <div class="btn-group" role="group">
+                        <button type="button" ng-click="uploadImage = false;" class="btn btn-default btn-flat">{{ 'matejer_main.cancel_btn'|trans }}</button>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="submit" class="btn btn-primary btn-flat">{{ 'matejer_main.image_btn'|trans }}</button>
+                    </div>
+                </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+

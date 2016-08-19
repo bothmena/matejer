@@ -1,0 +1,22 @@
+<div class="box box-{[{ theme }]} box-solid box-shadow">
+	<div class="box-header" style="min-height: 50px;">
+		<h3 class="box-title"><i class="fa fa-line-chart"></i> {{ 'shop_show_about.followers_reviews'|trans }}</h3>
+	</div>
+	<div class="box-body no-padding">
+		<table class="table table-hover">
+			<tbody>
+			<tr>
+				<td>{{ 'matejer_shop.subscribers'|trans }}</td>
+				<td><span class="label bg-blue pull-right" style="font-size: 14px;">{{ render(url('shop_parts_subsnb', {'slug': shop.slug})) }}</span></td>
+			</tr>
+			{% for i in 0..4 %}
+				<tr>
+					<td colspan="2"{% if loop.first %} class="bg-gray-light rate-value"{% endif %}>
+						{{ shop.rateStat.transValue(i, 'shop')|trans }}<span class="pull-right"><span class="label {[{background}]}" style="font-size: 12px;">{{ shop.rateStat.valueSwitch(i) | number_format(2) }}/5 | {{ shop.rateStat.valueNbr(i) }}</span> <span rate-star rate-value="{{ shop.rateStat.valueSwitch(i) }}"></span></span>
+					</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>

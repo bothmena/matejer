@@ -1,0 +1,58 @@
+<section class="sidebar">
+    <div class="image-btn-container">
+        <img src="{% if user.image == null %}{{ user.profileImg }}{% else %}{{ get_image(user.image.source, 'dash_logo', user.image.gcs) }}{% endif %}" class="img-responsible bg-gray-light" alt="{{ user.name }} profile image" style="height: 200px;width: 230px">
+        <div abo-image theme="{[{theme}]}" image-entity="user"></div>
+    </div>
+    {#<form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Search...">
+            <span class="input-group-btn">
+            	<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </form>#}
+    <ul class="sidebar-menu">
+        <li>
+            <a href="{{ path('abo_user_profile_show') }}"><i class="fa fa-user fa-lg"></i><span>{{ user.name }}</span></a>
+        </li>
+        <li class="treeview">
+            <a href="#"><i class="fa fa-heart-o fa-lg"></i> <span>{{ 'matejer_user.wishlist'|trans }}</span><i class="fa pull-right fa-angle-left fa-lg"></i></a>
+            <ul class="treeview-menu">
+                <li><a href="{{ path('abo_user_product_liked') }}"><i class="fa fa-angle-right"></i>{{ 'matejer_main.all_product'|trans }}</a></li>
+                {% for parent, group in categories %}
+                    <li>
+                        <a href="#"><i class="fa fa-angle-double-right"></i>{% set cc = 'matejer_category.'~parent %}{{ cc|trans }}<i class="fa pull-right fa-angle-left fa-lg"></i></a>
+                        <ul class="treeview-menu">
+                            {% for cat in group %}
+                                <li><a href="{{ path('abo_user_product_likedbycat', {'slug': cat.category.slug }) }}"><i class="fa fa-angle-right"></i>{{ cat.category.translatable|trans }}<span class="badge pull-right">{{ cat.productNb }}</span></a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
+        <li class="treeview">
+            <a href="{{ path('abo_user_shop_subscibed') }}"><i class="fa fa-star-o fa-lg"></i> <span>{{ 'matejer_user.fallowed_shop'|trans }}</span></a>
+        </li>
+        <li class="treeview">
+            <a href="#"><i class="fa fa-edit fa-lg"></i> <span>{{ 'matejer_user.reviews'|trans }}</span><i class="fa pull-right fa-angle-left"></i></a>
+            <ul class="treeview-menu">
+                <li><a href="{{ path('abo_user_product_reviews') }}"><i class="fa fa-angle-right"></i>{{ 'matejer_user.product_reviews'|trans }}</a></li>
+                <li><a href="{{ path('abo_user_shop_reviews') }}"><i class="fa fa-angle-right"></i>{{ 'matejer_user.shop_reviews'|trans }}</a></li>
+            </ul>
+        </li>
+        <li class="treeview">
+            <a href="#"><i class="fa fa-wrench fa-lg"></i> <span>{{ 'matejer_user.settings'|trans }}</span><i class="fa pull-right fa-angle-left"></i></a>
+            <ul class="treeview-menu">
+                <li><a href="{{ path('abo_user_profile_edit') }}"><i class="fa fa-angle-right"></i> {{ 'matejer_user.basic_setting'|trans }}</a></li>
+                <li><a href="{{ path('abo_user_profile_categories') }}"><i class="fa fa-angle-right"></i> {{ 'matejer_category.setting_user'|trans }}</a></li>
+                <li><a href="{{ path('abo_user_profile_changeusermail') }}"><i class="fa fa-angle-right"></i> {{ 'user_profile_edit.change_email'|trans }}</a></li>
+                <li><a href="{{ path('abo_user_change_password') }}"><i class="fa fa-angle-right"></i> {{ 'user_profile_edit.change_password'|trans }}</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="{{ path('abo_user_security_logout') }}"><i class="fa fa-sign-out fa-lg"></i> <span>{{ 'matejer_main.logout'|trans }}</span></a>
+        </li>
+    </ul>
+</section>
+

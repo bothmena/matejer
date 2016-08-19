@@ -1,0 +1,66 @@
+{% extends "ABOShopBundle::dashShopAdmin.html.twig" %}
+
+{% block title %}{{ 'shop_admin_setting.title'|trans({'%shopname%': shop.name }) }}{% endblock %}
+{% block options %}options = {token: true};{% endblock %}
+
+{% block content %}
+    <div class="row" style="margin-top: 15px;" ng-controller="EditProfileController" ng-init="addressUrl = '{{ url('abo_shop_admin_addressform') }}';">
+        <div class="col-xs-12">
+            <div class="nav-tabs-custom nav-tabs-danger box-shadow">
+                <ul class="nav nav-tabs pull-right">
+                    <li class=""><a href="#tab_contact" data-toggle="tab" aria-expanded="false">
+                     	<i class="fa fa-fax"></i> {{ 'shop_admin_setting.contact'|trans }}
+                	</a></li>
+                    <li class=""><a href="#tab_address" data-toggle="tab" aria-expanded="false">
+                    	<i class="fa fa-map-signs"></i> {{ 'matejer_main.address'|trans }}
+                	</a></li>
+                    <li class="active"><a href="#tab_perso" data-toggle="tab" aria-expanded="true">
+                    	<i class="fa fa-university"></i> {{ 'shop_admin_setting.shop_details'|trans }}
+                    </a></li>
+                    <li class="pull-left header"><i class="fa fa-sliders"></i><span class="hidden-xs hidden-sm"> {{ 'shop_admin_setting.update_settings'|trans }}</span></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab_perso">
+                        <div id="general_form_container" ng-show="!generalVisibile"></div>
+                        <div id="general_view_container" ng-show="generalVisibile">
+                            {% include 'ABOShopBundle:Admin:editViewRender.html.twig' with {'shop': shop, 'type': 'general' } %}
+                        </div>
+                        <div class="row-fluid text-right" ng-show="generalVisibile">
+                            <button type="button" ng-click="getForm('general')" class="btn btn-danger btn-flat wide-btn"><i class="fa fa-spinner fa-spin" ng-show="generalLoding"></i> {{ 'shop_admin_setting.update_shop_info'|trans }}</button>
+                        </div>
+                        <div class="row-fluid text-right" ng-show="!generalVisibile">
+                            <button type="button" ng-click="generalLoding||cancelForm('general')" ng-disabled="generalLoding" class="btn btn-default btn-flat medium-btn">{{ 'matejer_main.cancel_btn'|trans }}</button>
+                            <button type="button" ng-click="submitForm('general',$event);" class="btn btn-danger btn-flat medium-btn"><i class="fa fa-spinner fa-spin" ng-show="generalLoding"></i> {{ 'matejer_main.save_btn'|trans }}</button>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab_address">
+                        <div id="address_form_container" ng-show="!addressVisibile"></div>
+                        <div id="address_view_container" ng-show="addressVisibile">
+                            {% include 'ABOShopBundle:Admin:editViewRender.html.twig' with {'shop': shop, 'type': 'address' } %}
+                        </div>
+                        <div class="row-fluid text-right" ng-show="addressVisibile">
+                            <button type="button" ng-click="getForm('address')" class="btn btn-danger btn-flat wide-btn"><i class="fa fa-spinner fa-spin" ng-show="addressLoding"></i> {{ 'shop_admin_setting.change_address'|trans }}</button>
+                        </div>
+                        <div class="row-fluid text-right" ng-show="!addressVisibile">
+                            <button type="button" ng-click="addressLoding||cancelForm('address')" ng-disabled="addressLoding" class="btn btn-default btn-flat medium-btn">{{ 'matejer_main.cancel_btn'|trans }}</button>
+                            <button type="button" ng-click="submitForm('address',$event)" ng-disabled="refreshingForm" class="btn btn-danger btn-flat medium-btn"><i class="fa fa-spinner fa-spin" ng-show="addressLoding||refreshingForm"></i> {{ 'matejer_main.save_btn'|trans }}</button>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab_contact">
+                        <div id="contact_form_container" ng-show="!contactVisibile"></div>
+                        <div id="contact_view_container" ng-show="contactVisibile">
+                            {% include 'ABOShopBundle:Admin:editViewRender.html.twig' with {'shop': shop, 'type': 'contact', 'phones': phones, 'emails': emails } %}
+                        </div>
+                        <div class="row-fluid text-right" ng-show="contactVisibile">
+                            <button type="button" ng-click="getForm('contact')" class="btn btn-danger btn-flat wide-btn"><i class="fa fa-spinner fa-spin" ng-show="contactLoding"></i> {{ 'shop_admin_setting.update_contact_info'|trans }}</button>
+                        </div>
+                        <div class="row-fluid text-right" ng-show="!contactVisibile">
+                            <button type="button" ng-click="contactLoding||cancelForm('contact')" ng-disabled="contactLoding" class="btn btn-default btn-flat medium-btn">{{ 'matejer_main.cancel_btn'|trans }}</button>
+                            <button type="button" ng-click="submitForm('contact',$event)" class="btn btn-danger btn-flat medium-btn"><i class="fa fa-spinner fa-spin" ng-show="contactLoding"></i> {{ 'matejer_main.save_btn'|trans }}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    	</div>
+    </div>
+{% endblock %}

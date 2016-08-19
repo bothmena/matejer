@@ -1,0 +1,87 @@
+<a href="{{ path('abo_main_home_home') }}" class="logo">
+    <span><img src="{{ get_image('images/logo.png', 'icon_logo', true) }}" alt="Matejer logo"></span> <b>M</b>atejer
+</a>
+<nav class="navbar navbar-static-top" role="navigation">
+    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </a>
+    <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+        	{% if is_granted('ROLE_USER') %}
+                <li>
+                    <a href="{{ path('abo_main_gallery_gallery') }}">
+                        <i class="fa fa-th-large"></i><span class="hidden-xs"> {{ 'matejer_main.gallery'|trans }}</span>
+                    </a>
+            	</li>
+                <li class="user user-menu">
+                    <a href="{{ path('abo_user_profile_show') }}">
+                        <img src="{% if user.image == null %}{{ user.profileImg }}{% else %}{{ get_image(user.image.source, 'avatar', user.image.gcs) }}{% endif %}" class="user-image" alt="User Image">
+                        <span class="hidden-xs">{{ user.name }}</span>
+                    </a>
+                </li>
+                {% if is_granted('ROLE_TAJER') %}
+                    <li class="user user-menu">
+                        <a href="{{ path('abo_shop_show_homeadmin') }}">
+                            <img src="{{ get_image(user.myShop.image.source, 'avatar', user.myShop.image.gcs) }}" class="user-image" alt="User Shop Logo">
+                            <span class="hidden-xs">{{ user.myShop.name }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+                <!-- Messages: style can be found in dropdown.less-->
+                <li class="dropdown messages-menu">
+                    <!-- Menu toggle button -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    	<i class="fa fa-envelope-o"></i><span class="label label-success">4</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="header">You have 4 messages</li>
+                        <li>
+                            <!-- inner menu: contains the messages -->
+                            <ul class="menu">
+                                <li><!-- start message -->
+                                    <a href="#">
+                                        <div class="pull-left">
+                                            <img src="{{ get_image(user.image.source, 'avatar', user.image.gcs) }}" class="img-circle" alt="User Image">
+                                        </div>
+                                        <h4> Support Team <small><i class="fa fa-clock-o"></i> 5 mins</small></h4>
+                                        <p>Why not buy a new awesome theme?</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer"><a href="#">See All Messages</a></li>
+                    </ul>
+                </li><!-- /.messages-menu -->
+                
+                <!-- Notifications Menu -->
+                <li class="dropdown notifications-menu">
+                    <!-- Menu toggle button -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-bell-o"></i><span class="label label-warning">10</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="header">You have 10 notifications</li>
+                        <li>
+                            <!-- Inner Menu: contains the notifications -->
+                            <ul class="menu">
+                                <li><!-- start notification -->
+                                	<a href="#"><i class="fa fa-users text-aqua"></i> 5 new members joined today</a>
+                                </li><!-- end notification -->
+                            </ul>
+                        </li>
+                        <li class="footer"><a href="#">View all</a></li>
+                    </ul>
+                </li>
+            {% else %}
+            	<li><a href="{{ path('abo_main_gallery_gallery') }}"><i class="fa fa-th-large"></i> {{ 'matejer_main.gallery'|trans }}</a></li>
+                <li><a href="{{ path('abo_user_security_login') }}"><i class="fa fa-sign-in"></i> {{ 'user_security_login.login'|trans }}</a></li>
+                <li><a href="{{ path('abo_user_registration_register') }}"><i class="fa fa-user-plus"></i> {{ 'user_security_register.signup'|trans }}</a></li>
+            {% endif %}
+        </ul>
+    </div>
+{#         {% endif %}#}
+</nav>
+

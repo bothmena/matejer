@@ -1,0 +1,27 @@
+{%- block form_row -%}
+    <div class="col-xs-12">
+        <div class="box box-success collapsed-box box-shadow">
+        	<div class="box-header with-border">
+        		<h3 class="box-title">{{ form.vars.label|trans({}, 'messages') }}</h3>
+        		<div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                </div>
+        	</div>
+        	<div class="box-body" style="display: none;">
+            	{{- form_errors(form) -}}{{- form_widget(form) -}}
+            </div>
+        </div>
+    </div>
+{%- endblock form_row -%}
+
+{%- block choice_widget_expanded -%}
+    <div {{ block('widget_container_attributes') }}>
+        {%- for child in form %}
+            <div class="col-md-6">
+                <label class="btn btn-default btn-block box-shadow" style="margin-top: 3px;text-align: left;">
+                    <span style="float: right;">{{- form_widget(child) -}}</span> {{ child.vars.label|trans({}, 'messages') }}
+                </label>
+            </div>
+        {% endfor -%}
+    </div>
+{%- endblock choice_widget_expanded -%}

@@ -1,0 +1,175 @@
+#main_email_shop_confirmation:
+#    path:     /myShop/confirm_mail/{code}
+#    defaults: { _controller: ABOMainBundle:Email:shopConfirmation }
+#    
+main_email_user_confirmation: 
+    path:     /myProfile/confirm_mail/{code}
+    defaults: { _controller: ABOMainBundle:Email:userConfirmation }
+    
+main_email_change_user_mail: 
+    path:     /myProfile/change_mail
+    defaults: { _controller: ABOMainBundle:Email:changeUserMail }
+    
+main_gallery_gallery:
+    path:     /gallery/{search}
+    defaults: { _controller: ABOMainBundle:Gallery:gallery, search: search_null }
+    
+main_gallery_gallery_product: 
+    path:     /gallery_product/{search}/{page}
+    defaults: { _controller: ABOMainBundle:Gallery:galleryProduct, search: search_null }
+    requirements:
+        _method:  POST
+        page: \d+
+        
+main_gallery_gallery_shop: 
+    path:     /gallery_shop/{search}/{page}
+    defaults: { _controller: ABOMainBundle:Gallery:galleryShop, search: search_null }
+    requirements:
+        _method:  POST
+        page: \d+
+    
+main_gallery_gallery_offer: 
+    path:     /gallery_offer/{search}/{page}
+    defaults: { _controller: ABOMainBundle:Gallery:galleryOffer, search: search_null }
+    requirements:
+        _method:  POST
+        page: \d+
+    
+#main_gallery_gallery_trademark:
+#    path:     /gallery_trademark/{search}/{page}
+#    defaults: { _controller: ABOMainBundle:Gallery:galleryTradeMark, search: search_null }
+#    requirements:
+#        _method:  POST
+#        page: \d+
+    
+main_home_home:
+    path:     /
+    defaults: { _controller: ABOMainBundle:Home:home }
+    
+main_modal_color:
+    path:     /modal/color
+    defaults: { _controller: ABOMainBundle:Modal:color }
+    requirements:
+        _method:  GET
+    
+#main_modal_product_info:
+#    path:     /modal/product_info/{id}
+#    defaults: { _controller: ABOMainBundle:Modal:productInfo }
+#    requirements:
+#        id: \d+
+#    
+#main_modal_shop_info:
+#    path:     /modal/shop_info/{id}
+#    defaults: { _controller: ABOMainBundle:Modal:shopInfo }
+#    requirements:
+#        id: \d+
+#    
+#main_modal_product_gallery:
+#    path:     /modal/product_gallery/{id}
+#    defaults: { _controller: ABOMainBundle:Modal:productGallery }
+#    requirements:
+#        id: \d+
+#    
+#main_modal_offer_info:
+#    path:     /modal/offer_info/{id}
+#    defaults: { _controller: ABOMainBundle:Modal:offerInfo }
+#    requirements:
+#        id: \d+
+#    
+#main_modal_product_shop_form:
+#    path:     /modal/offer_form/{id}/{offer_id}
+#    defaults: { _controller: ABOMainBundle:Modal:productShopForm, offer_id: 0 }
+#    requirements:
+#        id: \d+
+#        offer_id: \d+
+#    
+#main_modal_product_shop_form_submit:
+#    path:     /modal/offer_submit/{id}/{offer_id}
+#    defaults: { _controller: ABOMainBundle:Modal:productShopSubmit, offer_id: 0 }
+#    requirements:
+#        id: \d+
+#        offer_id: \d+
+    
+#main_product_product:
+#    path:     /product/{slug}
+#    defaults: { _controller: ABOMainBundle:Product:product }
+    
+#main_product_product_reviews:
+#    path:     /product_reviews/{slug}/{slg}
+#    defaults: { _controller: ABOMainBundle:Product:productReviews }
+#    requirements:
+#        _method:  POST
+#    
+#main_product_product_features:
+#    path:     /product_features/{slug}
+#    defaults: { _controller: ABOMainBundle:Product:productFeatures }
+#    requirements:
+#        _method:  POST
+#    
+#main_product_gen_specs_form:
+#    path:     /add_prod/gen_specs_form/{id}
+#    defaults: { _controller: ABOTrademarkBundle:Product:genSpecsForm }
+#    requirements:
+#        _method:  POST
+#        id: \d+
+#    
+#main_product_review_form:
+#    path:     /product_review/{slug}/{id}
+#    defaults: { _controller: ABOMainBundle:Product:reviewForm }
+#    requirements:
+#        _method:  POST
+#        id: \d+
+
+#$http => ConfirmedController
+main_api_is_available_user: #undone
+    path:     /api/is_available/user/{property}/{value}
+    defaults: { _controller: ABOMainBundle:API:isAvailableUser }
+    requirements:
+        _method:  POST
+        property: username|email
+#$http => like directive
+main_api_like_product: #undone
+    path:     /api/like/product/{token}/{id}
+    defaults: { _controller: ABOMainBundle:API:likeProduct }
+    requirements:
+        _method:  POST
+#$http => subscribe directive
+main_api_subscribe_shop: #undone
+    path:     /api/subscribe/shop/{token}/{slug}
+    defaults: { _controller: ABOMainBundle:API:subscribeShop }
+    requirements:
+        _method:  POST
+#$http => shopModal directive
+main_api_shop_modal:
+    path:     /modal/shop/{token}/{slug}
+    defaults: { _controller: ABOMainBundle:Modal:shop }
+    requirements:
+        _method:  POST
+#$http => offerModal directive
+main_api_offer_modal:
+    path:     /modal/offer-form/{token}/{slug}
+    defaults: { _controller: ABOMainBundle:Modal:offerForm }
+    requirements:
+        _method:  GET|POST
+#$http => productModal directive
+main_api_product_modal:
+    path:     /modal/product/{token}/{slug}
+    defaults: { _controller: ABOMainBundle:Modal:product }
+    requirements:
+        _method:  POST
+#$http => galleryModal directive
+main_api_offer_info_modal:
+    path:     /modal/offer/{token}/{id}
+    defaults: { _controller: ABOMainBundle:Modal:offer }
+    requirements:
+        _method:  POST
+#$http => offerFormModal directive
+main_api_offer_form_modal:
+    path:     /modal/offer-form/{token}/{slug}
+    defaults: { _controller: ABOMainBundle:API:offerForm }
+    requirements:
+        _method:  POST
+#$http => ConfirmedController / Registration etc..
+main_modal_help:
+    path:     /modal/help/{token}/{group}/{item}
+    defaults: { _controller: ABOMainBundle:Modal:help }

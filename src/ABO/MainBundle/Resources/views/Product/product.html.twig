@@ -1,0 +1,94 @@
+{% extends '::mainBase.html.twig' %}
+
+{% block title %}{{ 'product_page.title'|trans({'%prodname%': catProd.fullName }) }}{% endblock %}
+{% block meta_description %}{{ descGS(catProd.generalSpecs) }}{% endblock %}
+{% block options %} options={token:true{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}, check:{id:{{ catProd.id }},entity:'product'}{% endif %}};{% endblock %}
+
+{% block meta_tags %}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@{{ tw_handle }}">
+    <meta name="twitter:title" content="{{ 'product_page.share_title'|trans({ '%prodname%': catProd.fullName }) }}">
+    <meta name="twitter:description" content="{{ descGS(catProd.generalSpecs, 200) }}">
+    <meta name="twitter:creator" content="{{ catProd.brand }}">
+    <meta name="twitter:image:src" content="{{ get_image(catProd.image.source, 'prod_modal', catProd.image.gcs) }}">
+    <meta property="og:title" content="{{ 'product_page.share_title'|trans({ '%prodname%': catProd.fullName }) }}" />
+    <meta property="og:type" content="product" />
+    <meta property="product:brand" content="{{ catProd.brand }}" />
+    <meta property="product:category" content="{{ catProd.category.translatable|trans }}" />
+    <meta property="product:condition" content="new" />
+    <meta property="og:url" content="{{ url('abo_main_product_product', {'slug': catProd.trademark.slug, 'slug_prod': catProd.product.slug }) }}" />
+    <meta property="og:image" content="{{ get_image(catProd.image.source, 'prod_gallery', catProd.image.gcs) }}" />
+    <meta property="og:description" content="{{ descGS(catProd.generalSpecs, 200) }}" />
+    <meta property="og:site_name" content="{{ 'matejer_main.matejer'|trans }}" />
+    <meta property="fb:app_id" content="{{ fb_app_id }}" />
+{% endblock %}
+
+{% block content_header %}
+    <div class="bread-btn">
+        {#<ol class="mbreadcrumb hidden-xs" vocab="http://schema.org/" typeof="BreadcrumbList">
+            <li property="itemListElement" typeof="ListItem">
+                <a property="item" typeof="WebPage"
+                   href="https://example.com/arts">
+                    <span property="name">Arts</span></a>
+                <meta property="position" content="1">
+            </li>
+            <li property="itemListElement" typeof="ListItem">
+                <a property="item" typeof="WebPage"
+                   href="https://example.com/arts/books">
+                    <span property="name">Books</span></a>
+                <meta property="position" content="2">
+            </li>
+            <li class="active" property="itemListElement" typeof="ListItem">
+                <a property="item" typeof="WebPage"
+                   href="https://example.com/arts/books/poetry">
+                    <span property="name">Poetry</span></a>
+                <meta property="position" content="3">
+            </li>
+        </ol>#}
+        <div like like-id="{{ catProd.id }}" theme="{[{ theme }]}"></div>
+        <div ng-controller="ShareController" class="addthis_sharing_toolbox pull-right"></div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div style="margin-bottom: 25px;" ng-controller="ProductController">
+        {{ render_esi(url('abo_main_product_description', {'id': catProd.id})) }}
+    </div>
+    <div class="row">
+        <div class="col-xs-12" style="margin-bottom: 15px;">
+            <ul class="nav nav-tabs nav-justified box-shadow">
+                <li role="presentation" class="active "><a data-toggle="tab" href="#specs">{{ 'matejer_genspecs.specifications'|trans }}</a></li>
+                <li role="presentation"><a data-toggle="tab" href="#feature">{{ 'matejer_feature.features'|trans }}</a></li>
+                <li role="presentation"><a data-toggle="tab" href="#review">{{ 'matejer_review.reviews'|trans }}</a></li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div id="specs" class="tab-pane fade in active"{% if app.request.getLocale() == 'ar' %} dir="rtl"{% endif %}>
+                {{ render_esi(url('abo_main_product_fiches', {'id': catProd.id }) ) }}
+            </div>
+            <div id="feature" class="tab-pane fade"{% if app.request.getLocale() == 'ar' %} dir="rtl"{% endif %}>
+                {% for feature in features %}
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        {{ render_esi(url('abo_main_product_feature', {'id': feature.feature.id }) ) }}
+                    </div>
+                    {% if loop.index is even == 0 %}<div class="clearfix visible-sm-block"></div>{% endif %}
+                    {% if loop.index % 3 == 0 %}<div class="clearfix visible-md-block visible-lg-block"></div>{% endif %}
+                {% endfor %}
+            </div>
+            <div id="review" class="tab-pane fade" ng-controller="ReviewController" ng-init="init('product');title();">
+                {{ render_esi(url('abo_main_product_userreviewrs', {'id': catProd.id }) ) }}
+                <div id="prod_reviews_container">
+                    {{ render_esi(url('abo_main_product_productreviews', {'id': catProd.id }) ) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56fe9bbffa8766a6"></script>
+{% endblock %}
+
+{% block page_seo %}
+    {{ render_esi(url('abo_main_product_productseo', {'slug': catProd.trademark.slug, 'id': catProd.id }) ) }}
+{% endblock %}

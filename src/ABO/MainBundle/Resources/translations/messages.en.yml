@@ -1,0 +1,908 @@
+matejer_category:
+    automobiles-and-transportation: Automobiles and Transportation
+    cars: Cars
+    sports: Sports
+    luxury: Luxury
+    large: Large
+    midsize: Midsize
+    small: Small
+    trucks: Trucks
+    light-duty: Light Duty
+    medium-duty: Medium Duty
+    heavy-duty: Heavy Duty
+    motorcycles-and-bikes: Motorcycles and Bikes
+    motorcycles: Motorcycles
+    bikes: Bikes
+    parts-electronics-and-accessories: Parts Electronics and Accessories
+    car-parts: Car Parts
+    motorcycles-parts: Motorcycles Parts
+    bikes-parts: Bikes Parts
+    car-electronics: Car Electronics
+    motorcycles-electronics: Motorcycles Electronics
+    car-accessories: Car Accessories
+    motorcycles-accessories: Motorcycles Accessories
+    bikes-accessories: Bikes Accessories
+    high-tech: high-tech
+    phone-and-cellphone: Phone and Cellphone
+    cellphone: Cellphone
+    smartphone: Smartphone
+    phone: Phone
+    fax: Fax
+    phone-cellphone-accessories-and-parts: Phone Cellphone Accessories and Parts
+    cameras-and-camcorders: Cameras and Camcorders
+    camcorder: Camcorder
+    digital-camera: Digital Camera
+    camera-flash: Camera Flash
+    lenses-and-filters: Lenses and Filters
+    picture-frames: Picture Frames
+    binoculars: Binoculars
+    camera-parts-and-tools: Camera Parts and Tools
+    camera-and-camcorder-accessories: Camera and Camcorder Accessories
+    computers: Computers
+    laptop: Laptop
+    gamer: Gamer
+    desktops: Desktops
+    all-in-one: All-in-One
+    server: Server
+    tablets: Tablets
+    tablet: Tablet
+    tablet-accessories: Tablet Accessories
+    pc-components: PC Components
+    screen: Screen
+    processors: Processors
+    motherboards: Motherboards
+    graphics-cards: Graphics Cards
+    internal-storage: Internal Storage
+    ram: RAM
+    coolers-and-fans: Coolers and Fans
+    power-supplies: Power Supplies
+    case: Case
+    burner-readers: Burner Readers
+    controller-cards: Controller Cards
+    sound-cards: Sound Cards
+    tv-tuner-cards: TV Tuner Cards
+    computer-and-server-racks: Computer and Server Racks
+    other-pc-components: Other PC Components
+    printers-and-ink: Printers and Ink
+    inkjet-printers: Inkjet Printers
+    laser-printers: Laser Printers
+    photo-printers: Photo Printers
+    scanners: Scanners
+    3d-printers: 3D Printers
+    printer-and-ink-accessories-and-parts: Printer and Ink Accessories and Parts
+    software: Software
+    antivirus-and-security: Antivirus and Security
+    office-software: Office Software
+    multimedia-software: Multimedia Software
+    leisure-and-practical-life-software: Leisure and Practical Life Software
+    professional-software: professional Software
+    mac-software: Mac Software
+    networking: Networking
+    wifi-usb-key: WiFi USB Key
+    bluetooth-usb-key: Bluetooth USB Key
+    modems-and-routers: Modems and Routers
+    plc-adapters: PLC Adapters
+    wifi-booster: WiFi Booster
+    wifi-repeater: WiFi Repeater
+    wifi-extender: WiFi Extender
+    nas-storage-servers: NAS Storage Servers
+    networking-accessories: Networking Accessories
+    other-networking-products: Other Networking Products
+    pc-accessories: PC Accessories
+    keyboard: Keyboard
+    mouse: Mouse
+    mousepad: Mousepad
+    pc-speakers: PC Speakers
+    webcams: Webcams
+    storage: Storage
+    microphone: Microphone
+    graphic-tablets-and-pens: Graphic Tablets and Pens
+    other-pc-accessories: Other PC Accessories
+    electronics: electronics
+    tv-and-projectors: TV and Projectors
+    tv: TV
+    projectors: Projectors
+    dtt-and-satellite: DTT and Satellite
+    mounts: Mounts
+    accessories-tv-and-projectors: accessories TV and Projectors
+    hi-fi-and-home-theater: Hi-Fi and Home Theater
+    home-theater: Home Theater
+    sound-bars: Sound Bars
+    micro-system-and-mini-system: Micro System and Mini System
+    hi-fi: Hi-Fi
+    speakers: Speakers
+    headphones-and-earphones: Headphones and Earphones
+    car-audio: Car Audio
+    radio-and-alarm-clock: Radio and Alarm Clock
+    audio-and-video: Audio and Video
+    cd-player: CD Player
+    mp3-player: MP3 Player
+    mp4-player: MP4 Player
+    blu-ray-player: Blu-Ray Player
+    dvd-player: DVD Player
+    sound-recorder: Sound Recorder
+    audio-video-accessories: Audio Video Accessories
+    radio-communication: Radio Communication
+    cb-radios: CB Radios
+    radio-antennas: Radio Antennas
+    radio-scanners: Radio Scanners
+    walkie-talkies: Walkie Talkies
+    batteries-and-power: Batteries and Power
+    batteries: Batteries
+    batteries-charger: Batteries Charger
+    batteries-and-power-accessories: Batteries and Power Accessories
+    home-garden-office-pets: home garden office pets
+    small-appliances: Small Appliances
+    coffee-tea-espresso: Coffee, Tea & Espresso
+    blenders-juicers: Blenders & Juicers
+    mixers-mixer-accessories: Mixers & Mixer Accessories
+    toasters: Toasters
+    electric-griddles-hotplates: Electric Griddles & Hotplates
+    food-processors: Food Processors
+    other-appliances: Other Appliances
+    major-appliances: Major Appliances
+    dishwashers: Dishwashers
+    dishwasher-parts-accessories: Dishwasher Parts & Accessories
+    microwave-ovens: Microwave Ovens
+    microwave-ovens-parts-accessories: Microwave Ovens Parts & Accessories
+    refrigerators-freezers: Refrigerators & Freezers
+    washers-dryers: Washers & Dryers
+    pizza-ovens: Pizza Ovens
+    furniture: Furniture
+    armoires-warddresss: Armoires & WardDresss
+    chairs-bar-stools-benches: Chairs, Bar Stools & Benches
+    bean-bags-inflatables: Bean Bags & Inflatables
+    beds-mattresses: Beds & Mattresses
+    bedroom-sets: Bedroom Sets
+    bookcases: Bookcases
+    cabinet-cupboards: Cabinet & Cupboards
+    desks-home-office-furniture: Desks & Home Office Furniture
+    dining-sets: Dining Sets
+    dressers-chests-of-drawers: Dressers & Chests of Drawers
+    entertainment-units-tv-stands: Entertainment Units, TV Stands
+    futons-covers: Futons & Covers
+    nightstands: Nightstands
+    ottomans-footstools-poufs: Ottomans, Footstools & Poufs
+    screens-room-dividers: Screens & Room Dividers
+    slipcovers: Slipcovers
+    sofas-loveseats: Sofas, Loveseats
+    tables: Tables
+    trunks-chests: Trunks & Chests
+    vanities-makeup-tables: Vanities & Makeup Tables
+    furniture-parts-accessories: Furniture Parts & Accessories
+    other-home-furniture: Other Home Furniture
+    home-decor: Home Décor
+    afghans-throw-blankets: Afghans & Throw Blankets
+    baskets: Baskets
+    bookends: Bookends
+    bottles: Bottles
+    boxes-jars-tins: Boxes, Jars & Tins
+    candles-candle-holders-accessories: Candles, Candle Holders & Accessories
+    carpets-and-rugs: carpets and rugs
+    clocks: Clocks
+    decals-stickers-vinyl-art: Decals, Stickers & Vinyl Art
+    decorative-fruit-vegetables: Decorative Fruit & Vegetables
+    floral-decor: Floral Décor
+    frames: Frames
+    home-fragrances: Home Fragrances
+    mirrors: Mirrors
+    pillows: Pillows
+    plate-racks-hangers: Plate Racks & Hangers
+    posters-prints: Posters & Prints
+    tapestries: Tapestries
+    vases: Vases
+    wall-shelves: Wall Shelves
+    other-home-decor: Other Home Décor
+    linens: Linens
+    apron: Apron
+    bed-linens: Bed Linens
+    blanket: Blanket
+    dish-towel-napkin: Dish Towel & Napkin
+    oven-glove: Oven Glove
+    tablecloth-table-runners: Tablecloth & Table Runners
+    towel: Towel
+    other-linens: Other Linens
+    lighting: Lighting
+    chandeliers: Chandeliers
+    lamps-lamp-shades: Lamps & Lamp Shades
+    light-bulbs: Light Bulbs
+    night-lights: Night Lights
+    string-lights-fairy-lights: String Lights, Fairy Lights
+    wall-fixtures: Wall Fixtures
+    lighting-parts-accessories: Lighting Parts & Accessories
+    other-lighting: Other Lighting
+    sanitary-and-plumbing: Sanitary and Plumbing
+    shower: Shower
+    bathtub: Bathtub
+    toilet: Toilet
+    washbasin: Washbasin
+    bidet: Bidet
+    faucets: Faucets
+    accessories: Accessories
+    hvac: HVAC
+    air-conditioners-coolers: Air Conditioners & Coolers
+    air-filters: Air Filters
+    air-purifiers: Air Purifiers
+    fireplace-hearth: Fireplace & Hearth
+    hvac-parts-accessories: HVAC Parts & Accessories
+    heaters: Heaters
+    portable-fans: Portable Fans
+    thermostats: Thermostats
+    ventilation: Ventilation
+    water-heaters: Water Heaters
+    garden-and-outdoors: Garden and Outdoors
+    garden-decor: Garden Décor
+    gardening-supplies: Gardening Supplies
+    lawnmowers: Lawnmowers
+    outdoor-cooking-eating: Outdoor Cooking & Eating
+    patio-garden-furniture: Patio & Garden Furniture
+    plants-seeds-bulbs: Plants, Seeds & Bulbs
+    pools-pools-parts-accessories: Pools, Pools Parts & Accessories
+    pets: Pets
+    birds-supplies: Birds & Supplies
+    cats-supplies: Cats & Supplies
+    dogs-supplies: Dogs & Supplies
+    fish-supplies: Fish & Supplies
+    other-pets-supplies: Other Pets & Supplies
+    house-cleaning: House Cleaning
+    carpet-shampooers-steamers: Carpet Shampooers & Steamers
+    carpet-floor-sweepers: Carpet & Floor Sweepers
+    cleaning-products: Cleaning Products
+    cleaning-towels-cloths: Cleaning Towels & Cloths
+    laundry-supplies: Laundry Supplies
+    mops-brooms: Mops & Brooms
+    paper-products: Paper Products
+    trash-cans-wastebaskets: Trash Cans & Wastebaskets
+    vacuum-cleaners: Vacuum Cleaners
+    vacuum-parts-accessories: Vacuum Parts & Accessories
+    other-home-cleaning-supplies: Other Home Cleaning Supplies
+    cookware-and-tableware: Cookware and Tableware
+    saucepans: Saucepans
+    frying-pans: Frying Pans
+    copper-cookware: Copper Cookware
+    casseroles: Casseroles
+    roasters-racks: Roasters & Racks
+    griddles-grill-pans: Griddles & Grill Pans
+    oven-to-tableware: Oven-to-tableware
+    saute-pans: Sauté Pans
+    stockpots: Stockpots
+    woks: Woks
+    steamers-bain-maries: Steamers & Bain-Maries
+    stovetop-kettles: Stovetop Kettles
+    egg-poachers: Egg Poachers
+    induction-cookware: Induction Cookware
+    tableware: Tableware
+    tagines: Tagines
+    other-cookware: Other Cookware
+    security-and-protection: Security and Protection
+    access-control: Access Control
+    alarms: Alarms
+    locks: Locks
+    security-cameras: Security Cameras
+    door-security: Door Security
+    safes: Safes
+    key-hiders: Key Hiders
+    security-lighting: Security Lighting
+    other-home-security-gadgets: Other Home Security Gadgets
+    clothing-and-prestige: clothing and prestige
+    men-clothing: men clothing
+    jacket: Jacket
+    bermuda: Bermuda
+    shirt: Shirt
+    coat: Coat
+    pull: Pull
+    vest: Vest
+    hoodie: Hoodie
+    t-shirt: T-Shirt
+    polo: Polo
+    blazers: Blazers
+    jean: Jean
+    pants: Pants
+    capri-pants: Capri Pants
+    short: Short
+    swimsuit: Swimsuit
+    pajamas: Pajamas
+    dressing-gown: Dressing Gown
+    underwear: Underwear
+    sportswear: Sportswear
+    shoes: Shoes
+    suit: Suit
+    workwear: Workwear
+    women-clothing: women clothing
+    dress: Dress
+    combination: Combination
+    swimsuit-1: Swimsuit
+    tank-top: Tank Top
+    vest-1: Vest
+    jean-1: Jean
+    pants-1: Pants
+    short-1: Short
+    capri-pants-1: Capri Pants
+    lingerie: Lingerie
+    bras: Bras
+    panties: Panties
+    pull-1: Pull
+    bib-brace: Bib & Brace
+    t-shirt-1: T-Shirt
+    shirt-1: Shirt
+    skirt: Skirt
+    blazers-1: Blazers
+    underwear-1: Underwear
+    pajamas-1: Pajamas
+    sportswear-1: Sportswear
+    shoes-1: Shoes
+    workwear-1: Workwear
+    nightgown: Nightgown
+    dressing-gown-1: Dressing Gown
+    girls-clothing: girls clothing
+    coat-1: Coat
+    jacket-1: Jacket
+    pull-2: Pull
+    hoodie-1: Hoodie
+    vest-2: Vest
+    t-shirt-2: T-Shirt
+    tank-top-1: Tank Top
+    blouse: Blouse
+    dress-1: Dress
+    skirt-1: Skirt
+    jean-2: Jean
+    pants-2: Pants
+    capri-pants-2: Capri Pants
+    legging: Legging
+    jogging: Jogging
+    bib-brace-1: Bib & Brace
+    combination-1: Combination
+    short-2: Short
+    bermuda-1: Bermuda
+    swimsuit-2: Swimsuit
+    pajamas-2: Pajamas
+    nightgown-1: Nightgown
+    dressing-gown-2: Dressing Gown
+    underwear-2: Underwear
+    tights: Tights
+    sportswear-2: Sportswear
+    shoes-2: Shoes
+    schoolwear: Schoolwear
+    boys-clothing: boys clothing
+    coat-2: Coat
+    jacket-2: Jacket
+    pull-3: Pull
+    hoodie-2: Hoodie
+    vest-3: Vest
+    t-shirt-3: T-Shirt
+    polo-1: Polo
+    shirt-2: Shirt
+    jean-3: Jean
+    pants-3: Pants
+    capri-pants-3: Capri Pants
+    jogging-1: Jogging
+    short-3: Short
+    bermuda-2: Bermuda
+    swimsuit-3: Swimsuit
+    pajamas-3: Pajamas
+    underwear-3: Underwear
+    sportswear-3: Sportswear
+    shoes-3: Shoes
+    schoolwear-1: Schoolwear
+    dressing-gown-3: Dressing Gown
+    babies-clothing: babies clothing
+    set: Set
+    pajamas-4: Pajamas
+    coat-3: Coat
+    t-shirt-4: T-shirt
+    tunic: Tunic
+    blouse-1: Blouse
+    pull-4: Pull
+    vest-4: Vest
+    hoodie-3: Hoodie
+    dress-2: Dress
+    skirt-2: Skirt
+    pants-4: Pants
+    jeans: Jeans
+    short-4: Short
+    combination-2: Combination
+    bib-brace-2: Bib & Brace
+    tights-1: Tights
+    swimsuit-4: Swimsuit
+    sleeping-bag: Sleeping bag
+    dressing-gown-4: Dressing Gown
+    shoes-4: Shoes
+    clothing-accessories: clothing accessories
+    umbrella: Umbrella
+    maternity-suitcase: Maternity Suitcase
+    scarf: Scarf
+    hat-cap: Hat, Cap
+    bonnet: Bonnet
+    gloves: Gloves
+    belts: Belts
+    handbags: Handbags
+    wallets: Wallets
+    tie: Tie
+    socks: Socks
+    angel-nest: Angel Nest
+    men-watches-and-jewelry: men watches and jewelry
+    wedding-bands: Wedding Bands
+    watches: Watches
+    cufflinks-and-shirt-studs: Cufflinks and Shirt Studs
+    blazer-buttons: Blazer Buttons
+    necklaces: Necklaces
+    bracelets: Bracelets
+    rings: Rings
+    women-watches-and-jewelry: women watches and jewelry
+    anklets: Anklets
+    bracelets-1: Bracelets
+    brooches-pins: Brooches & Pins
+    earrings: Earrings
+    jewelry-sets: Jewelry Sets
+    necklaces-1: Necklaces
+    wedding-bands-1: Wedding Bands
+    watches-1: Watches
+    children-watches-and-jewelry: children watches and jewelry
+    watches-2: Watches
+    anklets-1: Anklets
+    bracelets-2: Bracelets
+    earrings-1: Earrings
+    necklaces-2: Necklaces
+    bags-and-luggage: bags and luggage
+    suitcases: Suitcases
+    backpacks-and-sports-bags: Backpacks and Sports Bags
+    childrens-luggage: Childrens Luggage
+    shopping-trolleys: Shopping Trolleys
+    suit-carriers: Suit Carriers
+    briefcases: Briefcases
+    holdalls: Holdalls
+    shoulder-bags: shoulder Bags
+    bags-and-luggage-accessories: Bags and Luggage Accessories
+    health-and-beauty: health and beauty
+    bath-and-body: bath and body
+    body-moisturisers: Body Moisturisers
+    body-cleansers: Body Cleansers
+    body-scrubs: Body Scrubs
+    beautifying-oil: Beautifying Oil
+    hands-feet: Hands & Feet
+    spa-treatment: Spa & Treatment
+    aromatherapy-massage: Aromatherapy & Massage
+    bath-body-accessories: Bath & Body ACCESSORIES
+    other-bath-body-products: Other Bath & Body Products
+    hair-care-for-him: Hair Care For Him
+    shampoo: Shampoo
+    conditioner: Conditioner
+    hair-treatment: Hair Treatment
+    hair-styling: Hair Styling
+    brushes-combs: Brushes & Combs
+    hair-care-for-her: Hair Care For Her
+    shampoo-1: Shampoo
+    conditioner-1: Conditioner
+    hair-treatment-1: Hair Treatment
+    hair-styling-1: Hair Styling
+    brushes-combs-1: Brushes & Combs
+    makeup: Makeup
+    spring-trend: Spring Trend
+    all-in-one-1: All-In-One
+    face: Face
+    eyes: Eyes
+    cheeks: Cheeks
+    lips: Lips
+    bronzing: Bronzing
+    brushes-tools: Brushes & Tools
+    nails: Nails
+    skin-care: Skin Care
+    cleansers: Cleansers
+    exfoliators-masks: Exfoliators & Masks
+    toners: Toners
+    serums: Serums
+    moisturisers: Moisturisers
+    eye-care: Eye Care
+    lip-care: Lip Care
+    accessories-1: Accessories
+    oral-care: Oral Care
+    dentures: Dentures
+    flosses: Flosses
+    mouthwash: Mouthwash
+    toothbrushes: Toothbrushes
+    toothpaste: Toothpaste
+    sensitivity: Sensitivity
+    whitening: Whitening
+    baby-care: Baby Care
+    baby-wash: Baby Wash
+    bubble-bath: Bubble Bath
+    cologne: Cologne
+    cotton: Cotton
+    diaper-cream: Diaper Cream
+    gift-packs: Gift Packs
+    haircare: Haircare
+    lotion: Lotion
+    nursing-pads: Nursing Pads
+    oil: Oil
+    powder: Powder
+    wipes: Wipes
+    fragrance-for-him: Fragrance For Him
+    aftershave: Aftershave
+    deodorant: Deodorant
+    eau-de-toilette-parfum: Eau De Toilette & Parfum
+    alcohol-free: Alcohol Free
+    fragrance-for-her: Fragrance For Her
+    deodorant-1: Deodorant
+    eau-de-toilette-parfum-1: Eau De Toilette & Parfum
+    alcohol-free-1: Alcohol Free
+    vision-care: Vision Care
+    eyeglasses: Eyeglasses
+    eyeglass-lenses: Eyeglass Lenses
+    frame-styles: Frame Styles
+    sunglasses: Sunglasses
+    anti-reflective-lenses: Anti-Reflective Lenses
+    body: Body
+    entertainement-and-hobbies: entertainement and hobbies
+    video-games-and-consoles: Video Games and Consoles
+    consoles: Consoles
+    video-games: video games
+    gaming-accessories: Gaming Accessories
+    musical-instruments: Musical Instruments
+    brass: Brass
+    percussion: Percussion
+    strings: Strings
+    woodwinds: Woodwinds
+    sports-1: Sports
+    football: Football
+    basketball: BasketBall
+    cycling: Cycling
+    brass-1: Brass
+    sports-2: Sports
+    movies-and-tv-series: Movies and TV Series
+    movies: Movies
+    tv-series: TV Series
+    games-and-toys: Games and Toys
+    building-toys: Building Toys
+    dolls-puppets: Dolls & Puppets
+    electronic-games: Electronic Games
+    learning-education: Learning & Education
+    puzzles: Puzzles
+    sports-outdoor-play: Sports & Outdoor Play
+    other: Other
+    antique-and-collectible: antique and collectible
+    automobiles: Automobiles
+    sports-cars: Sports Cars
+    luxury-cars: Luxury Cars
+    large-cars: Large Cars
+    midsize-cars: Midsize Cars
+    small-cars: Small Cars
+    trucks-1: Trucks
+    motorcycles-1: Motorcycles
+    bikes-1: Bikes
+    arts: Arts
+    painting: Painting
+    sculpting: Sculpting
+    photography: Photography
+    calligraphy: Calligraphy
+    mosaic: Mosaic
+    books-and-manuscripts: Books and Manuscripts
+    agriculture: Agriculture
+    architecture: Architecture
+    art: Art
+    biography-and-memoir: Biography and Memoir
+    business: Business
+    children-fiction: Children Fiction
+    children-non-fiction: Children Non-Fiction
+    cooking-and-food: Cooking and Food
+    crafts-and-hobbies: Crafts and Hobbies
+    family-and-parenting: Family and Parenting
+    fiction: Fiction
+    fun-and-games: Fun and Games
+    gardening: Gardening
+    health-mind-and-body: Health, Mind, and Body
+    history: History
+    home-reference-how-to: Home Reference / How-To
+    humor: Humor
+    magasine: Magasine
+    medical: Medical
+    music: Music
+    newspapers: Newspapers
+    performing-arts: Performing Arts
+    pets-1: Pets
+    philosophy: Philosophy
+    photography-1: Photography
+    reference: Reference
+    religion: Religion
+    self-help: Self-Help
+    social-science: Social Science
+    sports-and-recreation: Sports and Recreation
+    transportation: Transportation
+    travel: Travel
+    furniture-and-decor: Furniture and Décor
+    armoires-warddresss-1: Armoires & WardDresss
+    chairs-bar-stools-benches-1: Chairs, Bar Stools & Benches
+    bean-bags-inflatables-1: Bean Bags & Inflatables
+    beds-mattresses-1: Beds & Mattresses
+    bookcases-1: Bookcases
+    cabinet-cupboards-1: Cabinet & Cupboards
+    desks-home-office-furniture-1: Desks & Home Office Furniture
+    dining-sets-1: Dining Sets
+    entertainment-units-tv-stands-1: Entertainment Units, TV Stands
+    ottomans-footstools-poufs-1: Ottomans, Footstools & Poufs
+    sofas-loveseats-1: Sofas, Loveseats
+    tables-1: Tables
+    afghans-throw-blankets-1: Afghans & Throw Blankets
+    candles-candle-holders-accessories-1: Candles, Candle Holders & Accessories
+    carpets-and-rugs-1: carpets and rugs
+    clocks-1: Clocks
+    decals-stickers-vinyl-art-1: Decals, Stickers & Vinyl Art
+    floral-decor-1: Floral Décor
+    frames-1: Frames
+    mirrors-1: Mirrors
+    vases-1: Vases
+    musical-instruments-1: Musical Instruments
+    brass-2: Brass
+    percussion-1: Percussion
+    strings-1: Strings
+    woodwinds-1: Woodwinds
+    lighting-1: Lighting
+    indoor: Indoor
+    outdoor: Outdoor
+    jewelry: Jewelry
+    women-jewelry: Women Jewelry
+    men-jewelry: Men Jewelry
+    women-watches: Women Watches
+    men-watches: Men Watches
+    clothing: Clothing
+    men: Men
+    women: Women
+    girl: Girl
+    boy: Boy
+    baby: Baby
+    ceramics-and-pottery: Ceramics and Pottery
+    ceramics: Ceramics
+    pottery: Pottery
+matejer_place:
+    TN: Tunisia
+    AF: Afghanistan
+    AX: Åland Islands
+    AL: Albania
+    DZ: Algeria
+    AS: American Samoa
+    AD: Andorra
+    AO: Angola
+    AI: Anguilla
+    AQ: Antarctica
+    AG: Antigua & Barbuda
+    AR: Argentina
+    AM: Armenia
+    AW: Aruba
+    AC: Ascension Island
+    AU: Australia
+    AT: Austria
+    AZ: Azerbaijan
+    BS: Bahamas
+    BH: Bahrain
+    BD: Bangladesh
+    BB: Barbados
+    BY: Belarus
+    BE: Belgium
+    BZ: Belize
+    BJ: Benin
+    BM: Bermuda
+    BT: Bhutan
+    BO: Bolivia
+    BA: Bosnia & Herzegovina
+    BW: Botswana
+    BR: Brazil
+    IO: British Indian Ocean Territory
+    VG: British Virgin Islands
+    BN: Brunei
+    BG: Bulgaria
+    BF: Burkina Faso
+    BI: Burundi
+    KH: Cambodia
+    CM: Cameroon
+    CA: Canada
+    IC: Canary Islands
+    CV: Cape Verde
+    BQ: Caribbean Netherlands
+    KY: Cayman Islands
+    CF: Central African Republic
+    EA: Ceuta & Melilla
+    TD: Chad
+    CL: Chile
+    CN: China
+    CX: Christmas Island
+    CC: Cocos (Keeling) Islands
+    CO: Colombia
+    KM: Comoros
+    CG: Congo - Brazzaville
+    CD: Congo - Kinshasa
+    CK: Cook Islands
+    CR: Costa Rica
+    CI: Côte d’Ivoire
+    HR: Croatia
+    CU: Cuba
+    CW: Curaçao
+    CY: Cyprus
+    CZ: Czech Republic
+    DK: Denmark
+    DG: Diego Garcia
+    DJ: Djibouti
+    DM: Dominica
+    DO: Dominican Republic
+    EC: Ecuador
+    EG: Egypt
+    SV: El Salvador
+    GQ: Equatorial Guinea
+    ER: Eritrea
+    EE: Estonia
+    ET: Ethiopia
+    FK: Falkland Islands
+    FO: Faroe Islands
+    FJ: Fiji
+    FI: Finland
+    FR: France
+    GF: French Guiana
+    PF: French Polynesia
+    TF: French Southern Territories
+    GA: Gabon
+    GM: Gambia
+    GE: Georgia
+    DE: Germany
+    GH: Ghana
+    GI: Gibraltar
+    GR: Greece
+    GL: Greenland
+    GD: Grenada
+    GP: Guadeloupe
+    GU: Guam
+    GT: Guatemala
+    GG: Guernsey
+    GN: Guinea
+    GW: Guinea-Bissau
+    GY: Guyana
+    HT: Haiti
+    HN: Honduras
+    HK: Hong Kong SAR China
+    HU: Hungary
+    IS: Iceland
+    IN: India
+    ID: Indonesia
+    IR: Iran
+    IQ: Iraq
+    IE: Ireland
+    IM: Isle of Man
+    IL: Israel
+    IT: Italy
+    JM: Jamaica
+    JP: Japan
+    JE: Jersey
+    JO: Jordan
+    KZ: Kazakhstan
+    KE: Kenya
+    KI: Kiribati
+    XK: Kosovo
+    KW: Kuwait
+    KG: Kyrgyzstan
+    LA: Laos
+    LV: Latvia
+    LB: Lebanon
+    LS: Lesotho
+    LR: Liberia
+    LY: Libya
+    LI: Liechtenstein
+    LT: Lithuania
+    LU: Luxembourg
+    MO: Macau SAR China
+    MK: Macedonia
+    MG: Madagascar
+    MW: Malawi
+    MY: Malaysia
+    MV: Maldives
+    ML: Mali
+    MT: Malta
+    MH: Marshall Islands
+    MQ: Martinique
+    MR: Mauritania
+    MU: Mauritius
+    YT: Mayotte
+    MX: Mexico
+    FM: Micronesia
+    MD: Moldova
+    MC: Monaco
+    MN: Mongolia
+    ME: Montenegro
+    MS: Montserrat
+    MA: Morocco
+    MZ: Mozambique
+    MM: Myanmar (Burma)
+    NA: Namibia
+    NR: Nauru
+    NP: Nepal
+    NL: Netherlands
+    NC: New Caledonia
+    NZ: New Zealand
+    NI: Nicaragua
+    NE: Niger
+    NG: Nigeria
+    NU: Niue
+    NF: Norfolk Island
+    KP: North Korea
+    MP: Northern Mariana Islands
+    NO: Norway
+    OM: Oman
+    PK: Pakistan
+    PW: Palau
+    PS: Palestinian Territories
+    PA: Panama
+    PG: Papua New Guinea
+    PY: Paraguay
+    PE: Peru
+    PH: Philippines
+    PN: Pitcairn Islands
+    PL: Poland
+    PT: Portugal
+    PR: Puerto Rico
+    QA: Qatar
+    RE: Réunion
+    RO: Romania
+    RU: Russia
+    RW: Rwanda
+    WS: Samoa
+    SM: San Marino
+    ST: São Tomé & Príncipe
+    SA: Saudi Arabia
+    SN: Senegal
+    RS: Serbia
+    SC: Seychelles
+    SL: Sierra Leone
+    SG: Singapore
+    SX: Sint Maarten
+    SK: Slovakia
+    SI: Slovenia
+    SB: Solomon Islands
+    SO: Somalia
+    ZA: South Africa
+    GS: South Georgia & South Sandwich Islands
+    KR: South Korea
+    SS: South Sudan
+    ES: Spain
+    LK: Sri Lanka
+    BL: St. Barthélemy
+    SH: St. Helena
+    KN: St. Kitts & Nevis
+    LC: St. Lucia
+    MF: St. Martin
+    PM: St. Pierre & Miquelon
+    VC: St. Vincent & Grenadines
+    SD: Sudan
+    SR: Suriname
+    SJ: Svalbard & Jan Mayen
+    SZ: Swaziland
+    SE: Sweden
+    CH: Switzerland
+    SY: Syria
+    TW: Taiwan
+    TJ: Tajikistan
+    TZ: Tanzania
+    TH: Thailand
+    TL: Timor-Leste
+    TG: Togo
+    TK: Tokelau
+    TO: Tonga
+    TT: Trinidad & Tobago
+    TA: Tristan da Cunha
+    TR: Turkey
+    TM: Turkmenistan
+    TC: Turks & Caicos Islands
+    TV: Tuvalu
+    UM: U.S. Outlying Islands
+    VI: U.S. Virgin Islands
+    UG: Uganda
+    UA: Ukraine
+    AE: United Arab Emirates
+    GB: United Kingdom
+    US: United States
+    UY: Uruguay
+    UZ: Uzbekistan
+    VU: Vanuatu
+    VA: Vatican City
+    VE: Venezuela
+    VN: Vietnam
+    WF: Wallis & Futuna
+    EH: Western Sahara
+    YE: Yemen
+    ZM: Zambia
+    ZW: Zimbabwe

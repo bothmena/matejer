@@ -1,0 +1,4 @@
+services:
+#    abo_support.example:
+#        class: ABO\SupportBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

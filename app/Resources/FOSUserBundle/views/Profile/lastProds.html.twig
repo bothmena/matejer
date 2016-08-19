@@ -1,0 +1,18 @@
+<table class="table table-hover">
+    <tbody>
+    <tr>
+        <th class="col-xs-3">{{ 'matejer_product.reference_name'|trans }}</th>
+        <th class="col-xs-3">{{ 'matejer_main.category'|trans }}</th>
+        <th class="col-xs-3">{{ 'matejer_product.mark'|trans }}</th>
+        <th class="col-xs-3">{{ 'matejer_main.date'|trans }}</th>
+    </tr>
+    {% for prod in lastProducts %}
+        <tr>
+            <td class="col-xs-3"><a href="{% if prod.categoryProduct.trademark %}{{ path('abo_trademark_product_product', {'slug': prod.categoryProduct.trademark.slug, 'slug_prod': prod.categoryProduct.product.slug}) }}{% else %}{{ path('abo_shop_product_product', {'slug': prod.categoryProduct.shop.slug, 'slug_prod': prod.categoryProduct.product.slug}) }}{% endif %}" class="btn-link">{{ prod.categoryProduct.fullname }}</a></td>
+            <td class="col-xs-3">{{ prod.categoryProduct.category.translatable|trans }}</td>
+            <td class="col-xs-3">{{ prod.categoryProduct.product.mark }}</td>
+            <td class="col-xs-3">{{ prod.date|date('d/m/Y') }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

@@ -1,0 +1,11 @@
+<div class="ftr-box box-shadow">
+    <div class="ftr-header">
+        <h3 class="ftr-title">{{ feature.name }}</h3>
+    </div>
+    <div class="ftr-img">
+        <img class="img-responsive undrag" src="{{ get_image(feature.image.source, 'prod_modal', feature.image.gcs) }}">
+    </div>
+    <div class="ftr-desc">
+        {{ feature.description|raw }}
+    </div>
+</div>

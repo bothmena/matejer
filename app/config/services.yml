@@ -1,0 +1,110 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+services:
+    abo.install_cmnd:
+        class: ABO\AdminBundle\Command\InstallCommand
+        arguments: ['@doctrine.orm.entity_manager']
+        tags:
+            -  { name: console.command }
+    abo.tag_cmnd:
+        class: ABO\AdminBundle\Command\TagCommand
+        arguments: ['@doctrine.orm.entity_manager']
+        tags:
+            -  { name: console.command }
+    abo.img_list:
+        class: ABO\AdminBundle\Command\ImageListCommand
+        arguments: ['@doctrine.orm.entity_manager', '@abo.file_loader']
+        tags:
+            -  { name: console.command }
+    abo.img_rmv:
+        class: ABO\AdminBundle\Command\ImageRemoveCommand
+        arguments: ['@doctrine.orm.entity_manager']
+        tags:
+            -  { name: console.command }
+    abo.mail_subscriber:
+        class: ABO\MainBundle\EventSubscriber\ABOEmailSubscriber
+        arguments: ['@abo.uniqueness', '@abo.mail']
+        tags:
+            - { name: kernel.event_subscriber }
+            
+    abo.shop_subscriber:
+        class: ABO\MainBundle\EventSubscriber\ABOShopSubscriber
+        arguments: ['@abo.uniqueness', '@abo.mail']
+        tags:
+            - { name: kernel.event_subscriber }
+            
+    abo.user_subscriber:
+        class: ABO\MainBundle\EventSubscriber\ABOUserSubscriber
+        arguments: ['@doctrine.orm.entity_manager', '@abo.uniqueness', '@abo.mail']
+        tags:
+            - { name: kernel.event_subscriber }
+            
+    abo.product_subscriber:
+        class: ABO\MainBundle\EventSubscriber\ABOProductSubscriber
+        arguments: ['@doctrine.orm.entity_manager', '@abo.uniqueness', '@abo.file_uploader']
+        tags:
+            - { name: kernel.event_subscriber }
+    abo.mail:
+        class: ABO\MainBundle\Services\ABOMail
+        arguments: ["@mailer", "@templating", "@translator", "%support_email%", "%support_email_password%"]
+
+    abo.file_uploader:
+        class: ABO\MainBundle\Services\ABOFileUploader
+        arguments: ["@abo.uniqueness"]
+
+    abo.file_loader:
+        class: ABO\MainBundle\Services\ABOFileLoader
+        arguments: ["@liip_imagine.cache.manager", "@liip_imagine.data.manager", "@liip_imagine.filter.manager"]
+        tags:
+            - { name: twig.extension }
+
+    abo.util:
+        class: ABO\MainBundle\Services\ABOUtil
+        arguments: ["@translator"]
+
+    abo.category:
+        class: ABO\MainBundle\Services\ABOCategory
+        arguments: ["@doctrine.orm.entity_manager"]
+
+    abo.phonemail:
+        class: ABO\MainBundle\Services\ABOPhoneEmail
+        arguments: ["@doctrine.orm.entity_manager", "@abo.uniqueness", "@translator"]
+
+    abo.render_gs:
+        class: ABO\MainBundle\Services\ABORenderGS
+        arguments: ["@translator", "@abo.file_loader"]
+        tags:
+            - { name: twig.extension }
+
+    abo.uniqueness:
+        class: ABO\MainBundle\Services\ABOUniqueness
+        arguments: ["@doctrine.orm.entity_manager", "@fos_user.util.token_generator" ]
+
+    abo.review_handler:
+        class: ABO\MainBundle\Services\ABORateStat
+        arguments: ["@doctrine.orm.entity_manager"]
+
+    abo.locale_subscriber:
+        class: ABO\MainBundle\EventSubscriber\ABOLocaleSubscriber
+        arguments: ["%kernel.default_locale%"]
+        tags:
+            - { name: kernel.event_subscriber }
+
+    abo.login_subscriber:
+        class: ABO\MainBundle\EventSubscriber\ABOLoginSubscriber
+        arguments: ["@session"]
+        tags:
+            - { name: kernel.event_subscriber }
+    abo_clothegs:
+        class: ABO\MainBundle\Form\GenSpecs\ClotheGSType
+        arguments:
+            - '@translator'
+            - '@abo.file_loader'
+        tags:
+            - { name: form.type, alias: clothegs }
+    abo_features:
+        class: ABO\MainBundle\Form\Specification\ProductFeaturesType
+        arguments:
+            - '@abo.file_loader'
+        tags:
+            - { name: form.type, alias: features }

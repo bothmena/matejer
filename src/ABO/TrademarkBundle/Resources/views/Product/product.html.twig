@@ -1,0 +1,182 @@
+{% extends "ABOTrademarkBundle::dashBase.html.twig" %}
+
+{% block title %}ABOTrademarkBundle:Show:home{% endblock %}
+{% block options %} options={token:true{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}, check:{id:{{ catProd.id }},entity:'product'}{% endif %}};{% endblock %}
+
+{% block content_header %}
+    <div class="bread-btn">
+        <ol class="mbreadcrumb hidden-xs" vocab="http://schema.org/" typeof="BreadcrumbList">
+            <li property="itemListElement" typeof="ListItem">
+                <a property="item" typeof="WebPage"
+                   href="https://example.com/arts">
+                    <span property="name">Arts</span></a>
+                <meta property="position" content="1">
+            </li>
+            <li property="itemListElement" typeof="ListItem">
+                <a property="item" typeof="WebPage"
+                   href="https://example.com/arts/books">
+                    <span property="name">Books</span></a>
+                <meta property="position" content="2">
+            </li>
+            <li class="active" property="itemListElement" typeof="ListItem">
+                <a property="item" typeof="WebPage"
+                   href="https://example.com/arts/books/poetry">
+                    <span property="name">Poetry</span></a>
+                <meta property="position" content="3">
+            </li>
+        </ol>
+        <div like like-id="{{ catProd.id }}" theme="{[{ theme }]}"></div>
+        <div ng-controller="ShareController" class="addthis_sharing_toolbox pull-right"></div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div style="margin-bottom: 25px;" ng-controller="ProductController">
+        <div class="box box-{[{ theme }]} box-shadow">
+            <div class="box-header">
+                <h3 class="box-title" style="font-size: 20px;display: inline-block;">
+                    {{ catProd.product.reference }}
+                </h3>
+            </div>
+            <div class="panel-body" style="padding: 0;padding-top: 10px;">
+                <div class="row-fluid">
+                    <div class="col-xs-12 col-md-6 center-container">
+                        <div class="pointer-link center" ng-click="prodGallery('{{ catProd.product.slug }}')">
+                            <i class="fa fa-spinner fa-spin fa-4x" ng-show="loadingGal"></i>
+                            <img class="img-responsive undrag" src="{{ get_image(catProd.image.source, 'prod_modal', catProd.image.gcs) }}">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <div class="box box-{[{ theme }]} box-shadow">
+                            <div class="box-body no-padding">
+                                <table class="table table-hover">
+                                    <tbody>
+                                    {% set specs = renderGS(catProd.generalSpecs) %}
+                                    {% if specs.description is defined and specs.description != '' %}
+                                        <tr>
+                                            <th colspan="2">{{ 'matejer_genspecs.description'|trans }} :</th>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">{{ specs.description }}</td>
+                                        </tr>
+                                    {% endif %}
+                                    {% if specs.specs is defined %}
+                                        {% for key, value in specs.specs %}
+                                            <tr>
+                                                <th>{{ key }}</th>
+                                                <td>{{ value }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    {% elseif specs.sizes|length > 0 %}
+                                        {% if specs.sizes|length > 1 %}
+                                            <tr>
+                                                <th colspan="2">{{ 'matejer_genspecs.sizes'|trans }}</th>
+                                            </tr>
+                                        {% endif %}
+                                        {% for key, sizes in specs.sizes %}
+                                            <tr>
+                                                <th>{{ key }}</th>
+                                                <td>{% for size in sizes %}<div class="prod-size">{{ size }}</div>{% endfor %}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    {% endif %}
+                                    {% if specs.colors[0] != '' %}
+                                        <tr>
+                                            <th>{{ 'matejer_genspecs.colors'|trans }}</th>
+                                            <td>{% for color in specs.colors %}<div class="prod-color" style="background-color: #{{ color }};"></div>{% endfor %}</td>
+                                        </tr>
+                                    {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12" style="margin-bottom: 15px;">
+            <ul class="nav nav-tabs nav-justified box-shadow">
+                <li role="presentation" class="active "><a data-toggle="tab" href="#specs">{{ 'matejer_genspecs.specifications'|trans }}</a></li>
+                <li role="presentation"><a data-toggle="tab" href="#feature">{{ 'matejer_feature.features'|trans }}</a></li>
+                <li role="presentation"><a data-toggle="tab" href="#review">{{ 'matejer_review.reviews'|trans }}</a></li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div id="specs" class="tab-pane fade in active">
+                {% for groupName, group in simpleFiche %}
+                    <div class="col-xs-12">
+                        <div class="box box-{[{ theme }]} Collapsable-box box-shadow box-solid">
+                            <div class="box-header" data-widget="collapse"{# data-toggle="tooltip" title="Expand / Collapse"#}>
+	                            <i class="fa fa-minus pull-right"></i>
+	                            <h3 class="box-title">{{ groupName }}</h3>
+                            </div>
+                            <div class="box-body no-padding">
+                                <table class="table table-striped">
+                                    <tbody>
+                                        {% for value in group %}
+                                            <tr>
+                                                <td>{{ value }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                {% for groupName, group in doubleFiche %}
+                    <div class="col-xs-12">
+                        <div class="box box-{[{ theme }]} Collapsable-box box-shadow box-solid">
+                            <div class="box-header" data-widget="collapse">
+	                            <i class="fa fa-minus pull-right"></i>
+                                <h3 class="box-title">{{ groupName }}</h3>
+                            </div>
+                            <div class="box-body no-padding">
+                                <table class="table table-striped">
+                                    <tbody>
+                                        {% for key, value in group %}
+                                            <tr>
+                                                <th class="col-xs-6">{{ key }}</th>
+                                                <td class="col-xs-6">{{ value }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div id="feature" class="tab-pane fade">
+                {% for feature in features %}
+                    <div class="col-xs-12">
+                        <div class="box box-{[{ theme }]} box-shadow">
+                            <div class="box-header">
+                                <h3 class="box-title">{{ feature.feature.name }}</h3>
+                            </div>
+                            <div class="box-body">
+                                <p>
+                                    <img style="float: left;margin-right: 10px;" src="{{ get_image(feature.feature.image.source ,'prod_modal', feature.feature.image.gcs ) }}" class="img-responsive"/>
+                                    {{ feature.feature.description|escape }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div id="review" class="tab-pane fade" ng-controller="ReviewController" ng-init="init('product');title();">
+                {{ controller("ABOMainBundle:Home:prodReviews", {'catProd': catProd, 'page': 1}) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56fe9bbffa8766a6"></script>
+{% endblock %}
+
+{% block page_seo %}
+    {{ render_esi(url('abo_main_product_productseo', {'slug': catProd.trademark.slug, 'id': catProd.id }) ) }}
+{% endblock %}

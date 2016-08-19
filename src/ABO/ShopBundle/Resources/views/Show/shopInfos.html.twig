@@ -1,0 +1,35 @@
+<div class="box box-{[{ theme }]} box-shadow">
+	<div class="box-header">
+		<h3 class="box-title"><i class="fa fa-university"></i> {{ 'shop_show_about.shop_info'|trans }}</h3>
+	</div>
+	<div class="box-body">
+		<table class="table table-hover">
+			<tr>
+				<th>{{ 'matejer_shop.name'|trans }}</th>
+				<td>{{ shop.name }}</td>
+			</tr>
+			<tr>
+				<th>{{ 'matejer_shop.slogan'|trans }}</th>
+				<td>{{ shop.slogan }}</td>
+			</tr>
+			<tr>
+				<th>{{ 'matejer_currency.currency'|trans }}</th>
+				<td>{{ shop.transExCurrency|trans }}</td>
+			</tr>
+			<tr>
+				<th>{{ 'matejer_shop.website'|trans }}</th>
+				<td>{{ shop.website }}</td>
+			</tr>
+			<tr>
+				<th>{{ 'matejer_shop.inscriptionDate'|trans }}</th>
+				<td>{{ shop.inscriptionDate|date('d/m/Y') }}</td>
+			</tr>
+			<tr>
+				<th colspan="2">{{ 'matejer_shop.description'|trans }}</th>
+			</tr>
+			<tr>
+				<td colspan="2">{{ shop.description }}</td>
+			</tr>
+		</table>
+	</div>
+</div>

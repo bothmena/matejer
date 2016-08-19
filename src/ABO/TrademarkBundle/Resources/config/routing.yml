@@ -1,0 +1,59 @@
+trademark_admin_register: 
+    path:     /admin/tm/register
+    defaults: { _controller: ABOTrademarkBundle:Admin:register }
+
+trademark_admin_arrangement:
+    path:     /admin/tm/{slug}/arrangements
+    defaults: { _controller: ABOTrademarkBundle:Admin:arrangement }
+
+trademark_admin_set_categories:
+    path:     /admin/tm/{slug}/categories
+    defaults: { _controller: ABOTrademarkBundle:Admin:setCategories }
+
+trademark_admin_features:
+    path:     /admin/tm/{slug}/features
+    defaults: { _controller: ABOTrademarkBundle:Admin:feature }
+
+trademark_admin_setting:
+    path:     /admin/tm/{slug}/setting
+    defaults: { _controller: ABOTrademarkBundle:Admin:setting }
+
+trademark_product_pre_add: 
+    path:     /admin/tm/{slug}/new_product/select_category
+    defaults: { _controller: ABOTrademarkBundle:Product:preAdd }
+
+trademark_product_specification: 
+    path:     /admin/tm/{slug}/product_specs/{slug_prod}
+    defaults: { _controller: ABOTrademarkBundle:Product:specification }
+
+trademark_product_add: 
+    path:     /admin/tm/{slug}/new_product/{slug_cat}
+    defaults: { _controller: ABOTrademarkBundle:Product:add }
+
+trademark_product_all_products:
+    path:     /admin/tm/{slug}/all_products
+    defaults: { _controller: ABOTrademarkBundle:Product:allProducts }
+
+trademark_product_prod_by_category:
+    path:     /admin/tm/{slug}/category/{slug_cat}
+    defaults: { _controller: ABOTrademarkBundle:Product:prodByCategory }
+
+trademark_product_prod_by_arrangement:
+    path:     /admin/tm/{slug}/arrangement/{slug_arr}
+    defaults: { _controller: ABOTrademarkBundle:Product:prodByArrangement }
+
+trademark_product_product:
+    path:     /admin/tm/{slug}/product/{slug_prod}
+    defaults: { _controller: ABOTrademarkBundle:Product:product }
+
+trademark_show_home: 
+    path:     /admin/tm/{slug}
+    defaults: { _controller: ABOTrademarkBundle:Show:home }
+
+trademark_show_about:
+    path:     /admin/tm/{slug}/about
+    defaults: { _controller: ABOTrademarkBundle:Show:about }
+
+trademark_show_reviews:
+    path:     /admin/tm/{slug}/reviews
+    defaults: { _controller: ABOTrademarkBundle:Show:reviews }

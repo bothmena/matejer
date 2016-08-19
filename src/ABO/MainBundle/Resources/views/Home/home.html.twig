@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ 'home_page.title'|trans }}</title>
+        <meta name="description" content="{{ 'home_page.description'|trans }}">
+        <link rel="icon" type="image/x-icon" href="https://matejer.storage.googleapis.com/images/favicon_32.ico" />
+        {% stylesheets
+            '@ABOMainBundle/Resources/public/css/home/bootstrap.min.css'
+            '@ABOMainBundle/Resources/public/css/home/font-awesome.min.css'
+            '@ABOMainBundle/Resources/public/css/home/agency.min.css' filter='cssrewrite' %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+        <link href="https://matejer.storage.googleapis.com/fonts/home-fonts.min.css" rel="stylesheet" type="text/css">
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body id="page-top" class="index">
+        {% if sent == '_success' %}
+            <div class="alert alert-success alert-dismissible" role="alert" style="max-width: 300px;margin-bottom: 0;opacity: 0.8;position: fixed;bottom: 20px;left: 20px;z-index: 50">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="opacity: 1;"><span aria-hidden="true">&times;</span></button>
+                <i class="fa fa-thumbs-up"></i> {{ 'home_page.msg_sent'|trans }}
+            </div>
+        {% elseif sent == '_error' %}
+            <div class="alert alert-danger alert-dismissible" role="alert" style="max-width: 300px;margin-bottom: 0;opacity: 0.8;position: fixed;bottom: 20px;left: 20px;z-index: 50">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="opacity: 1;"><span aria-hidden="true">&times;</span></button>
+                <i class="fa fa-warning"></i> {{ 'home_page.msg_err'|trans }}
+            </div>
+        {% endif %}
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand page-scroll" style="background: url('https://matejer.storage.googleapis.com/images/matejer-header-long.png') no-repeat center center;height: 50px; width: 223px;" href="#page-top"></a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden"><a href="#page-top"></a></li>
+                        <li><a class="page-scroll" href="#features">{{ 'home_page.features'|trans }}</a></li>
+                        <li><a class="page-scroll" href="#portfolio">{{ 'home_page.news'|trans }}</a></li>
+                        <li><a class="page-scroll" href="#about">{{ 'home_page.about'|trans }}</a></li>
+                        <li><a class="page-scroll" href="#starting">{{ 'home_page.starting'|trans }}</a></li>
+                        <li><a class="page-scroll" href="#contact">{{ 'home_page.contact'|trans }}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <header>
+            <div class="container">
+                <div class="intro-text">
+                    <div class="intro-heading" style="color: #222;">{{ 'home_page.welcome'|trans }}</div>
+                    {% if is_granted('ROLE_USER') %}
+                        <a href="{{ path('abo_user_profile_show') }}" class="page-scroll btn btn-xl"><i class="fa fa-user"></i> {{ 'home_page.myprofile'|trans }}</a>
+                        <a href="{{ path('abo_main_gallery_gallery') }}" class="page-scroll btn btn-xl"><i class="fa fa-th-large"></i> {{ 'matejer_main.gallery'|trans }}</a>
+                        {% if is_granted('ROLE_TAJER') %}
+                            <a href="{{ path('abo_shop_show_homeadmin') }}" class="page-scroll btn btn-xl"><i class="fa fa-university"></i> {{ 'home_page.myshop'|trans }}</a>
+                        {% endif %}
+                    {% else %}
+                        <a href="{{ path('abo_user_security_login') }}" class="page-scroll btn btn-xl"><i class="fa fa-sign-in"></i> {{ 'user_security_login.login'|trans }}</a>
+                        <a href="{{ path('abo_main_gallery_gallery') }}" class="page-scroll btn btn-xl"><i class="fa fa-th-large"></i> {{ 'matejer_main.gallery'|trans }}</a>
+                        <a href="{{ path('abo_user_registration_register') }}" class="page-scroll btn btn-xl"><i class="fa fa-user-plus"></i> {{ 'user_security_register.signup'|trans }}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </header>
+        <section id="features">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">{{ 'home_page.features'|trans }}</h2>
+                        <h3 class="section-subheading text-muted">{{ 'home_page.services.for-buyer'|trans }}</h3>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <div class="icon-circle">
+                            <i class="fa fa-shopping-cart fa-5x fa-inverse"></i>
+                        </div>
+                        <h4 class="service-heading">{{ 'home_page.services.buyer-1t'|trans }}</h4>
+                        <p class="text-muted">{{ 'home_page.services.buyer-1'|trans }}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="icon-circle">
+                            <i class="fa fa-calendar-check-o fa-5x fa-inverse"></i>
+                        </div>
+                        <h4 class="service-heading">{{ 'home_page.services.buyer-2t'|trans }}</h4>
+                        <p class="text-muted">{{ 'home_page.services.buyer-2'|trans }}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="icon-circle">
+                            <i class="fa fa-usd fa-5x fa-inverse"></i>
+                        </div>
+                        <h4 class="service-heading">{{ 'home_page.services.buyer-3t'|trans }}</h4>
+                        <p class="text-muted">{{ 'home_page.services.buyer-3'|trans }}</p>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 50px;">
+                    <div class="col-lg-12 text-center">
+                        <h3 class="section-subheading text-muted">{{ 'home_page.services.for-seller'|trans }}</h3>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <div class="icon-circle">
+                            <i class="fa fa-angle-double-up fa-5x fa-inverse"></i>
+                        </div>
+                        <h4 class="service-heading">{{ 'home_page.services.seller-1t'|trans }}</h4>
+                        <p class="text-muted">{{ 'home_page.services.seller-1'|trans }}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="icon-circle">
+                            <i class="fa fa-share-alt fa-5x fa-inverse"></i>
+                        </div>
+                        <h4 class="service-heading">{{ 'home_page.services.seller-2t'|trans }}</h4>
+                        <p class="text-muted">{{ 'home_page.services.seller-2'|trans }}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="icon-circle">
+                            <i class="fa fa-comments fa-5x fa-inverse"></i>
+                        </div>
+                        <h4 class="service-heading">{{ 'home_page.services.seller-3t'|trans }}</h4>
+                        <p class="text-muted">{{ 'home_page.services.seller-3'|trans }}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio" class="bg-light-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">{{ 'home_page.news'|trans }}</h2>
+                        <h3 class="section-subheading text-muted">{{ 'home_page.news_desc'|trans }}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    {% for product in products %}
+                        <div class="col-md-4 col-sm-6 portfolio-item">
+                            <a href="#portfolioModal{{ loop.index }}" class="portfolio-link card-img-container" data-toggle="modal">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img src="{{ get_image( product.image.source, 'gallery_thumb', product.image.gcs ) }}" class="img-responsive undrag" style="max-height: 256px;" alt="{{ product.fullname }}">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>{{ product.trademark.name }}</h4>
+                                <p class="text-muted">{{ product.product.name }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">{{ 'home_page.about'|trans }}</h2>
+                        <h3 class="section-subheading text-muted">{{ 'home_page.about_desc'|trans }}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-warning" style="border-radius: 0">
+                            <div class="panel-heading"><h3 class="panel-title">{{ 'home_page.about_cont.problem'|trans }}</h3></div>
+                            <div class="panel-body">
+                                <p class="section-subheading text-muted">{{ 'home_page.about_cont.problem_desc'|trans }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-success" style="border-radius: 0">
+                            <div class="panel-heading"><h3 class="panel-title">{{ 'home_page.about_cont.solution'|trans }}</h3></div>
+                            <div class="panel-body">
+                                <p class="section-subheading text-muted">{{ 'home_page.about_cont.solution_desc'|trans }}</p>
+                                <p class="section-subheading text-muted">{{ 'home_page.about_cont.solution_desc2'|trans }}</p>
+                                <p class="section-subheading text-muted">{{ 'home_page.about_cont.solution_desc3'|trans }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="starting" class="bg-light-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">{{ 'home_page.starting'|trans }}</h2>
+                        <h3 class="section-subheading text-muted">{{ 'home_page.starting_desc'|trans }}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="timeline">
+                            <li>
+                                <div class="timeline-image">
+                                    <img class="img-circle img-responsive" src="https://matejer.storage.googleapis.com/img/1.png" alt="">
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4>{{ 'home_page.steps.stepone'|trans }}</h4>
+                                        <h4 class="subheading">{{ 'home_page.steps.one_title'|trans }}</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p class="text-muted">{{ 'home_page.steps.one'|trans }}</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-inverted">
+                                <div class="timeline-image">
+                                    <img class="img-circle img-responsive" src="https://matejer.storage.googleapis.com/img/2.png" alt="">
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4>{{ 'home_page.steps.steptwo'|trans }}</h4>
+                                        <h4 class="subheading">{{ 'home_page.steps.two_title'|trans }}</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p class="text-muted">{{ 'home_page.steps.two'|trans }}</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-image">
+                                    <img class="img-circle img-responsive" src="https://matejer.storage.googleapis.com/img/3.png" alt="">
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4>{{ 'home_page.steps.stepthree'|trans }}</h4>
+                                        <h4 class="subheading">{{ 'home_page.steps.three_title'|trans }}</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p class="text-muted">{{ 'home_page.steps.three'|trans }}</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-inverted">
+                                <div class="timeline-image">
+                                    <img class="img-circle img-responsive" src="https://matejer.storage.googleapis.com/img/4.png" alt="">
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4>{{ 'home_page.steps.stepfour'|trans }}</h4>
+                                        <h4 class="subheading">{{ 'home_page.steps.four_title'|trans }}</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p class="text-muted">{{ 'home_page.steps.four'|trans }}</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-inverted">
+                                <div class="timeline-image">
+                                    <img class="img-circle img-responsive" src="https://matejer.storage.googleapis.com/img/5.png" alt="">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">{{ 'home_page.contact'|trans }}</h2>
+                        <h3 class="section-subheading text-muted">{{ 'home_page.contact_desc'|trans }}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        {{ form_start(form) }}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form_widget(form.name) }}
+                                    <p class="help-block text-danger">
+                                        {% for error in form.name.vars.errors %}<i class="fa fa-minus-circle"></i> {{ error.message }}.{% endfor %}
+                                    </p>
+                                </div>
+                                <div class="form-group">
+                                    {{ form_widget(form.email) }}
+                                    <p class="help-block text-danger">
+                                        {% for error in form.email.vars.errors %}<i class="fa fa-minus-circle"></i> {{ error.message }}.{% endfor %}
+                                    </p>
+                                </div>
+                                <div class="form-group">
+                                    {{ form_widget(form.subject) }}
+                                    <p class="help-block text-danger">
+                                        {% for error in form.subject.vars.errors %}<i class="fa fa-minus-circle"></i> {{ error.message }}.{% endfor %}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form_widget(form.message) }}
+                                    <p class="help-block text-danger">
+                                        {% for error in form.message.vars.errors %}<i class="fa fa-minus-circle"></i> {{ error.message }}.{% endfor %}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <button type="submit" class="btn btn-xl">{{ 'contact_us.send'|trans }}</button>
+                            </div>
+                        </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <span class="copyright">Copyright &copy; {{ 'home_page.copyright'|trans }}</span>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-inline quicklinks">
+                            <li><a href="#" style="color: #3c8dbc;">{{ 'home_page.terms'|trans }}</a>
+                            </li>
+                            <li><a href="#" style="color: #3c8dbc;">{{ 'home_page.privacy'|trans }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        {% for product in products %}
+            <div class="portfolio-modal modal fade" id="portfolioModal{{ loop.index }}" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal">
+                        <div class="lr">
+                            <div class="rl">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 col-lg-offset-2">
+                                <div class="modal-body">
+                                    <h2>{{ product.trademark.name }}</h2>
+                                    <p class="item-intro text-muted">{{ product.product.name }}</p>
+                                    <img class="img-responsive img-centered" src="{{ get_image( product.image.source, 'prod_gallery', product.image.gcs ) }}" alt="{{ product.fullname }}">
+                                    <table class="table table-hover">
+                                        <tbody>
+                                        {{ renderGS(product.generalSpecs)|raw }}
+                                        </tbody>
+                                    </table>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> {{ 'matejer_main.close_btn'|trans }}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <script type="application/ld+json">
+            {
+                "@context" : "http://schema.org",
+                "@type" : "WebSite",
+                "name" : "{{ 'seo.website.name'|trans }}",
+                "alternateName" : "{{ 'seo.website.alternateName'|trans }}",
+                "url" : "{{ url('abo_main_home_home') }}",
+                "genre": "{{ 'seo.website.genre'|trans }}",
+                "image": "https://matejer.storage.googleapis.com/images/logo.png",
+                "sameAs" : [
+                    "{{ fb_profile }}",
+                    "{{ gp_profile }}",
+                    "{{ tw_profile }}",
+                    "{{ in_profile }}",
+                    "{{ yt_profile }}"
+                ],
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "{{ 'seo.website.potentialAction.target'|trans }}",
+                    "query-input": "required name=search_term_string"
+                },
+                "about": {
+                    "@type": "Thing",
+                    "name": "{{ 'seo.website.about.name'|trans }}",
+                    "description": "{{ 'seo.website.about.description'|trans }}",
+                    "url": "{{ url('abo_support_main_aboutus') }}"
+                },
+                "creator": {
+                    "@type": "Person",
+                    "name": "{{ 'seo.website.creator.first_name'|trans }}",
+                    "familyName": "{{ 'seo.website.creator.last_name'|trans }}",
+                    "birthDate": "{{ 'seo.website.creator.birthday'|trans }}",
+                    "birthPlace": {
+                        "@type": "Place",
+                        "address": {
+                          "@type": "PostalAddress",
+                          "addressCountry": "{{ 'seo.website.creator.birth_place.country'|trans }}",
+                          "addressLocality": "{{ 'seo.website.creator.birth_place.locality'|trans }}"
+                        }
+                    },
+                    "email": "{{ 'seo.website.creator.email'|trans }}",
+                    "telephone": "{{ 'seo.website.creator.telephone'|trans }}",
+                    "description": "{{ 'seo.website.creator.description'|trans }}",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "{{ 'seo.website.creator.address.country'|trans }}",
+                        "addressLocality": "{{ 'seo.website.creator.address.locality'|trans }}",
+                        "streetAddress": "{{ 'seo.website.creator.address.street'|trans }}",
+                        "postalCode": "{{ 'seo.website.creator.address.postal_code'|trans }}"
+                    },
+                    "image": "https://matejer.storage.googleapis.com/images/website.creator.jpg"{#,
+                    "url": "https://www.matejer.com" website creator url#}
+                },
+                "keywords": "{{ 'seo.website.keywords'|trans }}",
+                "inLanguage": [{
+                        "@type": "Language",
+                        "name": "{{ 'seo.website.language.en'|trans }}"
+                    },{
+                        "@type": "Language",
+                        "name": "{{ 'seo.website.language.fr'|trans }}"
+                    },{
+                        "@type": "Language",
+                        "name": "{{ 'seo.website.language.ar'|trans }}"
+                    }]
+            }
+        </script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-78469348-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+        {% javascripts
+            '@ABOMainBundle/Resources/public/js/home/jquery.js'
+            '@ABOMainBundle/Resources/public/js/home/bootstrap.min.js'
+            '@ABOMainBundle/Resources/public/js/home/classie.js'
+            '@ABOMainBundle/Resources/public/js/home/cbpAnimatedHeader.js'
+            '@ABOMainBundle/Resources/public/js/home/jqBootstrapValidation.js'
+            '@ABOMainBundle/Resources/public/js/home/agency.js'
+            '@ABOMainBundle/Resources/public/js/home/contact_me.js'
+            '@ABOMainBundle/Resources/public/js/home/jquery.easing.min.js' %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    </body>
+</html>

@@ -1,0 +1,21 @@
+# This file is a "template" of what your parameters.yml file should look like
+# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
+# http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: matejerdb
+    database_user: matejerc_aymen
+    database_password: love50434012MUFC
+    mailer_transport: gmail
+    mailer_spoil_path: '%kernel.root_dir%/../web/emails'
+    support_email: contact@matejer.com
+    support_email_password: love50434012MUFC
+    locale: en
+    session_name: SIABOMATEJER
+    facebook_app_id: 1696048203969683
+    facebook_app_secret: 10736fa2b5e899c09171001b78ab0139
+    google_app_id: 945032048214-igaq34mu16fqmt6stg7q66cg1e1sl2gu.apps.googleusercontent.com
+    google_app_secret: StCcfiDdxU8IM0pfP4x86Z_k
+    secret: 0c340b6508fdf87213d8408306fd1c06fe5d7c88
+

@@ -1,0 +1,45 @@
+{% extends "ABOShopBundle::dashShop.html.twig" %}
+
+{% block title %}{{ 'shop_show_about.title'|trans({'%shopname%': shop.name}) }}{% endblock %}
+{% block options %}{% if is_granted('ROLE_USER') %}options={token:true, check:{id:{{ shop.id }},entity:'shop'}};{% endif %}{% endblock %}
+
+{% block content_header %}
+	<div class="bread-btn">
+		<ol class="mbreadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+			<li property="itemListElement" typeof="ListItem">
+				<a href="{{ url('abo_shop_show_home', {'slug': shop.slug}) }}" property="item" typeof="WebPage">
+					<span property="name">{{ shop.name }}</span>
+				</a>
+				<meta property="position" content="1">
+			</li>
+			<li property="itemListElement" typeof="ListItem">
+				<a href="{{ url('abo_shop_show_about', {'slug': shop.slug}) }}" property="item" typeof="WebPage">
+					<span property="name">{{ 'matejer_shop.about'|trans({'%shopname%': shop.name}) }}</span>
+				</a>
+				<meta property="position" content="2">
+			</li>
+		</ol>
+		{% if is_granted('ROLE_USER') %}<div subscribe subscribe-entity="shop" subscribe-slug="{{ shop.slug }}" theme="{[{ theme }]}"></div>{% endif %}
+	</div>
+{% endblock %}
+{% block content %}
+	<div class="row">
+		<div class="col-xs-12 col-md-6">
+			{{ render_esi(url('abo_shop_show_shopinfos', {'slug': shop.slug}) ) }}
+		</div>
+		<div class="col-xs-12 col-md-6">
+			{{ render_esi(url('abo_shop_show_shopcontact', {'slug': shop.slug}) ) }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 col-md-6">
+			{{ render_esi(url('abo_shop_show_catsandoffers', {'slug': shop.slug}) ) }}
+		</div>
+		<div class="col-xs-12 col-md-6">
+			{{ render_esi(url('main_review_shopratestat', {'id': shop.id }) ) }}
+		</div>
+	</div>
+{% endblock %}
+{% block page_seo %}
+    {{ render_esi(url('abo_shop_show_shopseo', {'slug': shop.slug})) }}
+{% endblock %}

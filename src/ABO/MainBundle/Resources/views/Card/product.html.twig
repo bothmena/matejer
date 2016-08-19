@@ -1,0 +1,50 @@
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 five-pad" style="max-width: 410px">
+    <div class="box box-widget widget-user box-shadow show-img" ng-class="getClass('p_{{ prod.product.slug }}')">
+		<div class="widget-user-header card-img-container" ng-hide="selected == 'p_{{ prod.product.slug }}'">
+		    <img class="img-responsive undrag" src="{{ get_image(prod.image.source, 'gallery_thumb', prod.image.gcs) }}">
+	    </div>
+	    <div ng-show="selected == 'p_{{ prod.product.slug }}'" class="widget-user-header bg-aqua-active ng-hide">
+		    <h3 class="widget-user-username">{{ prod.category.translatable|trans }}</h3>
+	    </div>
+	    <div class="box-footer no-padding">
+		    <div class="specs-container ng-hide" ng-show="selected == 'p_{{ prod.product.slug }}'">
+                <table class="table table-hover">
+                    <tbody>
+                        <tr>
+                            <th>{{ 'matejer_product.likes'|trans }}</th>
+                            <td>{{ render_esi(url('main_product_likesnb', {'id': prod.id})) }}</td>
+                        </tr>
+                        <tr>
+                            <th>{{ 'matejer_review.rating'|trans }}</th>
+                            <td>{{ render_esi(url('main_product_ratevalue', {'id': prod.id})) }}/5 <span class="label bg-aqua-active">{{ render_esi(url('main_product_ratenb', {'id': prod.id})) }}</span></td>
+                        </tr>
+                        {{ renderGS(prod.generalSpecs)|raw }}
+                    </tbody>
+                </table>
+            </div>
+            <div class="row username-container" ng-hide="selected == 'p_{{ prod.product.slug }}'">
+                <div class="col-xs-12">
+                    {% if prod.trademark != null %}
+                        {% set img = prod.trademark.image.source %}{% set gcs = prod.trademark.image.gcs %}
+                        {% set url = path('abo_trademark_product_product', {'slug': prod.trademark.slug, 'slug_prod': prod.product.slug}) %}
+                    {% elseif prod.shop != null %}
+                        {% set img = prod.shop.image.source %}{% set gcs = prod.shop.image.gcs %}
+                        {% set url = path('abo_shop_product_product', {'slug': prod.shop.slug, 'slug_prod': prod.product.slug}) %}
+                    {% endif %}
+                    <h4 class="widget-user-username">
+	                    <img src="{{ get_image(img, 'icon_logo', gcs) }}" class="user-image img-circle"/>
+	                    <a href="{{ url }}"> {{ prod.fullname }}</a>
+                    </h4>
+                </div>
+            </div>
+	        <div class="row card-btn-group">
+		        <div class="col-xs-12 no-padding">
+			        <button class="btn btn-{[{ theme }]} btn-sm card-btn" title="{{ 'matejer_product.see_desc'|trans }}" ng-click="toggleShow('p_{{ prod.product.slug }}')"><i class="fa fa-exchange"></i></button>
+			        {% if is_granted('ROLE_TAJER') %}<div offer is-public="{{ prod.product.public }}" offer-id="{{ prod.id }}" offer-cat="{{ prod.category.id }}" offer-slug="{{ prod.product.slug }}" theme="{[{ theme }]}"></div>{% endif %}
+			        <div quick-view view-entity="product" view-slug="{{ prod.product.slug }}" theme="{[{ theme }]}"></div>
+			        {% if is_granted('ROLE_USER') %}<div like like-id="{{ prod.id }}" theme="{[{ theme }]}"></div>{% endif %}
+		        </div>
+	        </div>
+        </div>
+    </div>
+</div>

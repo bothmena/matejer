@@ -1,0 +1,10 @@
+{% extends "ABOAdminBundle::dashBase.html.twig" %}
+
+{% block title %}ABOAdminBundle:Site:places{% endblock %}
+
+{% block content %}
+    <h1>Welcome to the Site:places page</h1>
+    {% for place in places %}
+        {{ place.slug }}: {{ place.name|title }}<br />
+    {% endfor %}
+{% endblock %}

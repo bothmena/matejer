@@ -1,0 +1,48 @@
+<div data-stat="success" data-template="true">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="dismiss()" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">{{ 'modal_shop_images.title'|trans }}</h4>
+    </div>
+    {% form_theme form ':Form:abo_form_inline.html.twig' %}
+    {{ form_start( form, {'attr': {'id': 'form_shop_images'}} ) }}
+        <div class="modal-body no-padding" style="padding-top: 10px;">
+            <div class="nav-tabs-custom nav-tabs-danger box-shadow">
+                <ul class="nav nav-tabs">
+                    <li class="custom-tab active">
+                        <a href="#tab_logo" data-toggle="tab" aria-expanded="true">{{ 'modal_shop_images.logo'|trans }}</a>
+                    </li>
+                    <li class="custom-tab">
+                        <a href="#tab_cover" data-toggle="tab" aria-expanded="false">{{ 'modal_shop_images.cover'|trans }}</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab_logo">
+                        <div class="row" style="min-height: 200px;max-height: 300px;overflow-y: auto;">
+                            <div class="col-md-6">
+                                {{ form_row(form.logo) }}
+                                {{ form_row(form._token) }}
+                            </div>
+                            <div class="col-md-6">
+                                {{ form_row(form.logos) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab_cover">
+                        <div class="row" style="min-height: 200px;max-height: 300px;overflow-y: auto;">
+                            <div class="col-md-6">
+                                {{ form_row(form.cover) }}
+                            </div>
+                            <div class="col-md-6">
+                                {{ form_row(form.covers) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-danger btn-flat medium-btn pull-right" style="margin-left: 5px;">{{ 'matejer_main.submit_btn'|trans }}</button>
+            <button type="button" class="btn btn-default btn-flat medium-btn pull-right" ng-click="dismiss()">{{ 'matejer_main.cancel_btn'|trans }}</button>
+        </div>
+    {{ form_end(form) }}
+</div>

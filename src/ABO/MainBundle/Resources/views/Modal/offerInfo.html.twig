@@ -1,0 +1,107 @@
+<div data-stat="success" data-template="true">
+    <div class="modal-body" style="padding-bottom: 0;">
+        <div class="row" style="height: 50px;width: 100%; padding: 15px 0 10px 10px;">
+            <button type="button" class="close" ng-click="dismiss()" style="position: absolute;right: 8px;top: 5px;" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h3 class="modal-title text-capitalize text-center text-info"><small>{{ 'matejer_offer.modal_info_header' | trans }}</small> {{ offer.categoryProduct.fullname }}</h3>
+        </div>
+        <hr class="divider modal-divider">
+        <div class="row" style="height: 460px;overflow-y: auto;" ng-init="offer = true;details = false;images = false;trailer = false;">
+            <div class="col-xs-12" style="padding: 0 5px;" ng-show="images">
+                {{ render_esi(url('abo_main_modal_images', {'id': offer.categoryProduct.id }) ) }}
+            </div>
+            {% if offer.categoryProduct.generalSpecs.videoSite != '' %}
+                {{ render_esi(url('abo_main_modal_trailer', {'id': offer.categoryProduct.id }) ) }}
+            {% endif %}
+            <div style="height: 420px;padding: 0 5px;" ng-show="details">
+                {{ render_esi(url('abo_main_modal_details', {'id': offer.categoryProduct.id }) ) }}
+            </div>
+            <div style="height: 420px;padding: 0 5px;" ng-show="offer">
+                <div class="col-xs-12 no-padding">
+                    <p>
+                        <img src="{{ get_image(offer.shop.image.source, 'avatar', offer.shop.image.gcs) }}" style="margin: 0 10px 10px 0;" class="img-thumbnail pull-left">
+                        <span class="h4">Offer proposed by: {{ offer.shop.name }} <small>{{ offer.shop.slogan }}</small></span><br>
+                        <span>{{ offer.shop.description }}</span>
+                    </p>
+                </div>
+                <div class="col-xs-12 col-md-6 no-padding-left">
+                    <div class="box box-primary box-shadow">
+                        <div class="box-header">
+                            <h3 class="box-title">{{ 'matejer_offer.offer_details'|trans }}</h3>
+                        </div>
+                        <div class="box-body no-padding">
+                            <table class="table table-hover">
+                                <tbody>
+                                <tr>
+                                    <th class="col-xs-6">{{ 'matejer_offer.reference'|trans }}</th>
+                                    <td class="col-xs-6">{{ offer.reference }}</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-xs-6">{{ 'matejer_offer.availability'|trans }}</th>
+                                    <td class="col-xs-6">{{ offer.transAvailability|trans }}</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-xs-6">{{ 'matejer_offer.price'|trans }}</th>
+                                    <td class="col-xs-6">{% set price = offer.price - offer.price * offer.discount/100 %}{{ price|number_format(2,'.',' ') }} {{ offer.shop.transCurrency|trans }}</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-xs-6">{% if offer.discount > 0 %}{{ 'matejer_offer.original_price'|trans }}{% else %}{{ 'matejer_offer.discount'|trans }}{% endif %}</th>
+                                    <td class="col-xs-6">{% if offer.discount > 0 %}{{ offer.price }} {{ offer.shop.transCurrency|trans }} [ {{ 'matejer_offer.discount_off'|trans({'%count%':offer.discount }) }} ]{% else %}{{ 'matejer_offer.no_discount'|trans }}{% endif %}</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-xs-6">{{ 'matejer_offer.warranty'|trans }}</th>
+                                    <td class="col-xs-6">{{ 'matejer_offer.warranty_choice'|transchoice(offer.warranty) }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 no-padding-right">
+                    <div class="box box-primary box-shadow">
+                        <div class="box-header">
+                            <h3 class="box-title">{{ 'matejer_offer.payment'|trans }}</h3>
+                        </div>
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                <tr>
+                                    <th>{{ 'matejer_offer.payment_detail.advance'|trans }}</th>
+                                    <th>{{ 'matejer_offer.payment_detail.per_month'|trans }}</th>
+                                    <th>{{ 'matejer_offer.payment_detail.months'|trans }}</th>
+                                </tr>
+                                {% if payments is empty %}
+                                    <tr>
+                                        <td colspan="3">{{ 'matejer_offer.no_payment'|trans }}</td>
+                                    </tr>
+                                {% else %}
+                                    {% for payment in payments %}
+                                        <tr>
+                                            <td>{{ (payment.payment.advance * price / 100)|number_format(2,'.',' ') }} {{ offer.shop.transCurrency|trans }}</td>
+                                            {% set rest = price - payment.payment.advance * price / 100 %}
+                                            <td>{{ (rest / payment.payment.month)|number_format(2,'.',' ') }} {{ offer.shop.transCurrency|trans }}</td>
+                                            <td>{{ payment.payment.month }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 no-padding-right">
+                    <a href="{{ path('abo_shop_product_product' , {'slug': offer.shop.slug, 'slug_prod': offer.categoryProduct.product.slug}) }}" class="btn btn-info btn-sm btn-flat pull-right medium-btn"><i class="fa fa-plus-circle"></i> More Details</a>
+                </div>
+            </div>
+            <div class="col-xs-12" style="padding: 5px;">
+                <div class="btn-group pull-right" role="group" aria-label="...">
+                    <button type="button" class="btn btn-sm btn-flat" ng-class="offer? 'btn-primary': 'btn-default';" ng-click="offer = true;details = false;images = false;trailer = false;"><i class="fa fa-list"></i> {{ 'matejer_modal.odetails'|trans }}</button>
+                    <button type="button" class="btn btn-sm btn-flat" ng-class="details? 'btn-primary': 'btn-default';" ng-click="offer = false;details = true;images = false;trailer = false;"><i class="fa fa-list"></i> {{ 'matejer_modal.details'|trans }}</button>
+                    <button type="button" class="btn btn-sm btn-flat" ng-class="images? 'btn-primary': 'btn-default';" ng-click="offer = false;details = false;images = true;trailer = false;"><i class="fa fa-image"></i> {{ 'matejer_modal.images'|trans }}</button>
+                    {% if offer.categoryProduct.generalSpecs.videoSite != '' %}
+                        <button type="button" class="btn btn-sm btn-flat" ng-class="trailer? 'btn-primary': 'btn-default';" ng-click="offer = false;details = false;images = false;trailer = true;"><i class="fa fa-play-circle"></i> {{ 'matejer_modal.trailer'|trans }}</button>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

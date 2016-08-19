@@ -1,0 +1,36 @@
+{% extends "ABOShopBundle::dashShopAdmin.html.twig" %}
+
+{% block title %}{{ 'category_setting_page.title_shop'|trans({'%shopname%': shop.name }) }}{% endblock %}
+{% block options %}options = { token: true };{% endblock %}
+
+{% block content %}
+    <div class="row" ng-controller="RemoveEditController">
+        <div class="col-xs-12 col-md-4" style="margin-top: 10px;">
+            <div class="box box-{[{theme}]} box-shadow">
+                <div class="box-header with-border">
+                    <h3 class="box-title">{{ 'category_setting_page.shops'|trans }}</h3>
+                    <button class="btn btn-{[{theme}]} btn-circle pull-right" ng-click="enableEdit('shop')" ng-disabled="unlocking" title="{[{ tooltip }]}"><i class="fa fa-lg" ng-class="isLocked ? 'fa-lock':'fa-unlock'"></i></button>
+                </div>
+                <div class="box-body no-padding">
+                    <table class="table table-hover">
+                        <tbody>
+                        {% for shopCat in shopCategories %}
+                            <tr><td>
+                                <div remove-edit item-id="{{shopCat.id}}" item-name="{{shopCat.category.translatable|trans}}" item-type="cat" entity="shop" disable-edit="1"><span class="editable">{{ shopCat.category.translatable|trans }}</span></div>
+                            </td></tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-8" style="margin-top: 10px;">
+            <div class="box box-{[{theme}]} box-shadow">
+                <div class="box-header with-border">
+                    <h3 class="box-title">{{ 'category_setting_page.new_shop'|trans }}</h3>
+                </div>
+                {% include 'ABOMainBundle:Reusable:categoryForm.html.twig' with {'form': form} %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

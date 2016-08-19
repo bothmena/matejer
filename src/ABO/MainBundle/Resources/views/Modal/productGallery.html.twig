@@ -1,0 +1,25 @@
+<div data-stat="success" data-template="true">
+    <div class="modal-body" style="padding-bottom: 0;">
+        <div class="row" style="height: 50px;width: 100%; padding: 15px 0 10px 10px;">
+            <button type="button" class="close" ng-click="dismiss()" style="position: absolute;right: 8px;top: 5px;" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h3 class="modal-title text-capitalize text-center text-info"><small>{{ 'matejer_product.gallery_header' | trans }}</small> {{ catProd.fullname }}</h3>
+        </div>
+        <hr class="divider modal-divider">
+        <div class="row" style="height: 460px;overflow-y: auto;" ng-init="images = true;trailer = false;">
+            <div class="col-xs-12" style="padding: 0 5px;" ng-show="images">
+                {{ render_esi(url('abo_main_modal_images', {'id': catProd.id }) ) }}
+            </div>
+            {% if catProd.generalSpecs.videoSite != '' %}
+                {{ render_esi(url('abo_main_modal_trailer', {'id': catProd.id }) ) }}
+            {% endif %}
+            <div class="col-xs-12" style="padding: 5px;">
+                <div class="btn-group pull-right" role="group" aria-label="...">
+                    <button type="button" class="btn btn-sm btn-flat" ng-class="images? 'btn-primary': 'btn-default';" ng-click="details = false;images = true;trailer = false;"><i class="fa fa-image"></i> {{ 'matejer_modal.images'|trans }}</button>
+                    {% if catProd.generalSpecs.videoSite != '' %}
+                        <button type="button" class="btn btn-sm btn-flat" ng-class="trailer? 'btn-primary': 'btn-default';" ng-click="details = false;images = false;trailer = true;"><i class="fa fa-play-circle"></i> {{ 'matejer_modal.trailer'|trans }}</button>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

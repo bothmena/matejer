@@ -1,0 +1,27 @@
+{% form_theme form ':Form:abo_form_table.html.twig' %}
+{{ form_start(form, {'method': 'POST', 'action': form.vars.action} ) }}
+    <table class="table"{% if type == 'address' %} ng-init="select()"{% endif %}>
+        <tbody>
+            <div class="col-xs-12">
+                {% if type == 'contact' %}
+                    {% if form.emailOne is defined %}
+                        {{ form_row(form.emailOne.email) }}
+                        {{ form_row(form.emailTwo.email) }}
+                        {{ form_row(form.emailThree.email) }}
+                        {{ form_row(form.website) }}
+                    {% endif %}
+                    {{ form_row(form.phoneOne.subscriber) }}
+                    {{ form_row(form.phoneTwo.subscriber) }}
+                    {{ form_row(form.phoneThree.subscriber) }}
+                    {{ form_row(form._token) }}
+                {% else %}
+                    {% for field in form %}
+                        {{ form_row(field) }}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </tbody>
+    </table>
+{{ form_errors(form) }}
+{{ form_end(form) }}
+

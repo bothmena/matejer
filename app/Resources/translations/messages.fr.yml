@@ -1,0 +1,2358 @@
+matejer_main:
+    administration: Administration du site
+    help: Aide
+    gallery: Galerie
+    support: Support
+    category: Catégorie
+    search_placeholder: Recherche Matejer
+    matejer: Matejer
+    matejer_support: SUPPORT MATEJER
+    matejer_com: matejer.com
+    all_product: Tous les produits
+    new_product: Nouveau Produit
+    view_more: Plus de détails...
+    name: Nom
+    date: Date
+    close_btn: Fermer
+    remove_btn: Retirer
+    edit_btn: Modifier
+    cancel_btn: Annuler
+    confirm_btn: Confirmer
+    register_btn: Enregistrer
+    submit_btn: Envoyer
+    save_btn: Sauvegarder
+    select_btn: Sélectionner
+    image_btn: Télécharger
+    submit_prod_btn: Ajouter le produit
+    change_password_btn: Changer le mot de passe
+    change_email_btn: Changer l'e-mail
+    new_password_confirmation: Répété le nouveau mot de passe
+    new_password: Nouveau mot de passe
+    current_password: Mot de passe actuel
+    loading: Chargement, veuillez patienter ...
+    logout: Se déconnecter
+    gender_male: Homme
+    gender_female: Femme
+    address: Addresse
+    phone: Téléphone
+    day: Jour
+    month: Mois
+    months: Mois
+    year: Année
+    description: Description
+    yes: Oui
+    no: Non
+    mo: MB
+    go: GB
+    error_occ: Oups ! Une erreur est survenue ...
+    what_next: Et après ?
+    user: Utilisateur
+    pass_unlock_shop: Pour des raisons de sécurité, vous devez entrer votre mot de passe pour activer le « Mode administrateur » afin de modifier/supprimer vos données de la boutique.
+    pass_unlock_tm: pour des raisons de sécurité, vous devez entrer votre mot de passe pour activer le « Mode administrateur » afin de modifier/supprimer vos données.
+    pass_unlock_note: Notez que ce mode sera désactivé automatiquement 5min après vous êtes fait de gérer vos paramètres ou quand vous le désactiver en cliquant sur le bouton de verrouillage.
+page.general.shop_administration: Gestions de boutique
+page.payments.your_payments: Vos Facilités De Paiement
+page.payments.panel_form_header: Ajouter Une Facilité De Paiement
+footer:
+    home: Page d’accueil
+    contact: Contactez-nous
+    faq: F.A.Q.
+    about: À propos de Matejer
+    aboutc: Matejer est un projet avec l’espoir de rendre l’Internet plus utile (dans le secteur commercial), offrant un moyen facile pour les vendeurs de publier leurs produits sur Internet.
+contact_us:
+    email:
+        label: E-mail
+        ph: Votre e-mail, alors nous vous répondons.
+    name:
+        label: Name
+        ph: Votre nom, afin de vous connaître
+    subject:
+        label: Sujet du message
+        ph: Sujet de votre message
+    message:
+        label: Message
+        ph: Votre message, ce que vous voulez dire
+    send: Envoyer Message
+address:
+    country: Pays
+    state: Gouvernorat/Région
+    city: Ville
+    street: Addresse
+    postalCode: Code Postal
+home_page:
+    title: Bienvenue à Matejer
+    description:  vous êtes un acheteur, essayant de trouver la bonne offre ou un vendeur qui veut promouvoir son magasin et attirer de nouveaux clients ? Matejer est la meilleure solution pour les deux.
+    welcome: Bienvenue à Matejer!
+    features: Nos Services
+    myprofile: Mon Profil
+    myshop: Ma Boutique
+    news: Quoi de Neuf
+    news_desc: Découvrez les derniers produits, avec tous les détails dont vous aurez besoin.
+    starting: Mise en route
+    starting_desc: C’est gratuit ! et il ne prendra pas trop de votre précieux temps
+    about: À Propos
+    about_desc: Pourquoi Matejer Existe ?
+    about_cont:
+        problem: Problème
+        problem_desc: Dans ces jours, publier les offres/produits sur internet est une chose importante à faire pour attirer l’attention des nouveaux clients et améliorer vos affaires, mais ! Construction d'un site commercial et le maintenir n’est pas très facile, il coûte de l'argent, et le temps, plus vous n’obtiendrez pas un site Web facile à gérer (ajouter un nouveau produit ou mettre à jour un ancien) seulement si vous payez beaucoup plus ! Et puis vient, bien sûr, l'hébergement de votre site, le suivi des problèmes qui se produisent souvent, et beaucoup de maux de tête.
+        solution: Solution
+        solution_desc: Nous savons avec certitude que les internautes tunisiens se multiplient chaque jour, à la différence du contenu web tunisien (sites Web, blogs, etc.) Dont il ne croît pas beaucoup, principalement en raison des difficultés, que nous avons déjà dit.
+        solution_desc2: La principale raison que je voulais construire Matejer.com est que peut-être il y a cinq ans, que j’étais intéressé par une TV, donc j’ai cherché un. J’ai trouvé presque rien d’autre que 2 ou 3 produits d’occasion et quelques sites commercials tunisiens qui ne contiennent pas tous ce que je cherche.
+        solution_desc3: Matejer.com a été construit pour vous donner tous les outils pour administrer votre boutique ; Enregistrer et publier votre magasin et vos produits sur internet, sans perdre votre temps ou de dépenser beaucoup d’argent pour obtenir moins de ce que Matejer.com vous offre gratuitement ! Alors, qu’attendez-vous pour ?
+    contact: Contact
+    msg_sent: Nous vous remercions de nous avoir contacté, nous avons reçu votre message et nous vous contacterons dès que possible.
+    msg_err: Oups, nous ne pouvions pas envoyer votre message, il y avait une erreur dans le formulaire que vous soumettez seulement. S’il vous plaît corriger les erreurs s’il y en a et la soumettre à nouveau.
+    contact_desc: Avoir un problème ou une suggestion, ou quelque chose n’est pas claire ? S'il vous plaît nous contacter.
+    contactf:
+        name: Votre nom, pour vous connaître.
+        email: Votre e-mail, alors nous vous répondre.
+        message: Votre message.
+        send: Envoyer Message
+    services:
+        for-buyer: Avantages de l'utilisation de Matejer pour les utilisateurs.
+        for-seller: Avantages de l'utilisation de Matejer pour le vendeur.
+        buyer-1t: Trouver Des Boutiques
+        buyer-1: Dans Matejer, vous trouverez tous les boutiques qui vendent presque tout ce dont vous en avez besoin. Nous allons vous donner plusieurs façons de communiquer avec eux.
+        buyer-2t: Être À Jour
+        buyer-2: Le High-tech ne peut pas arrêter de se développer ! Chaque jour des nouvelles technologies/produits sont né. Tenez-vous informé avec Matejer.
+        buyer-3t: Meilleures Offres
+        buyer-3: Trouver la meilleure offre qui répond à vos besoins et satisfaire votre budget.
+        seller-1t: Promouvoir Votre Commerce
+        seller-1: Matejer n’est pas seulement un site Web pour montrer aux gens ce que vous vendez sur internet ; C’est aussi un site Internet pour rendre votre boutique célèbre.
+        seller-2t: Partager Vos Offres
+        seller-2: Laissez les gens à découvrir vos offres et ce que vous vendez. Nous avons fait cette tâche facile pour vous ; Il n’y a de bonnes chances que vous trouverez vos produits déjà ajoutés à notre base de données avec autant de détails.
+        seller-3t: Restez En Contact Avec Vos Clients
+        seller-3: Laissez vos clients vous contactent en fournissant une adresse e-mail, numéro de téléphone. Ou les envoyer un e-mail chaque fois que vous faites une nouvelle offre(s).
+    steps:
+        one_title: Inscrivez-vous
+        stepone: Première Étape
+        one: "Nous fournissons diverses façons de s’inscrire à Matejer. La voie rapide : Inscrivez-vous avec votre compte Facebook / Google+ compte ou le formulaire classique d’inscription, quelques champs à remplir, e-mail de confirmation et vous avez terminé. Dans les deux cas, il ne prendra pas beaucoup de temps."
+        two_title: Être impliqué
+        steptwo: Deuxième Étape
+        two: Maintenant, après avoir enregistré avec succès à Matejer.com, vous pouvez aimer des produits, abonner vous aux boutiques, évaluer des boutiques et des produits, et mieux encore...
+        three_title: Enregistrer Votre Boutique
+        stepthree: Troisième Étape
+        three: Inscrit ? Votre e-mail est vérifié ? Vous êtes prêt à enregistrer votre boutique ! Accédez à la page de réglage de votre compte, vous trouverez un lien pour vous emmener à la page suivante où vous donnez quelques informations sur votre boutique. Remplissez le formulaire, soumettre et tout est fait.
+        four_title: Ajoutez Vos Produits
+        stepfour: Quatrième Étape
+        four: Maintenant, votre voyage d’affaires avec Matejer a commencé. Ajouter toutes vos offres sur votre compte ; Il n’y a aucune limite ! Et n’oubliez pas d’informer vos clients.
+    terms: Conditions D’utilisation
+    privacy: Politique De Confidentialité
+    copyright: Matejer, 2016. Tous Droits Réservés.
+matejer_help:
+    modal_title: Aide
+    unfound_group_title: 404 Non Trouvé
+    unfound_group: Désolé, nous ne pouvions pas trouver l’aide demandée.
+    terms_title: Conditions D’utilisation
+    shop_terms_title: Conditions D’utilisation Pour Les Vendeurs
+    shop_terms: You agree that you will pay for all products you purchase through the Services, and that Apple may charge your payment method for any products purchased and for any additional amounts (including any taxes and late fees, as applicable) that may be accrued by or in connection with your Account. YOU ARE RESPONSIBLE FOR THE TIMELY PAYMENT OF ALL FEES AND FOR PROVIDING APPLE WITH A VALID PAYMENT METHOD FOR PAYMENT OF ALL FEES. For details of how purchases are billed please visit
+    terms: You agree that you will pay for all products you purchase through the Services, and that Apple may charge your payment method for any products purchased and for any additional amounts (including any taxes and late fees, as applicable) that may be accrued by or in connection with your Account. YOU ARE RESPONSIBLE FOR THE TIMELY PAYMENT OF ALL FEES AND FOR PROVIDING APPLE WITH A VALID PAYMENT METHOD FOR PAYMENT OF ALL FEES. For details of how purchases are billed please visit
+    pass_title: Mot de passe
+    password: Mot de passe doit contenir au moins un chiffre, une majuscule et un caractère en minuscule. Mot de passe doit comporter au moins 8 caractères et ne peut pas dépasser 20 caractères.
+    name_title: Nom et Prénom
+    name: Votre nom est obligatoire, et vous pouvez le masquer si vous voulez (dans vos evaluations par exemple) en ajoutant un nom d’utilisateur unique.
+    email_title: E-mail
+    email: E-mail est très important ! Veuillez sélectionner un e-mail que vous possédez pour vous inscrire, si au cas où vous oublieriez votre mot de passe, l’e-mail est la seule façon de récupérer votre compte et réinitialiser votre mot de passe.
+    qts_title: Ce n’était pas utile assez ?
+    pre_qts: Vous pouvez
+    qts: Contacter l’équipe de support
+    post_qts: . Avec plaisir, ils vous repondent à toutes vos questions et vous aident à résoudre tout vos problèmes.
+    username_title: Nom d’utilisateur
+    username: Tout d’abord, savoir que ce champ de nom d’utilisateur n’est pas nécessaire. Mais si vous voulez cacher votre vrai nom (prénom + nom de famille) vous pouvez définir un nom d’utilisateur unique qui s’affichera dans vos avis que vous allez publier plus tard au lieu de votre vrai nom, aussi vous pouvez utiliser votre nom d’utilisateur pour se connecter au lieu de votre adresse e-mail.
+access_denied:
+    access_forbidden: Désolé, vous n'êtes pas autorisé à accéder à cette page
+    not_auth: Vous devez se connecter / s’inscrire pour avoir accès à cette page
+    has_shop: Désolé, vous ne pouvez pas accéder à cette page, vous avez déjà enregistré votre boutique.
+    has_not_shop: Désolé, vous ne pouvez pas accéder à cette page sauf si vous avez un magasin inscrit sur matejer.
+    email_unconfirmed: Désolé, vous devez confirmer votre compte d’abord.
+    no_priviliges: Vous n’avez pas assez de privilèges pour accéder à cette section.
+    cant_access: Désolé, mais vous ne pouvez pas accéder à cette page.
+    csrf: Le CSRF fourni dans l’URL n’est pas valide. Essayez d’actualiser la page.
+    error_title: Vous ne pouvez pas ajouter ce produit à votre boutique.
+    cant_add_offer: La catégorie du produit n’est pas listé dans vos catégories de produits.
+error_page:
+    403:
+        title: 403! Accès Refusé
+        oops: Vous n’êtes pas autorisé à accéder à cette page.
+        sorry: En raison d'un manque de privilèges, nous ne pouvons pas vous accorder l'accès à cette page/section.
+        sorry2: Si vous avez besoin de plus d’explications à ce sujet, s’il vous plaît
+        contact: contactez-nous.
+    404:
+        title: 404 ! Page non trouvée
+        oops: Oups ! Page non trouvée.
+        sorry: Désolé que nous ne pouvions pas trouver ce que vous cherchez.
+    500:
+        title: Une erreur serveur s’est produite
+        oops: Eh bien, ce n’était pas censé de se produire !
+        sorry: Ce n’est pas votre faute que quelque chose n’allait pas, c’est la nôtre, et nous allons la fixer dès que possible.
+        sorry2: Essayez de recharger la page, si cela ne fonctionne pas, considérer
+        contact: contactez-nous.
+not_found:
+    page: La page demandée n’existe pas (non plus).
+    product: Le produit demandé n'a pas été trouvée.
+    offer: L’offre requise n’a pas été trouvée.
+    unfound_title: 404 ! Non trouvée !
+    shop_content: Désolé, nous n’avons pas trouvé la boutique vous avez demandé, peut être le rafraîchissement de la page résoudra le problème.
+    prod_content: Désolé, nous ne pouvions pas trouver le produit vous a demandé, peut être le rafraîchissement de la page résoudra le problème.
+    offer_content: Désolé, nous n’avons trouvé l’offre vous a demandé, peut être le rafraîchissement de la page résoudra le problème.
+    shop: La boutique requise n’a pas été trouvée.
+    sub_shop: La boutique vous avez demandé de souscrire à, n'a pas été trouvé. Actualisez la page et/ou réessayer.
+    add_cat: La catégorie demandée introuvable ou peut être non listé dans vos catégories de produits.
+    user_token: L’utilisateur avec le jeton de confirmation de valeur "%token%" n’existe pas.
+    cat_shop: Catégorie du nouveau produit n’est pas listé dans vos catégories de produits.
+matejer_language:
+    language: Langue
+    ar: العربية
+    fr: Français
+    en: English
+matejer_flash:
+    user_mail_confirmed: Félicitations, votre email a été confirmée.
+matejer_phone:
+    user_phones: Les numéros de téléphone
+    shop_phones: Les numéros de téléphone
+    no_phone_user: Vous n’avez pas ajouté aucun numéro de téléphone
+    no_phone_shop: Votre boutique n'a pas de numéro de téléphone, ajouter jusqu'à 3 numéros pour vos clients
+    edit_phone: Ajouter/Modifier N° de Téléphones
+matejer_image:
+    image_label: Ouvrir une image
+    images_label: Ajouter plus d'images
+matejer_email:
+    email: E-mail
+    emails: E-mails
+    confirmed: E-mail Confirmé
+    confirm_mail: Confirmez Votre E-mail
+    confirm_code_ph: Entrez le code de vérification ici
+    confirm_action: Soumettre code
+    resend_code: Renvoyer le code
+    confirm_cancel: Pas maintenant
+    confirm_title: E-mail Confirmé
+    confirm_success: Félicitations, vous confirmé avec succès votre e-mail.
+    confirm_error: Désolé, le code entré ne correspond pas à votre code de verification.
+    code_sent: Code envoyé
+    code_sent_content: Nous vous enverrons un e-mail avec le code de confirmation; s'il vous plaît soumettre le code pour confirmer votre e-mail.
+    email_unfound_title: E-mail introuvable
+    email_unfound: Désolé, nous ne pouvions pas trouver l’e-mail demandé, réessayer ou actualiser la page, puis réessayez.
+    no_email_shop: Votre boutique n'a pas d’e-mails, ajouter jusqu'à 3 e-mails pour vos clients
+    shop_email: E-mails de la boutique
+    email_choice: "{0}Boutique n'a aucun e-mail|{1}Email|]1,Inf[ E-mails"
+    unconfirmed: Non confirmé
+    contact_us: Si vous avez besoin de quelque chose, ou si vous voulez faire des commentaires - s'il vous plaît ne pas hésiter à tendre la main à nous contacter
+    support_email: support@matejer.com
+    contact_email: contact@matejer.com
+    support_signature: Équipe De Support Matejer.
+    hello: Salut, %username%
+    hello_shop: Salut, %username%, l'administrateur de %shopname%
+    confirm: S'il vous plaît confirmer votre adresse e-mail en cliquant sur le lien ci-dessous.
+    why: Nous pouvons avoir besoin de vous envoyer des informations critiques sur notre service, et il est important que nous ayons une adresse électronique verifié que nous pouvons en avoir confiance.
+    confirm_btn: Confirmez votre adresse e-mail
+    good_bye: Cordialement,
+    place: Tunisie, Nabeul
+    helpful: Liens utiles
+    emailus: Envoyez-nous un e-mail
+    ourweb: Notre site Web
+    support: Notre page de support
+    social: Suivez-nous
+    email_confirmed: Félicitations, vous confirmé avec succès votre e-mail. Nous espérons que vous apprécierez nos services.
+    email_changed: Félicitations, vous avez confirmé avec succès votre e-mail. A partir de maintenant, vous devez utiliser votre nouvel e-mail pour vous connecter. Ancien e-mail est supprimé.
+    wrong_code: Désolé, mais le code de confirmation ne correspond pas avec le vôtre.
+    change_email:
+        subject: Notification De Changement D'e-mail - Matejer
+        title: Notification De Changement D'e-mail - Matejer
+        header: "Vous avez demandé de changer votre E-mail"
+        notification: Nous voulons que vous sachiez que votre e-mail de votre compte Matejer a été changé, et il n’est encore confirmé. Nous allons vous informer quand cet e-mail est remplacé et non plus associé à votre compte.
+        current_email: E-mail actuel
+        new_email: Nouveau e-mail
+        new_email_error: E-mail déjà utilisé.
+        email_error: L'e-mail que vous avez entré ne vous appartient pas.
+        email_success: Vous avez changé avec succès votre email.
+        email_confirm: Le nouvel e-mail sera considéré après confirmation (via le lien de confirmation dans l'e-mail que nous avons envoyé).
+    confirm_user:
+        subject: Confirmation d'adresse email - Matejer
+        title: Confirmation d'adresse email - Matejer
+        message: "Merci d'avoir inscrit pour Matejer, nous sommes si heureux de vous avoir à bord. Pour commencer, s'il vous plaît cliquez ci-dessous pour confirmer votre adresse e-mail:"
+        button: Confirmez Votre E-mail
+        why_confirm: Pourquoi dois-je confirmer mon email?
+        why_confirm_answer: La confirmation de l'email est le seul moyen qui nous permettra de savoir que le courriel appartient à vous et vous avez accès, alors nous serons confiants d'envoyer vos renseignements personnels à cette adresse, par exemple dans le cas où vous oubliez votre mot de passe et que vous voulez récupérer votre compte.
+        what_if_not: Qu'est-ce qui se passe si je ne confirme pas mon e-mail?
+        what_happen_if_not: Si vous ne confirmez pas votre e-mail dans 72h, votre compte sera verrouillé et vous ne serez pas capable de se connecter, à moins que vous demander le récupérer ou vous confirmez votre e-mail.
+    confirm_shop:
+        subject: Confirmation d'adresse e-mail - Matejer
+        title: Confirmation d'adresse e-mail - Matejer
+        message: "Vous avez ajouté un courriel à votre boutique sur Matejer, très bien. Maintenant confirmer le!"
+        link: lien
+        code: Code
+        how: Comment confirmer l’e-mail de ma boutique ?
+        one: "Accédez àla page de configuration de votre boutique:"
+        two: Sélectionnez l'onglet "Contact".
+        three: Cliquez sur le bouton sur "Confirmez Votre E-mail"; un petit formulaire sera affiché.
+        four: Copiez le code ci-dessous et le coller dans le champ de formulaire
+        five: Cliquez sur le bouton rouge "Soumettre code".
+    welcome_shop:
+        header: Bienvenue sur Matejer Business
+        subject: Bienvenue sur Matejer Business
+        title: Bienvenue sur Matejer Business
+        message: Félicitations, vous avez pris la première étape pour le lancement de votre boutique en ligne avec Matejer et développer vos affaires ! Alors quelle est la prochaine étape ?
+        one: Télécharger une image de couverture logo et d'attirer plus d'utilisateurs.
+        two: Ajouter certains produits, les tenir à jour, nous avons fait cette tâche facile pour vous.
+        three: Ajouter plus d’informations sur votre boutique (description, numéro (s) de téléphone, e-mail (s), etc.) pour que les utilisateurs apprennent à se connaître votre boutique.
+        four: Demandez à vos clients de visiter votre magasin sur Matejer et de s’abonner afin qu'ils ne manquent aucune occasion.
+    welcome_user:
+        header: Bienvenue sur Matejer
+        subject: Bienvenue sur Matejer
+        title: Bienvenue sur Matejer
+        message: "Je vous remercie pour se joindre à Matejer. Vous êtes tous prêts à commencer!"
+        one: Parcourir, aimer et évaluer tous nos produits ; votre avis peut être utile pour les autres.
+        two: Abonnez-vous aux boutiques, donc vous ne manquez aucune offre.
+        three: Si vous êtes un vendeur,
+        register: 'Inscrire votre magasin sur Matejer gratuitement *.'
+        four: Parler de nous avec vos amis.
+        note: '* Pour inscrire votre boutique, votre e-mail doit être confirmé en premier lieu, nous vous avons déjà envoyé un e-mail. Jeter un coup d’œil sur votre boîte de réception.'
+    user_confirmation:
+        title: Confirmation De L’adresse E-mail | Matejer
+    email_replaced:
+        title: 'E-mail remplacé - Matejer'
+        subject: 'E-mail remplacé - Matejer'
+        header: 'Votre E-mail est remplacé'
+        notification: 'Nous avons envoyé un e-mail pour vous informer que vous avez demandé de changer votre adresse e-mail. Eh bien, le nouvel e-mail est vérifié, et il a remplacé cet e-mail, alors celui-ci n’est plus associé avec votre compte Matejer.'
+    mail_confirmed:
+        title: 'Merci, pour confirmer votre e-mail - Matejer'
+        subject: 'Merci, pour confirmer votre e-mail - Matejer'
+        header: 'Votre E-mail est confirmée'
+        notification: 'Merci de vérifier votre adresse mail, nous espérons que nos services répond à vos attentes.'
+    resetting_password:
+        title: Demande de récupération de mot de passe - Matejer
+        subject: Demande de récupération de mot de passe - Matejer
+        message: "Vous avez récemment demandé récupérer votre compte Matejer, pour ce faire, vous devez réinitialiser votre mot de passe donc s’il vous plaît cliquez sur le lien:"
+        reset_btn: Réinitialiser Votre Mot De Passe
+matejer_user:
+    wishlist: Liste De Souhaits
+    fallowed_shop: Abonnements
+    profile: monProfile
+    profile_setting: paramètres de monProfile
+    reviews: Avis
+    product_reviews: Produits Évalués
+    shop_reviews: Boutiques Évaluées
+    settings: Paramètres
+    basic_setting: Paramètres de base
+    wishlist_choice: "{0}Liste de souhaits vide|{1}Un seul produit|]1,Inf[ %count% Produits"
+    followed_choice: "{0}0 boutiques|{1}Une boutique|]1,Inf[ %count% boutique"
+    review_choice: "{0}Pas d'avis|{1}Un avis|]1,Inf[ %count% avis"
+    gender: Sexe
+    username: Nom d’utilisateur
+    firstname: Prénom
+    lastname: Nom de famille
+    birthday: Anniversaire
+    image_lbl: Télécharger une nouvelle image de profil
+    old_image: Ou sélectionnez une image
+    img_mdl_ttl: Mettre à jour votre Image de profil
+matejer_shop:
+    subscribed: Souscrit
+    sub_choice: "{0}Abonné|{1}Abonné|]1,Inf[Abonnés"
+    offer_choice: "{0}Offre|{1}Offre|]1,Inf[Offres"
+    shop: Boutique
+    shops: Boutiques
+    myShop: maBoutique
+    know_shop: Apprends à connaître %shopname%
+    subscriber: Abonné
+    subscribers: Abonnés
+    prod_cats:
+        up: Produit
+        down: Catégories
+    product_choice: "{0}Pas de produits|{1}Un seul produit|]1,Inf[ %count% Produits"
+    client_choice: "{0}Pas d'abonnés|{1}Un Abonné|]1,Inf[ %count% Abonnés"
+    review_choice: "{0}Pas d'avis|{1}Un avis|]1,Inf[ %count% avis"
+    shop_setting: Paramètres de maBoutique
+    setting: Paramètres
+    all_shop: Tous les boutiques
+    location: Emplacement
+    slogan: Slogan
+    slogan_placeholder: Slogan de la boutique
+    inscriptionDate: Date d’inscription
+    name: Nom
+    name_placeholder: Nom de la boutique
+    email_placeholder: E-mail de la boutique
+    basic_setting: Paramètres de base
+    website: Site Web
+    description: Description
+    about: À propos de %shopname%
+    aboutt: À propos
+matejer_review:
+    written: Écrit
+    review: Avis
+    reviews: Avis
+    rating: Évaluation
+    rate: Évaluer
+    stars: Stars
+    reviews_choice: "{0}0 avis|{1}1 avis|]1,Inf[%count% avis"
+    reviews_choice_g: "{1}avis|]1,Inf[avis"
+    your_review: Votre Avis
+    edit_review: Modifier votre avis sur %reviewed%
+    edit: Modifier votre avis
+    write: Ecrire un avis
+    titlechoice: "[0,1]Stats évaluations - %count% avis|]1,Inf[Stats évaluations - %count% avis"
+    form:
+        write_review: Ecrire un avis
+        edit_review: Modifier un avis
+        item_review: "Avis sur %itemname%"
+        submit_btn: Soumettre votre avis
+        value_error: Ce champ est obligatoire
+        comment_error: Commentaire est trop long. Il devrait avoir %max_length% caractères ou moins.
+        comment_sh_ph: S’il vous plaît partager avec nous votre opinion honnête sur cette boutique.
+        comment_pr_ph: S’il vous plaît partager avec nous votre opinion sincère sur ce produit.
+    shop:
+        value : Satisfaction Globale
+        valueOne: Rapport Qualité/Prix De Produits
+        valueTwo: Service Clientèle
+        valueThree: Services Après-Vente (SAV)
+        valueFour: Précision Des Informations
+    Standard:
+        value : Évaluation Globale
+        valueOne: Fonctionnalités/Performances
+        valueTwo: Valeur
+        valueThree: Qualité
+        valueFour: Conception
+    PhoneTablet:
+        value : Évaluation Globale
+        valueOne: Caractéristiques
+        valueTwo: Performances
+        valueThree: Autonomie
+        valueFour: Conception
+    TopMan:
+        value : Évaluation Globale
+        valueOne: Qualité Du Tissu
+        valueTwo: Rapport Qualité/Prix
+        valueThree: Conception
+        valueFour: Couleurs
+    BottomMan:
+        value : Évaluation Globale
+        valueOne: Qualité Du Tissu
+        valueTwo: Rapport Qualité/Prix
+        valueThree: Conception
+        valueFour: Couleurs
+    ShoesMan:
+        value : Évaluation Globale
+        valueOne: Qualité Du Tissu
+        valueTwo: Rapport Qualité/Prix
+        valueThree: Conception
+        valueFour: Couleurs
+    TopWoman:
+        value : Évaluation Globale
+        valueOne: Qualité Du Tissu
+        valueTwo: Rapport Qualité/Prix
+        valueThree: Conception
+        valueFour: Couleurs
+    BottomWoman:
+        value : Évaluation Globale
+        valueOne: Qualité Du Tissu
+        valueTwo: Rapport Qualité/Prix
+        valueThree: Conception
+        valueFour: Couleurs
+    ShoesWoman:
+        value : Évaluation Globale
+        valueOne: Qualité Du Tissu
+        valueTwo: Rapport Qualité/Prix
+        valueThree: Conception
+        valueFour: Couleurs
+    UnderwearWoman:
+        value : Évaluation Globale
+        valueOne: Qualité Du Tissu
+        valueTwo: Rapport Qualité/Prix
+        valueThree: Conception
+        valueFour: Couleurs
+    TopGirl:
+        value : Évaluation Globale
+        valueOne: Qualité Du Tissu
+        valueTwo: Rapport Qualité/Prix
+        valueThree: Conception
+        valueFour: Couleurs
+    BottomGirl:
+        value : Évaluation Globale
+        valueOne: Qualité Du Tissu
+        valueTwo: Rapport Qualité/Prix
+        valueThree: Conception
+        valueFour: Couleurs
+    ShoesGirl:
+        value : Évaluation Globale
+        valueOne: Qualité Du Tissu
+        valueTwo: Rapport Qualité/Prix
+        valueThree: Conception
+        valueFour: Couleurs
+    TopBoy:
+        value : Évaluation Globale
+        valueOne: Qualité Du Tissu
+        valueTwo: Rapport Qualité/Prix
+        valueThree: Conception
+        valueFour: Couleurs
+    BottomBoy:
+        value : Évaluation Globale
+        valueOne: Qualité Du Tissu
+        valueTwo: Rapport Qualité/Prix
+        valueThree: Conception
+        valueFour: Couleurs
+    ShoesBoy:
+        value : Évaluation Globale
+        valueOne: Qualité Du Tissu
+        valueTwo: Rapport Qualité/Prix
+        valueThree: Conception
+        valueFour: Couleurs
+    TopBaby:
+        value : Évaluation Globale
+        valueOne: Qualité Du Tissu
+        valueTwo: Rapport Qualité/Prix
+        valueThree: Conception
+        valueFour: Couleurs
+    BottomBaby:
+        value : Évaluation Globale
+        valueOne: Qualité Du Tissu
+        valueTwo: Rapport Qualité/Prix
+        valueThree: Conception
+        valueFour: Couleurs
+    ShoesBaby:
+        value : Évaluation Globale
+        valueOne: Qualité Du Tissu
+        valueTwo: Rapport Qualité/Prix
+        valueThree: Conception
+        valueFour: Couleurs
+    Camcorder:
+        value : Évaluation Globale
+        valueOne: Qualité D’image
+        valueTwo: Performances
+        valueThree: Fonctionnalités
+        valueFour: Conception & Utilisabilité
+    Camera:
+        value : Évaluation Globale
+        valueOne: Qualité D’image
+        valueTwo: Performances
+        valueThree: Fonctionnalités
+        valueFour: Conception & Utilisabilité
+    Computer:
+        value : Évaluation Globale
+        valueOne: Fonctionnalités
+        valueTwo: Performances
+        valueThree: Qualité
+        valueFour: Valeur
+    GraphicCard:
+        value : Évaluation Globale
+        valueOne: Caractéristiques
+        valueTwo: Performances
+        valueThree: Qualité
+        valueFour: Valeur
+    Motherboard:
+        value : Évaluation Globale
+        valueOne: Caractéristiques
+        valueTwo: Performances
+        valueThree: Qualité
+        valueFour: Valeur
+    Processor:
+        value : Évaluation Globale
+        valueOne: Caractéristiques
+        valueTwo: Performances
+        valueThree: Qualité
+        valueFour: Valeur
+    Projector:
+        value : Évaluation Globale
+        valueOne: Fonctionnalités
+        valueTwo: Performances
+        valueThree: Conception
+        valueFour: Valeur
+    Ram:
+        value : Évaluation Globale
+        valueOne: Caractéristiques
+        valueTwo: Performances
+        valueThree: Qualité
+        valueFour: Valeur
+    Storage:
+        value : Évaluation Globale
+        valueOne: Caractéristiques
+        valueTwo: Performances
+        valueThree: Qualité
+        valueFour: Valeur
+    Television:
+        value : Évaluation Globale
+        valueOne: Fonctionnalités
+        valueTwo: Qualité D’image
+        valueThree: Qualité Audio
+        valueFour: Conception
+    Monitor:
+        value : Évaluation Globale
+        valueOne: Fonctionnalités
+        valueTwo: Qualité D’image
+        valueThree: Qualité Audio
+        valueFour: Conception
+matejer_product:
+    product_details: Détails du produit
+    modal_header: Coup d’œil Produit
+    gallery_header: Galerie d’images de produit
+    see_desc: Plus de détails
+    likes_rs: Aime & Avis
+    favored: Aimé
+    likes: Aime
+    product: Produit
+    products: Produits
+    product_choice: "{0}0 produits|{1}Un produit|]1,Inf[ %count% produits"
+    like_choice: "{0}Personne n’aimait ce produit encore|{1}1 utilisateur aime ce produit|]1,Inf[ %count% utilisateurs aiment ce produit"
+    add_new: Nouveau produit
+    reference_name: Référence / nom
+    reference: Référence
+    name: Nom
+    name_placeholder: Requis uniquement si la référence n’est pas fournie
+    mark: Marque
+    mark_label: Marque pas dans la liste ?
+    mark_label_empty: Marque
+    trademark_label: Marque
+    trademark_placeholder: Sélectionnez la marque
+    arrangement_label: Arrangement
+    arrangement_placeholder: Sélectionnez l’arrangement
+    file: Image principale
+    files: Images secondaires
+    specification: Spécifications
+    feature: Fonctionnalités
+    color: Couleurs disponibles
+    add_color: Ajouter des couleurs choisies
+    parent: Produit parent
+    hasFeature: Fonctionnalités En Commun ?
+    hasFiche: Specifications En Commun ?
+    anyParent: Produit parent ?
+    after_submit:
+        label: Que faire ensuite ?
+        same_cat: Nouveau produit (même catégorie)
+        new_cat: Nouveau produit (catégorie différente)
+        offer: Régler l'offre
+        shop_home: Page D’accueil maBoutique
+        tm_home: Page D’accueil TradeMark
+        same_mod: Nouveau modèle (même parent)
+        prod_specs: Spécifications du produit
+matejer_offer:
+    offer: Offre
+    offers: Offres
+    offer_choice: "{0}0 Offres|{1}Une offre|]1,Inf[ %count% Offres"
+    modal_header: Ajout D'une Offre
+    modal_info_header: Coup D’œil Offre
+    offer_details: Détails de l’offre
+    reference: Référence
+    price: Prix
+    original_price: Prix Original
+    discount: Remise
+    discount_choice: "{0}Pas de remise pour cette offre|]1,Inf[ Réduction de %count%%"
+    no_discount: Pas de remise pour cette offre
+    warranty: Garantie
+    availability: Disponibilité
+    collection: Collections
+    payment: Facilités de paiement
+    no_payment: Aucune facilité de paiement pour cette offre
+    success_title: Vous avez une nouvelle offre
+    success_content: Votre nouvelle offre a été ajouté avec succès à votre magasin ; vous avez toujours la possibilité de la modifier à tout moment.
+    discount_off: "%count%% Off"
+    warranty_choice: "{0}No Warranty|{1}One Month|]1,Inf[ %count% Months"
+    avai_choices:
+        stock: En Stock
+        comnd: Sur Commande
+        avasn: Disponible Bientôt
+        unava: Non Disponible
+    payment_detail:
+        advance: En Avance
+        per_month: Par Mois
+        months: Mois
+    form_modal:
+        title: La nouvelle offre a été ajoutée.
+        content: '%prodname% est maintenant disponible dans votre magasin pour vos clients.'
+matejer_genspecs:
+    genspecs: Spécifications Cénérales
+    specifications: Spécifications
+    description: Description
+    sizes: Tailles Disponibles
+    care: Soins De Vêtement
+    source: Fiche Source
+    colors: Couleurs Disponibles
+    video:
+        video: Video Du Produit
+        site: Site Hôte Du Vidéo
+        youtube: YouTube
+        dailymotion: Dailymotion
+        vimeo: Vimeo
+    ClotheGS:
+        one:
+            label: Lavage
+            wsh-ccl-any:
+                title: Machine à laver, régulier
+                description: Garment may be laundered through the use of hottest available water, detergent or soap, agitation, and a machine designed for this purpose.
+            wsh-ccl-prm:
+                title: Lavage en machine, pressage permanent
+                description: Garment may be machine laundered only on the setting designed to preserve Permanent Press with cool down or cold rinse prior to reduced spin.
+            wsh-ccl-gnt:
+                title: Lavage en machine, pressage douce
+                description: Garment may be machine laundered only on the setting designed for gentle agitation and/or reduced time for delicate items.
+            wsh-ccl-hnd:
+                title: Lavage à la main
+                description: Garment may be laundered through the use of water, detergent or soap and gentle hand manipulation.
+            wsh-ccl-not:
+                title: Ne pas laver
+                description: Garment may not be safely laundered by any process. Normally accompanied by dry clean instructions.
+        two:
+            label: Température de lavage
+            wsh-tmp-30c:
+                title: Lavage en machine 30 °C
+                description: Température de l’eau initiale ne doit pas dépasser 30 °C
+            wsh-tmp-40c:
+                title: Lavage en machine 40 °C
+                description: Température de l’eau initiale ne doit pas dépasser 40 °C
+            wsh-tmp-50c:
+                title: Machine à laver 50 °C
+                description: Température de l’eau initiale ne doit pas dépasser 50 °C
+            wsh-tmp-60c:
+                title: Lavage en machine 60 °C
+                description: Température de l’eau initiale ne doit pas dépasser 60 °C
+            wsh-tmp-70c:
+                title: Machine à laver 70 °C
+                description: Température de l’eau initiale ne doit pas dépasser 70 °C
+            wsh-tmp-95c:
+                title: Lavage machine 95 °C
+                description: Température de l’eau initiale ne doit pas dépasser 95 °C
+        three:
+            label: Blanchiment
+            ble-any:
+                title: Le vêtement peut être traité avec du chlore ou du percarbonate de sodium
+                description: Any commercially available bleach product may be used in the laundering process.
+            ble-nch:
+                title: N'utiliser l’eau de Javel lorsque nécessaire
+                description: Only a non-chlorine, color-safe bleach may be used in the laundering process. Chlorine bleach may not be used.
+            ble-not:
+                title: Ne pas utiliser d’eau de Javel
+                description: No bleach product should be used including detergents with bleach - or follow bleach package test procedures to test for bleach safety.
+        four:
+            label: Séchage
+            dry-ccl-any:
+                title: Sécher, en normal
+                description: A machine dryer may be regularly used at the hottest available temperature setting.
+            dry-ccl-prm:
+                title: Dégringolade sèche, pressage permanent
+                description: A machine dryer may be regularly used only at the Permanent Press setting.
+            dry-ccl-gnt:
+                title: Sécher, en douce
+                description: A machine dryer may be regularly used only at the Gentle setting.
+            dry-ccl-ntr:
+                title: Ne pas sécher au sèche-linge
+                description: A machine dryer may not be used. Usually accompanied by an alternate drying method symbol.
+            dry-ccl-not:
+                title: Ne pas sécher
+                description: A machine dryer may not be used. Usually accompanied by an alternate drying method symbol.
+            dry-ccl-lin:
+                title: Séchage en ligne
+                description: Hang damp garment from line or bar, in or out doors.
+            dry-ccl-drp:
+                title: Laisser sécher
+                description: Hang dripping wet garment from line or bar, in or out doors, without hand shaping or smoothing.
+            dry-ccl-flt:
+                title: Sécher à plat
+                description: Lay out horizontally for drying.
+            dry-ccl-shd:
+                title: Sécher à l’ombre
+                description: Usually added to line or drip dry. Dry away from direct sunlight.
+        five:
+            label: Temperature Séchage
+            dry-tmp-low:
+                title: Temperature séchage faible
+                description: A machine dryer may be regularly used at a maximum of Low Heat setting.
+            dry-tmp-mdm:
+                title: Temperature séchage moyenne
+                description: A machine dryer may be regularly used at a maximum of Medium Heat setting.
+            dry-tmp-hgh:
+                title: Temperature séchage élevée
+                description: A machine dryer may be regularly used at a High Heat setting.
+            dry-tmp-not:
+                title: Séchage sans chaleur
+                description: A machine dryer may be regularly used only at No Heat or Air Only setting.
+        six:
+            label: Repassage
+            iro-ccl-any:
+                title: Repassage toute température, vapeur ou sec
+                description: Regular ironing may be needed and may be performed at any available temperature with or without steam is acceptable.
+            iro-ccl-nst:
+                title: Repassage sans vapeur
+                description: Steam ironing will harm garment, but regular dry ironing at indicated temperature setting is acceptable.
+            iro-ccl-not:
+                title: Ne pas repasser
+                description: Item may not be smoothed or finished with an iron.
+        seven:
+            label: Temperature Repassage
+            iro-tmp-low:
+                title: Repassage à basse temperature
+                description: Low temperature ironing, may be performed at low setting (110C, 230F) only.
+            iro-tmp-mdm:
+                title: Repassage à moyenne temperature
+                description: Medium temperature ironing, may be performed at medium setting (150C, 300F).
+            iro-tmp-hgh:
+                title: Repassage à haute temperature
+                description: High temperature ironing, may be performed at high setting (200C, 290F).
+        eight:
+            label: Nettoyage à sec
+            dcl-ccl-any:
+                title: Nettoyage à sec
+                description: Dry Clean, any solvent, any cycle any moisture, any heat.
+            dcl-ccl-not:
+                title: Ne pas nettoyer à sec
+                description: Garment may not be commercially drycleaned.
+            dcl-ccl-shr:
+                title: Nettoyage à sec, cycle court
+                description: May be used with A, P, or F solvent restriction.
+            dcl-ccl-rdc:
+                title: Nettoyage à sec, humidité réduite
+                description: May be used with A, P, or F solvent restriction.
+            dcl-ccl-lwh:
+                title: Nettoyage à sec, basse temperature
+                description: May be used with A, P, or F solvent restriction.
+            dcl-ccl-nst:
+                title: Nettoyage à sec, sans vapeur
+                description: May be used with A, P, or F solvent restriction.
+        nine:
+            label: Solvant de nettoyage sec
+            dcl-slv-any:
+                title: Nettoyage à sec, tout solvant
+                description: Dry Clean, any solvent. Usually used with other restrictions on proper dry cleaning procedure.
+            dcl-slv-fon:
+                title: Nettoyage à sec, solvant pétrolier uniquement
+                description: Dry Clean using only petroleum solvent. Usually used with other restrictions.
+            dcl-slv-ptr:
+                title: Nettoyage à sec, tout solvant sauf trichloréthylène
+                description: Any dry cleaning solvent other than trichloroethylene may be safely used.
+    Television:
+        one:
+            label: Taille De L’écran
+            unit: Insh
+        two:
+            label: Largeur
+        three:
+            label: Hauteur
+        two_three:
+            label: Resolution
+            unit: Pixels
+        four:
+            label: Technologie D’affichage
+            values:
+                plasma: Plasma
+                led: LED
+                lcd: LCD
+                oled: OLED
+                quant: Boîte Quantique (Quantum Dot)
+        five:
+            label: Fréquence De Rafraîchissement
+            unit: Hz
+        six:
+            label: Smart
+        seven:
+            label: 3D
+        eight:
+            label: Entrées USB
+        nine:
+            label: Entrées HDMI™
+    Monitor:
+        one:
+            label: Taille De L’écran
+            unit: Insh
+        two:
+            label: Largeur
+        three:
+            label: Hauteur
+        two_three:
+            label: Resolution
+            unit: Pixels
+        four:
+            label: Technologie D’affichage
+            values:
+                plasma: Plasma
+                led: LED
+                lcd: LCD
+                oled: OLED
+                quant: Boîte Quantique (Quantum Dot)
+        five:
+            label: "Format d'image"
+            unit: ms
+        six:
+            label: Luminosité
+        seven:
+            label: Contraste
+        eight:
+            label: Temps De Réponse
+        nine:
+            label: Connecteurs D’entrée
+    PhoneTablet:
+        one:
+            label: Processeur
+        two:
+            label: RAM
+            unit: Mo
+        three:
+            label: Taille De L’écran
+            unit: Insh
+        four:
+            label: Largeur
+        five:
+            label: Hauteur
+        four_five:
+            label: Resolution
+            unit: Pixels
+        six:
+            label: Système D'exploitation
+            values:
+                android_1_6: Android 1.6 Donut
+                android_2_1: Android 2.1 Eclair
+                android_2_2: Android 2.2 Froyo
+                android_2_3: Android 2.3 Gingerbread
+                android_3_0: Android 3.0 Honeycomb
+                android_4_0: Android 4.0 Ice Cream Sandwich
+                android_4_1: Android 4.1 Jelly Bean
+                android_4_4: Android 4.4 KitKat
+                android_5_0: Android 5.0 Lollipop
+                android_6_0: Android 6.0 Marshmallow
+                ios_2: iOS 2
+                ios_3: iOS 3
+                ios_4: iOS 4
+                ios_5: iOS 5
+                ios_6: iOS 6
+                ios_7: iOS 7
+                ios_8: iOS 8
+                ios_9: iOS 9
+                wp_7: Windows Phone 7
+                wp_7_5: Windows Phone 7.5
+                wp_7_8: Windows Phone 7.8
+                wp_8: Windows Phone 8
+                wp_8_1: Windows Phone 8.1
+                wp_10: Windows Phone 10
+        seven:
+            label: Caméra Frontale
+            unit: MP
+        eight:
+            label: Caméra Arrière
+            unit: MP
+        nine:
+            label: Capacité De Stockage Interne
+            unit: Go
+        ten:
+            label: Stockage Externe (capacité maximale possible de stockage)
+            short_lbl: Stockage externe
+            unit: Go
+            value: Jusqu'à %storage% Go
+    Computer:
+        one:
+            label: Processeur
+        two:
+            label: RAM
+            unit: Go
+        three:
+            label: Capacité De Stockage
+        four:
+            label: Carte Graphique
+        five:
+            label: Système D'exploitation
+        six:
+            label: Taille De L’écran
+            unit: Insh
+        seven:
+            label: Largeur
+        eight:
+            label: Hauteur
+        seven_eight:
+            label: Résolution D’écran
+            unit: Pixels
+        nine:
+            label: Écran Tactile
+    Processor:
+        one:
+            label: Nombre De Cœurs
+        two:
+            label: Nombre De Threads
+        three:
+            label: Fréquence (Vitesse)
+            unit: GHz
+        four:
+            label: Technologie CMOS
+            unit: nm
+        five:
+            label: Cache
+            unit: Mo
+        six:
+            label: Socket
+        seven:
+            label: Puissance De Dissipation Thermique  (PDT)
+            unit: W
+        eight:
+            label: Graphiques
+    Motherboard:
+        one:
+            label: Socket Du Processeur
+        two:
+            label: Chipset
+        three:
+            label: Facteur De Forme
+        four:
+            label: Emplacements De Mémoire
+        five:
+            label: Capacité Mémoire Maximale
+            unit: Go
+        six:
+            label: Connecteurs Stockage SATA
+            flabel: Connecteurs Stockage SATA (si plusieurs, séparez les entrées par '#')
+        seven:
+            label: Ports USB
+            flabel: Ports USB (si plusieurs, séparez les entrées par '#')
+        eight:
+            label: Emplacements D’extension PCI Express
+            flabel: Emplacements D’extension PCI Express (si plusieurs, séparez les entrées par '#')
+        nine:
+            label: Autres Emplacements/Ports
+            flabel: Autres Emplacements/Ports (en option) (si plusieurs, séparez les entrées par '#')
+    GraphicCard:
+        one:
+            label: Vitesse D’horloge GPU
+        two:
+            label: Capacité De Stockage De Mémoire
+        three:
+            label: Interface Mémoire
+        four:
+            label: Bande Passante Mémoire
+        five:
+            label: Vitesse D’horloge De Mémoire
+            unit: MHz
+        six:
+            label: Puissance De Dissipation Thermique  (PDT)
+            unit: W
+    Ram:
+        one:
+            label: Nombre D’éléments
+            unit: unité
+        two:
+            label: Capacité De Stockage De Mémoire (par unité)
+            unit: Go
+        three:
+            label: Vitesse D’horloge De Mémoire
+            unit: MHz
+        four:
+            label: Technologie De Mémoire
+matejer_tm:
+    tm: Marques
+    new_tm: Nouvelle Marque
+matejer_currency:
+    currency: Currency
+    eur: EUR
+    tnd: TND
+    usd: USD
+matejer_ex_currency:
+    eur: EUR - EURO
+    tnd: TND - Dinar tunisien
+    usd: USD - Dollar USA
+matejer_size:
+    uni: Tailles universelles
+    fr: Tailles Françaises
+    fr_pant: Tailles Françaises (culotte)
+    eur: Tailles européennes
+    eur_sg: Tailles européennes (bra)
+    age: Tailles d’âge
+matejer_collection:
+    title: "%shopname% - Gestion des collections | Matejer"
+    collection: Collection
+    collections: Collections
+    yours: Collections actuelles
+    add_new: Ajouter une nouvelle collection
+    select_category: Sélectionnez la catégorie des produits
+    anyParent:
+        label: Rendre une collection père
+        note: Une collection père est une collection qui regroupe d’autres collections (collections enfants) alors vous ne serez pas en mesure d’ajouter un produit à elle. Notez que vous n’êtes autorisés que d’ajouter que 3 niveaux de collections dont la dernière ne peut pas être une collection père.
+    parent:
+        ph: Sélectionnez une collection père
+        label: Collection père (optionnelle)
+    no_shop: Aucune collection
+    no_my_shop: Vous n’avez pas de collection
+    collection_setting: Gestion de collections
+    edit: Modifier la collection
+    unfound_title: Collection introuvable
+    unfound_content: Nous ne pouvions pas trouver la collection demandée, s’il vous plaît réessayer et si cela ne fonctionne pas, actualisez la page.
+    success_title: Collection mise à jour
+    success_content: Votre collection a été modifiée avec succès.
+    removed_title : Collection supprimée
+    removed_content: Votre collection a été supprimée avec succès.
+matejer_payment:
+    title: "%shopname% - Gestion de facilités de paiement | Matejer"
+    payment: Paiement
+    payments: Paiements
+    name: Nom de paiement
+    name_lbl: Nom de paiement (facultatif)
+    addedValue: Surplus
+    addedValue_ph: Valeur ajoutée au prix du produit
+    advance: Pré payé
+    advance_lbl: "% du prix à payer après application de surplus"
+    month: Mois
+    edit: Modifier la facilité de paiement
+    unfound_title: Facilité de paiement non trouvée
+    unfound_content: Nous ne pouvions pas trouver la facilité de paiement demandé, s’il vous plaît réessayer et si cela ne fonctionne pas, actualisez la page.
+    success_title: Facilité de paiement mis à jour
+    success_content: Facilité de paiement a été modifiée avec succès.
+    removed_title : Facilité de paiement supprimée
+    removed_content: Facilité de paiement a été supprimée avec succès.
+    payment_setting: Facilités de paiements
+    this_payment: Cette facilité de paiement
+matejer_feature:
+    features: Fonctionnalités
+    new: Nouvelle fonctionnalité
+    image: Fonctionnalité Image
+    name:
+        en: Nom (Anglais)
+        fr: Nom (Français)
+        ar: Nom (Arabe)
+    description:
+        en: Description (Anglais)
+        fr: Description (Français)
+        ar: Description (Arabe)
+# pages
+seo:
+    website:
+        name: Matejer
+        alternateName: Matejer.com
+        genre: e-commerce website
+        potentialAction:
+            target: https://www.matejer.com/gallery/{search_term_string}
+        about:
+            name: About Matejer
+            description: about my website description content
+        creator:
+            first_name: Aymen
+            last_name: Ben Othmen
+            birthday: "1992-06-02"
+            birth_place:
+                country: TN
+                locality: Nabeul
+            email: aymenbenothmen@hotmail.com
+            telephone: "+216 50 434 012"
+            description: about me ...
+            address:
+                country: TN
+                locality: Nabeul
+                street: 24 Rue Street
+                postal_code: 8000
+        keywords: matejer, shopping, produit, offres, boutiques, magasins, avis, gallerie
+        language:
+            en: English
+            fr: French
+            ar: Arabic
+gallery_page:
+    no_product_search: Votre recherche "%search%" ne correspond à aucun produit
+    no_shop_search: Votre recherche "%search%" ne correspond à aucune boutique
+    no_offer_search: Votre recherche "%search%" ne correspond à aucun offre
+    title: Gallery | Matejer
+    description: Trouver les derniers produits sur le marché avec tous les détails dont vous avez besoin ou des magasins à proximité.Rechercher la meilleure offre qui vous satisfaire.
+    offers: Offres
+    products: Produits
+    shops: Boutiques
+    stips:
+        title: "Voici quelques conseils utiles pour vous aider à chercher ce dont vous avez besoin:"
+        one: Vérifiez votre orthographe
+        two: Essayez d’utiliser des mots clé différents
+        three: Utilisez des mots clés moins spécifiques
+        four: Essayez avec moins de mots clés
+        five: Laissez-nous vous aider, contacter nous
+remove_password_modal:
+    password: Veuillez entrer votre mot de passe tout d’abord
+    title_cat: Confirmation de suppression de la catégorie
+    sure_cat: Êtes-vous sûr de vouloir supprimer cette catégorie ? Cette action est irréversible.
+    alert_cat: Notez que toutes vos offres qui appartiennent à "%name%" vont être supprimés!
+    title_col: Confirmation de suppression de la collection
+    sure_col: Êtes-vous sûr de vouloir supprimer cette collection ? Cette action est irréversible.
+    title_pay: Confirmation de suppression de la facilité de paiement
+    sure_pay: Êtes-vous sûr de vouloir supprimer cette facilité de paiement ? Cette action est irréversible.
+category_setting_page:
+    title_user: "%username% - Gestion catégories | Matejer"
+    title_shop: "%shopname% - Gestion catégories | Matejer"
+    users: Vos catégories préférées
+    new_user: Ajouter des catégories
+    error_title: Catégorie introuvable
+    cat_user_unfound: On dirait que la catégorie n’existe pas ! S’il vous plaît, actualisez la page et recommencez.
+    cat_shop_unfound: On dirait que la catégorie n’existe pas ! S’il vous plaît, actualisez la page et recommencez.
+    success_title: Catégorie supprimé avec succès.
+    shops: Vos Catégories De Produits
+    new_shop: Ajouter Des Catégories
+    save_cats: Enregistrer Les Catégories
+    modal_title: Confirmation de suppression de la catégorie
+    info_alert: Notez que vous pouvez ré-ajouter cette catégorie à votre liste quand vous le voulez.
+user_security_login:
+    title: Connectez-vous à votre compte Matejer
+    description: 'Se connecter sur Matejer : en tant que client, trouver les produits, offres et boutiques. Ou comme un commerçant, publier vos offres et votre boutique et rester en contact avec vos clients.'
+    pre_form: Connectez-vous pour commencer votre session
+    login: Se Connecter
+    or: OU
+    forgotten_password: J’ai oublié mon mot de passe
+    signup: S'inscrire
+    username_mail: Email ou nom d’utilisateur
+    password: Mot de passe
+    remember_me: Se souvenir de moi
+fos_user_resetting_request: #and send email.
+    title: Récupérer votre mot de passe | Matejer
+    code_sent_title: Votre code de confirmation est envoyé | Matejer
+    send_code_title: Renvoyer le code de confirmation de l’e-mail | Matejer
+    description: Vous avez oublié votre mot de passe ? Ne vous inquiétez pas, aussi longtemps que vous n’oubliez pas votre e-mail/nom d’utilisateur. Demander un rétablissement de mot de passe en soumettant votre e-mail ou nom d’utilisateur.
+    error: L'e-mail ou nom d'utilisateur "%username%" n'existe pas.
+    pre_form: Entrez votre e-mail/nom d’utilisateur pour récupérer votre mot de passe
+    submit: Réinitialiser mot de passe
+    resend: Renvoyer le Code
+    wrong_email: L’e-mail que vous avez fourni n’est pas valide
+    confirm_email: Confirmez E-mail
+    enter_email: Entrez votre e-mail actuel
+    email_sent: Un e-mail a été envoyé à "%email%". Il contient un lien, vous devez cliquer pour confirmer votre adresse e-mail.
+    disabled:
+        title: Votre compte est désactivé | Matejer
+        box_title: Votre compte est désactivé
+        error: Nous sommes désolés, que votre demande de récupération de mot de passe a été refusé parce que l’administration de Matejer a désactivé votre compte.
+        contact: Nous envoyons habituellement un e-mail d’expliquer les raisons qui nous ont fait désactiver un compte d’utilisateur, vérifiez votre boîte de réception et si vous ne trouvez pas cet e-mail, vous pouvez contacter l’équipe de support.
+    locked:
+        title: Votre compte est verrouillé | Matejer
+        box_title: Votre compte est verrouillé
+        error: Nous sommes désolés, que vous ne pouvez pas réinitialiser votre mot de passe à moins que vous Débloquez votre compte.
+    unconfirmed:
+        title: Votre e-mail n’est pas confirmée | Matejer
+        box_title: Votre e-mail n’est pas confirmée
+        error: Votre e-mail n’est pas vérifiée, et il est risqué de donner le feu vert pour changer votre mot de passe en utilisant une adresse e-mail non confirmées.
+        risk: Nous pouvons vous envoyer un e-mail pour récupérer votre mot de passe, mais c’est risqué, comme nous l’avons dit. Si vous êtes prêt à le faire, il est sous votre propre responsabilité.
+    password_requested:
+        title: Récupération de mot de passe déjà demandée | Matejer
+        title_email: Récupération de mot de passe déjà demandée
+        email_sent: Un e-mail a été envoyé à "%email%". Il contient un lien, vous devez cliquer pour réinitialiser votre mot de passe.
+        error: La récupération de mot de passe pour cet utilisateur a déjà été demandée dans les dernières 24 heures ; s’il vous plaît vérifier votre boîte de réception.
+fos_user_resetting_reset:
+    title: Changer votre mot de passe | Matejer
+    description: description
+    new_pass: Nouveau mot de passe
+    re_new_pass: Retapez le nouveau mot de passe
+    enter_pass: Entrez votre nouveau mot de passe, puis connectez-vous.
+    submit: Changer mot de passe
+user_security_register:
+    title: Inscrivez-vous | Matejer
+    description: Bienvenue sur Matejer. Si vous n’avez pas déjà un compte, inscrivez-vous dès maintenant gratuitement et découvrez tous nos produits et magasins en ligne et obtenir toute la joie du shopping en ligne
+    signup: Inscrivez-vous
+    box_msg: S’inscrire comme nouveau membre
+    pass: Mot de passe
+    repass: Retapez le mot de passe
+    pre_terms: J’accepte les
+    terms: termes et conditions d’utilisation
+    or: OU
+    sign_fb: Inscription avec Facebook
+    sign_gp: Inscription avec Google+
+    registred: J’ai déjà un compte
+user_registration_confirmed:
+    title: Une inscription réussie, Bravo | Matejer
+    welcome: Bienvenue sur Matejer.
+    username_available: "%username% est unique et prêt à l'emploi"
+    username_unavailable: "%username% est Malheureusement pris, essayer une autre chose."
+    confirm_email: Votre inscription est réussie. Vous devriez recevoir un e-mail contenant un lien de confirmation, suivez le lien et votre inscription sera achevée.
+    username: Choisissez un nom d’utilisateur si vous souhaitez masquer votre nom.
+    username_ph: Soyez unique
+    upload: Télécharger une photo de profil.
+    profile_link: monProfil
+user_profile_show:
+    title: "%fullname% | Matejer"
+    last_products: Produits que vous avez aimé récemment
+    last_shops: Boutiques vous avez récemment souscrit à
+    product_full_list: "{0}Ajouter des produits à votre liste d'envies|[1,Inf[Voir la liste complète"
+    shop_full_list: "{0}Trouver des boutiques qui pourraient vous intéresser|[1,Inf[Voir la liste complète"
+    manage_categories: Gérer vos catégories
+user_profile_edit:
+    title: "%fullname% paramètres de profil | Matejer"
+    panel_header: Informations relatives au profil
+    personal_info: Renseignements personnels
+    contact: Informations de contact
+    change_password: Changer mot de passe
+    change_email: Changer e-mail
+    addShop_text: Vous êtes un commerçant ? Construire votre magasin sur Matejer gratuitement
+    addShop_button: ici
+    change_contact_info: Modifier Infos Contact
+    change_address: Changer d’adresse
+    edit_perso_info: Mettre à jour vos Infos
+    edit_info: Vérifiez & modifier vos paramètres de compte
+    perso_info: Infos personnelles
+    contact: Contact
+    change_pic: Changer votre photo de profil
+    flw_shops: Abonnements
+    fav_prods: Produits aimé
+    pref_cats: Catégories préférés
+    member_since: Membre depuis
+user_favored_product:
+    title: "%username% produits aimé | Matejer"
+    title_cat: "%username%, produits aimé: %cat% | Matejer"
+    empty: vous n’avez aucun produit aimé
+    empty_cat: 'vous n’avez aucun produit aimé.'
+user_reviews:
+    product:
+        title: "%username% avis sur produits | Matejer"
+        empty: vous n'avez evalué aucun produit.
+    shop:
+        title: "%username% avis sur boutiques | Matejer"
+        empty: vous n'avez evalué aucune boutique.
+user_subscribed_shop:
+    title: "%username% Abonnements au boutiques | Matejer"
+    empty: Vous n’êtes pas abonné à aucune boutique encore.
+fos_change_password:
+    title: Réinitialisation de mot de passe | Matejer
+    panel_header: Réinitialisation de mot de passe
+    current: Votre mot de passe actuel
+    first: Nouveau mot de passe
+    second: Retaper nouveau mot de passe
+main_email_change_email:
+    title: Changement e-mail | Matejer
+    note: Le nouvel e-mail sera considéré seulement après confirmation.
+    panel_header: Changement e-mail
+    current: Votre e-mail actuel
+    new: Nouvel E-mail
+    password: Votre mot de passe
+shop_registration_register:
+    title: Inscrire votre boutique, Construire une commerce prospère | Matejer
+    description: Inscrire votre boutique sur Matejer et profiter de tous les avantages que nous offrons pour améliorer vos affaires et faire mieux pour satisfaire tous vos clients.
+    form_title: "- Inscrire votre boutique, Construire une commerce prospère -"
+    email_note: Vous pouvez utiliser votre e-mail de compte Matejer (confirmation non requise), mais nous vous recommandons d’utiliser un e-mail spécifié pour votre boutique (confirmation requise).
+    after_submit: Après Soumission, vous serez déconnecté. Juste reconnecter et vous serez en mesure d’accéder à votre boutique
+shop_navigation:
+    no_cats: Vide
+    no_cats_admin: Pas de catégories sélectionnées
+shop_show_home:
+    title: "%shopname% | Matejer"
+    title_admin: "%shopname% | Matejer"
+    last_products: Derniers produits
+    last_followers: Derniers abonnés
+    last_reviews: Les derniers avis
+    product_full_list: "{0}Ajouter un nouveau produit|[1,Inf[Voir tous les produits"
+    review_full_list: "{0}Pas d'avis encore|[1,Inf[Voir tous les avis"
+    user_full_list: "{0}Pas d'abonnés encore|[1,Inf[Voir tous les abonnés"
+shop_product_allproduct:
+    title_admin: "%shopname% - tous les produits | Matejer"
+    title: "%shopname% - tous les produits | Matejer"
+    no_product_admin: Vous n’avez encore aucun produit.
+    no_product: Cette boutique n’a encore aucun produit.
+shop_productadmin_by_cat:
+    title: "%shopname% - produits: %category% | Matejer"
+    no_product: 'Vous n’avez encore aucun produit (%category%).'
+shop_product_by_cat:
+    title: "%shopname% - %category% | Matejer"
+    category_product: "produits %category%"
+    no_product: 'Cette boutique n’a encore aucun produit "%category%".'
+shop_productadmin_by_col:
+    title: "%shopname% - %collection% | Matejer"
+    no_product: Cette collection est vide.
+shop_product_by_col:
+    title: "%shopname% - %collection% | Matejer"
+    no_product: Cette collection est vide.
+prod_reviews:
+    review: Évaluer ce produit ; votre avis peut aider les autres utilisateurs
+    be_the_first: Soyez le premier à évaluer ce produit.
+    reviews: Avis d’utilisateurs
+    only_one: On dirait que vous êtes la seule personne qui à évaluer que ce produit.
+    login_rvw: Connectez-vous pour évaluer ce produit.
+shop_reviews:
+    admin:
+        title: "%shopname% - avis | Matejer"
+        empty: Aucun utilisateur a évalué votre boutique.
+        reviews: avis d’utilisateurs
+    visitor:
+        title: "%shopname% - reviews | Matejer"
+        empty: Aucun utilisateur a évalué cette boutique.
+        be_the_first: Soyez le premier à évaluer cette boutique.
+        review: Évaluer cette boutique, votre avis peut aider les autres utilisateurs
+        login_to_rvw: Connectez-vous pour évaluer cette boutique.
+        reviews: Avis d’utilisateurs
+        only_one: On dirait que vous êtes la seule personne qui à évaluer que cette boutique.
+shop_show_reviews_admin:
+    title: maBoutique - avis | Matejer
+    breadcrumb: Avis
+shop_show_about:
+    title: "À propos de %shopname% | Matejer"
+    title_admin: "À propos de %shopname% | Matejer"
+    shop_info: Boutique Infos
+    shop_cat_offer: Catégories Et Offres
+    offer_nbr: Nombre d’offres
+    followers_reviews: Abonnés Et Avis
+    address_contact: Adresse Et Contact
+    followers: "{0}0 Abonnés|{1}1 Abonné|]1,Inf[%count% Abonnés"
+    reviews: "{0}0 Avis|{1}1 Avis|]1,Inf[%count% Avis"
+shop_show_followers:
+    title: "%shopname% - followers | Matejer"
+    follower_date: Abonné depuis
+    follower_from: De
+    follower_list: Liste d'abonnés
+shop_admin_setting:
+    title: "%shopname% - Paramètres basiques | Matejer"
+    update_contact_info: Mettre à jour vos contact infos
+    update_shop_info: Màj les infos de boutique
+    update_settings: Modifier Infos & paramètres
+    shop_details: Shop Details
+    contact: Contact
+    change_logo: Détails de la boutique
+    member_since: Membre depuis
+    change_address: Modifier l’adresse
+shop_productadmin_pre_add:
+    title: maBoutique - Sélectionnez la catégorie du nouveau produit | Matejer
+    panel_header: Sélectionnez la catégorie du nouveau produit
+shop_productadmin_add:
+    title: "Nouveau produit: %category% | Matejer"
+modal_shop_images:
+    title: Mettre à jour votre boutique Logo/couverture
+    cover: Couverture
+    logo: Logo
+    new_cover: Télécharger une nouvelle couverture
+    new_logo: Télécharger un nouveau logo
+    old_cover: Ou sélectionnez une existante
+    old_logo: Ou sélectionnez un existant
+product_shop_page:
+    title: "%shopname% - %prodname% | Matejer"
+    share_title: '%shopname% - %prodname%'
+product_page:
+    title: "%prodname% | Matejer"
+    share_title: '%prodname%'
+matejer_modal:
+    details: Détails du produit
+    odetails: Détails de l’offre
+    images: Galerie
+    trailer: Bande-annonce
+profile_boxes:
+    prod:
+        one: Produits
+        two: Aimé
+    shop:
+        one: Abonnements
+        two: Boutiques
+    cats:
+        one: Catégories
+        two: Préférés
+    reviews:
+        one: Avis
+        two: Écrits
+matejer_category:
+    preferred: Préférée
+    category: Catégorie
+    category_choice: "{0}0 Catégorie|{1}1 Catégorie|]1,Inf[%count% Catégories"
+    setting_user: Catégories préférées
+    setting_shop: Catégories des produits
+    categories: Catégories
+    no_preferred: Aucune catégorie préférée
+    no_shop: Aucune catégorie
+    no_my_shop: Aucune catégorie
+    wearable-technology: Wearable Technology
+    activity-trackers: Activity Trackers
+    wearable-cameras: Wearable Cameras
+    smart-glasses: Smart Glasses
+    smart-watches: Smart Watches
+    for-kids: For Kids
+    smart-sport-accessories: Smart Sport Accessories
+    healthcare-devices: Healthcare Devices
+    gesture-control-entertainment: Gesture Control & Entertainment
+    automobiles-and-transportation: Automobiles and Transportation
+    cars: Cars
+    sports: Sports
+    luxury: Luxury
+    large: Large
+    midsize: Midsize
+    small: Small
+    trucks: Trucks
+    light-duty: Light Duty
+    medium-duty: Medium Duty
+    heavy-duty: Heavy Duty
+    motorcycles-and-bikes: Motorcycles and Bikes
+    motorcycles: Motorcycles
+    bikes: Bikes
+    parts-electronics-and-accessories: Parts Electronics and Accessories
+    car-parts: Car Parts
+    motorcycles-parts: Motorcycles Parts
+    bikes-parts: Bikes Parts
+    car-electronics: Car Electronics
+    motorcycles-electronics: Motorcycles Electronics
+    car-accessories: Car Accessories
+    motorcycles-accessories: Motorcycles Accessories
+    bikes-accessories: Bikes Accessories
+    high-tech: high-tech
+    phone-and-cellphone: Phone and Cellphone
+    cellphone: Cellphone
+    smartphone: Smartphone
+    phone: Phone
+    fax: Fax
+    phone-cellphone-accessories-and-parts: Phone Cellphone Accessories and Parts
+    cameras-and-camcorders: Cameras and Camcorders
+    camcorder: Camcorder
+    digital-camera: Digital Camera
+    camera-flash: Camera Flash
+    lenses-and-filters: Lenses and Filters
+    picture-frames: Picture Frames
+    binoculars: Binoculars
+    camera-parts-and-tools: Camera Parts and Tools
+    camera-and-camcorder-accessories: Camera and Camcorder Accessories
+    computers: Computers
+    laptop: Laptop
+    gamer: Gamer
+    desktops: Desktops
+    all-in-one: All-in-One
+    server: Server
+    tablets: Tablets
+    tablet: Tablet
+    tablet-accessories: Tablet Accessories
+    pc-components: PC Components
+    screen: Screen
+    processors: Processors
+    motherboards: Motherboards
+    graphics-cards: Graphics Cards
+    internal-storage: Internal Storage
+    ram: RAM
+    coolers-and-fans: Coolers and Fans
+    power-supplies: Power Supplies
+    case: Case
+    burner-readers: Burner Readers
+    controller-cards: Controller Cards
+    sound-cards: Sound Cards
+    tv-tuner-cards: TV Tuner Cards
+    computer-and-server-racks: Computer and Server Racks
+    other-pc-components: Other PC Components
+    printers-and-ink: Printers and Ink
+    inkjet-printers: Inkjet Printers
+    laser-printers: Laser Printers
+    photo-printers: Photo Printers
+    scanners: Scanners
+    3d-printers: 3D Printers
+    printer-and-ink-accessories-and-parts: Printer and Ink Accessories and Parts
+    software: Software
+    antivirus-and-security: Antivirus and Security
+    office-software: Office Software
+    multimedia-software: Multimedia Software
+    leisure-and-practical-life-software: Leisure and Practical Life Software
+    professional-software: professional Software
+    mac-software: Mac Software
+    networking: Networking
+    wifi-usb-key: WiFi USB Key
+    bluetooth-usb-key: Bluetooth USB Key
+    modems-and-routers: Modems and Routers
+    plc-adapters: PLC Adapters
+    wifi-booster: WiFi Booster
+    wifi-repeater: WiFi Repeater
+    wifi-extender: WiFi Extender
+    nas-storage-servers: NAS Storage Servers
+    networking-accessories: Networking Accessories
+    other-networking-products: Other Networking Products
+    pc-accessories: PC Accessories
+    keyboard: Keyboard
+    mouse: Mouse
+    mousepad: Mousepad
+    pc-speakers: PC Speakers
+    webcams: Webcams
+    storage: Storage
+    microphone: Microphone
+    graphic-tablets-and-pens: Graphic Tablets and Pens
+    other-pc-accessories: Other PC Accessories
+    electronics: electronics
+    tv-and-projectors: TV and Projectors
+    tv: TV
+    projectors: Projectors
+    dtt-and-satellite: DTT and Satellite
+    mounts: Mounts
+    accessories-tv-and-projectors: accessories TV and Projectors
+    hi-fi-and-home-theater: Hi-Fi and Home Theater
+    home-theater: Home Theater
+    sound-bars: Sound Bars
+    micro-system-and-mini-system: Micro System and Mini System
+    hi-fi: Hi-Fi
+    speakers: Speakers
+    headphones-and-earphones: Headphones and Earphones
+    car-audio: Car Audio
+    radio-and-alarm-clock: Radio and Alarm Clock
+    audio-and-video: Audio and Video
+    cd-player: CD Player
+    mp3-player: MP3 Player
+    mp4-player: MP4 Player
+    blu-ray-player: Blu-Ray Player
+    dvd-player: DVD Player
+    sound-recorder: Sound Recorder
+    audio-video-accessories: Audio Video Accessories
+    radio-communication: Radio Communication
+    cb-radios: CB Radios
+    radio-antennas: Radio Antennas
+    radio-scanners: Radio Scanners
+    walkie-talkies: Walkie Talkies
+    batteries-and-power: Batteries and Power
+    batteries: Batteries
+    batteries-charger: Batteries Charger
+    batteries-and-power-accessories: Batteries and Power Accessories
+    home-garden-office-pets: home garden office pets
+    small-appliances: Small Appliances
+    coffee-tea-espresso: Coffee, Tea & Espresso
+    blenders-juicers: Blenders & Juicers
+    mixers-mixer-accessories: Mixers & Mixer Accessories
+    toasters: Toasters
+    electric-griddles-hotplates: Electric Griddles & Hotplates
+    food-processors: Food Processors
+    other-appliances: Other Appliances
+    major-appliances: Major Appliances
+    dishwashers: Dishwashers
+    dishwasher-parts-accessories: Dishwasher Parts & Accessories
+    microwave-ovens: Microwave Ovens
+    microwave-ovens-parts-accessories: Microwave Ovens Parts & Accessories
+    refrigerators-freezers: Refrigerators & Freezers
+    washers-dryers: Washers & Dryers
+    pizza-ovens: Pizza Ovens
+    furniture: Furniture
+    armoires-warddresss: Armoires & WardDresss
+    chairs-bar-stools-benches: Chairs, Bar Stools & Benches
+    bean-bags-inflatables: Bean Bags & Inflatables
+    beds-mattresses: Beds & Mattresses
+    bedroom-sets: Bedroom Sets
+    bookcases: Bookcases
+    cabinet-cupboards: Cabinet & Cupboards
+    desks-home-office-furniture: Desks & Home Office Furniture
+    dining-sets: Dining Sets
+    dressers-chests-of-drawers: Dressers & Chests of Drawers
+    entertainment-units-tv-stands: Entertainment Units, TV Stands
+    futons-covers: Futons & Covers
+    nightstands: Nightstands
+    ottomans-footstools-poufs: Ottomans, Footstools & Poufs
+    screens-room-dividers: Screens & Room Dividers
+    slipcovers: Slipcovers
+    sofas-loveseats: Sofas, Loveseats
+    tables: Tables
+    trunks-chests: Trunks & Chests
+    vanities-makeup-tables: Vanities & Makeup Tables
+    furniture-parts-accessories: Furniture Parts & Accessories
+    other-home-furniture: Other Home Furniture
+    home-decor: Home Décor
+    afghans-throw-blankets: Afghans & Throw Blankets
+    baskets: Baskets
+    bookends: Bookends
+    bottles: Bottles
+    boxes-jars-tins: Boxes, Jars & Tins
+    candles-candle-holders-accessories: Candles, Candle Holders & Accessories
+    carpets-and-rugs: carpets and rugs
+    clocks: Clocks
+    decals-stickers-vinyl-art: Decals, Stickers & Vinyl Art
+    decorative-fruit-vegetables: Decorative Fruit & Vegetables
+    floral-decor: Floral Décor
+    frames: Frames
+    home-fragrances: Home Fragrances
+    mirrors: Mirrors
+    pillows: Pillows
+    plate-racks-hangers: Plate Racks & Hangers
+    posters-prints: Posters & Prints
+    tapestries: Tapestries
+    vases: Vases
+    wall-shelves: Wall Shelves
+    other-home-decor: Other Home Décor
+    linens: Linens
+    apron: Apron
+    bed-linens: Bed Linens
+    blanket: Blanket
+    dish-towel-napkin: Dish Towel & Napkin
+    oven-glove: Oven Glove
+    tablecloth-table-runners: Tablecloth & Table Runners
+    towel: Towel
+    other-linens: Other Linens
+    lighting: Lighting
+    chandeliers: Chandeliers
+    lamps-lamp-shades: Lamps & Lamp Shades
+    light-bulbs: Light Bulbs
+    night-lights: Night Lights
+    string-lights-fairy-lights: String Lights, Fairy Lights
+    wall-fixtures: Wall Fixtures
+    lighting-parts-accessories: Lighting Parts & Accessories
+    other-lighting: Other Lighting
+    sanitary-and-plumbing: Sanitary and Plumbing
+    shower: Shower
+    bathtub: Bathtub
+    toilet: Toilet
+    washbasin: Washbasin
+    bidet: Bidet
+    faucets: Faucets
+    accessories: Accessories
+    hvac: HVAC
+    air-conditioners-coolers: Air Conditioners & Coolers
+    air-filters: Air Filters
+    air-purifiers: Air Purifiers
+    fireplace-hearth: Fireplace & Hearth
+    hvac-parts-accessories: HVAC Parts & Accessories
+    heaters: Heaters
+    portable-fans: Portable Fans
+    thermostats: Thermostats
+    ventilation: Ventilation
+    water-heaters: Water Heaters
+    garden-and-outdoors: Garden and Outdoors
+    garden-decor: Garden Décor
+    gardening-supplies: Gardening Supplies
+    lawnmowers: Lawnmowers
+    outdoor-cooking-eating: Outdoor Cooking & Eating
+    patio-garden-furniture: Patio & Garden Furniture
+    plants-seeds-bulbs: Plants, Seeds & Bulbs
+    pools-pools-parts-accessories: Pools, Pools Parts & Accessories
+    pets: Pets
+    birds-supplies: Birds & Supplies
+    cats-supplies: Cats & Supplies
+    dogs-supplies: Dogs & Supplies
+    fish-supplies: Fish & Supplies
+    other-pets-supplies: Other Pets & Supplies
+    house-cleaning: House Cleaning
+    carpet-shampooers-steamers: Carpet Shampooers & Steamers
+    carpet-floor-sweepers: Carpet & Floor Sweepers
+    cleaning-products: Cleaning Products
+    cleaning-towels-cloths: Cleaning Towels & Cloths
+    laundry-supplies: Laundry Supplies
+    mops-brooms: Mops & Brooms
+    paper-products: Paper Products
+    trash-cans-wastebaskets: Trash Cans & Wastebaskets
+    vacuum-cleaners: Vacuum Cleaners
+    vacuum-parts-accessories: Vacuum Parts & Accessories
+    other-home-cleaning-supplies: Other Home Cleaning Supplies
+    cookware-and-tableware: Cookware and Tableware
+    saucepans: Saucepans
+    frying-pans: Frying Pans
+    copper-cookware: Copper Cookware
+    casseroles: Casseroles
+    roasters-racks: Roasters & Racks
+    griddles-grill-pans: Griddles & Grill Pans
+    oven-to-tableware: Oven-to-tableware
+    saute-pans: Sauté Pans
+    stockpots: Stockpots
+    woks: Woks
+    steamers-bain-maries: Steamers & Bain-Maries
+    stovetop-kettles: Stovetop Kettles
+    egg-poachers: Egg Poachers
+    induction-cookware: Induction Cookware
+    tableware: Tableware
+    tagines: Tagines
+    other-cookware: Other Cookware
+    security-and-protection: Security and Protection
+    access-control: Access Control
+    alarms: Alarms
+    locks: Locks
+    security-cameras: Security Cameras
+    door-security: Door Security
+    safes: Safes
+    key-hiders: Key Hiders
+    security-lighting: Security Lighting
+    other-home-security-gadgets: Other Home Security Gadgets
+    clothing-and-prestige: clothing and prestige
+    men-clothing: men clothing
+    jacket: Jacket
+    bermuda: Bermuda
+    shirt: Shirt
+    coat: Coat
+    pull: Pull
+    vest: Vest
+    hoodie: Hoodie
+    t-shirt: T-Shirt
+    polo: Polo
+    blazers: Blazers
+    jean: Jean
+    pants: Pants
+    capri-pants: Capri Pants
+    short: Short
+    swimsuit: Swimsuit
+    pajamas: Pajamas
+    dressing-gown: Dressing Gown
+    underwear: Underwear
+    sportswear: Sportswear
+    shoes: Shoes
+    suit: Suit
+    workwear: Workwear
+    women-clothing: women clothing
+    dress: Dress
+    combination: Combination
+    swimsuit-1: Swimsuit
+    tank-top: Tank Top
+    vest-1: Vest
+    jean-1: Jean
+    pants-1: Pants
+    short-1: Short
+    capri-pants-1: Capri Pants
+    lingerie: Lingerie
+    bras: Bras
+    panties: Panties
+    pull-1: Pull
+    bib-brace: Bib & Brace
+    t-shirt-1: T-Shirt
+    shirt-1: Shirt
+    skirt: Skirt
+    blazers-1: Blazers
+    underwear-1: Underwear
+    pajamas-1: Pajamas
+    sportswear-1: Sportswear
+    shoes-1: Shoes
+    workwear-1: Workwear
+    nightgown: Nightgown
+    dressing-gown-1: Dressing Gown
+    girls-clothing: girls clothing
+    coat-1: Coat
+    jacket-1: Jacket
+    pull-2: Pull
+    hoodie-1: Hoodie
+    vest-2: Vest
+    t-shirt-2: T-Shirt
+    tank-top-1: Tank Top
+    blouse: Blouse
+    dress-1: Dress
+    skirt-1: Skirt
+    jean-2: Jean
+    pants-2: Pants
+    capri-pants-2: Capri Pants
+    legging: Legging
+    jogging: Jogging
+    bib-brace-1: Bib & Brace
+    combination-1: Combination
+    short-2: Short
+    bermuda-1: Bermuda
+    swimsuit-2: Swimsuit
+    pajamas-2: Pajamas
+    nightgown-1: Nightgown
+    dressing-gown-2: Dressing Gown
+    underwear-2: Underwear
+    tights: Tights
+    sportswear-2: Sportswear
+    shoes-2: Shoes
+    schoolwear: Schoolwear
+    boys-clothing: boys clothing
+    coat-2: Coat
+    jacket-2: Jacket
+    pull-3: Pull
+    hoodie-2: Hoodie
+    vest-3: Vest
+    t-shirt-3: T-Shirt
+    polo-1: Polo
+    shirt-2: Shirt
+    jean-3: Jean
+    pants-3: Pants
+    capri-pants-3: Capri Pants
+    jogging-1: Jogging
+    short-3: Short
+    bermuda-2: Bermuda
+    swimsuit-3: Swimsuit
+    pajamas-3: Pajamas
+    underwear-3: Underwear
+    sportswear-3: Sportswear
+    shoes-3: Shoes
+    schoolwear-1: Schoolwear
+    dressing-gown-3: Dressing Gown
+    babies-clothing: babies clothing
+    set: Set
+    pajamas-4: Pajamas
+    coat-3: Coat
+    t-shirt-4: T-shirt
+    tunic: Tunic
+    blouse-1: Blouse
+    pull-4: Pull
+    vest-4: Vest
+    hoodie-3: Hoodie
+    dress-2: Dress
+    skirt-2: Skirt
+    pants-4: Pants
+    jeans: Jeans
+    short-4: Short
+    combination-2: Combination
+    bib-brace-2: Bib & Brace
+    tights-1: Tights
+    swimsuit-4: Swimsuit
+    sleeping-bag: Sleeping bag
+    dressing-gown-4: Dressing Gown
+    shoes-4: Shoes
+    clothing-accessories: clothing accessories
+    umbrella: Umbrella
+    maternity-suitcase: Maternity Suitcase
+    scarf: Scarf
+    hat-cap: Hat, Cap
+    bonnet: Bonnet
+    gloves: Gloves
+    belts: Belts
+    handbags: Handbags
+    wallets: Wallets
+    tie: Tie
+    socks: Socks
+    angel-nest: Angel Nest
+    men-watches-and-jewelry: men watches and jewelry
+    wedding-bands: Wedding Bands
+    watches: Watches
+    cufflinks-and-shirt-studs: Cufflinks and Shirt Studs
+    blazer-buttons: Blazer Buttons
+    necklaces: Necklaces
+    bracelets: Bracelets
+    rings: Rings
+    women-watches-and-jewelry: women watches and jewelry
+    anklets: Anklets
+    bracelets-1: Bracelets
+    brooches-pins: Brooches & Pins
+    earrings: Earrings
+    jewelry-sets: Jewelry Sets
+    necklaces-1: Necklaces
+    wedding-bands-1: Wedding Bands
+    watches-1: Watches
+    children-watches-and-jewelry: children watches and jewelry
+    watches-2: Watches
+    anklets-1: Anklets
+    bracelets-2: Bracelets
+    earrings-1: Earrings
+    necklaces-2: Necklaces
+    bags-and-luggage: bags and luggage
+    suitcases: Suitcases
+    backpacks-and-sports-bags: Backpacks and Sports Bags
+    childrens-luggage: Childrens Luggage
+    shopping-trolleys: Shopping Trolleys
+    suit-carriers: Suit Carriers
+    briefcases: Briefcases
+    holdalls: Holdalls
+    shoulder-bags: shoulder Bags
+    bags-and-luggage-accessories: Bags and Luggage Accessories
+    health-and-beauty: health and beauty
+    bath-and-body: bath and body
+    body-moisturisers: Body Moisturisers
+    body-cleansers: Body Cleansers
+    body-scrubs: Body Scrubs
+    beautifying-oil: Beautifying Oil
+    hands-feet: Hands & Feet
+    spa-treatment: Spa & Treatment
+    aromatherapy-massage: Aromatherapy & Massage
+    bath-body-accessories: Bath & Body ACCESSORIES
+    other-bath-body-products: Other Bath & Body Products
+    hair-care-for-him: Hair Care For Him
+    shampoo: Shampoo
+    conditioner: Conditioner
+    hair-treatment: Hair Treatment
+    hair-styling: Hair Styling
+    brushes-combs: Brushes & Combs
+    hair-care-for-her: Hair Care For Her
+    shampoo-1: Shampoo
+    conditioner-1: Conditioner
+    hair-treatment-1: Hair Treatment
+    hair-styling-1: Hair Styling
+    brushes-combs-1: Brushes & Combs
+    makeup: Makeup
+    spring-trend: Spring Trend
+    all-in-one-1: All-In-One
+    face: Face
+    eyes: Eyes
+    cheeks: Cheeks
+    lips: Lips
+    bronzing: Bronzing
+    brushes-tools: Brushes & Tools
+    nails: Nails
+    skin-care: Skin Care
+    cleansers: Cleansers
+    exfoliators-masks: Exfoliators & Masks
+    toners: Toners
+    serums: Serums
+    moisturisers: Moisturisers
+    eye-care: Eye Care
+    lip-care: Lip Care
+    accessories-1: Accessories
+    oral-care: Oral Care
+    dentures: Dentures
+    flosses: Flosses
+    mouthwash: Mouthwash
+    toothbrushes: Toothbrushes
+    toothpaste: Toothpaste
+    sensitivity: Sensitivity
+    whitening: Whitening
+    baby-care: Baby Care
+    baby-wash: Baby Wash
+    bubble-bath: Bubble Bath
+    cologne: Cologne
+    cotton: Cotton
+    diaper-cream: Diaper Cream
+    gift-packs: Gift Packs
+    haircare: Haircare
+    lotion: Lotion
+    nursing-pads: Nursing Pads
+    oil: Oil
+    powder: Powder
+    wipes: Wipes
+    fragrance-for-him: Fragrance For Him
+    aftershave: Aftershave
+    deodorant: Deodorant
+    eau-de-toilette-parfum: Eau De Toilette & Parfum
+    alcohol-free: Alcohol Free
+    fragrance-for-her: Fragrance For Her
+    deodorant-1: Deodorant
+    eau-de-toilette-parfum-1: Eau De Toilette & Parfum
+    alcohol-free-1: Alcohol Free
+    vision-care: Vision Care
+    eyeglasses: Eyeglasses
+    eyeglass-lenses: Eyeglass Lenses
+    frame-styles: Frame Styles
+    sunglasses: Sunglasses
+    anti-reflective-lenses: Anti-Reflective Lenses
+    body: Body
+    entertainement-and-hobbies: entertainement and hobbies
+    video-games-and-consoles: Video Games and Consoles
+    consoles: Consoles
+    video-games: video games
+    gaming-accessories: Gaming Accessories
+    musical-instruments: Musical Instruments
+    brass: Brass
+    percussion: Percussion
+    strings: Strings
+    woodwinds: Woodwinds
+    sports-1: Sports
+    football: Football
+    basketball: BasketBall
+    cycling: Cycling
+    brass-1: Brass
+    sports-2: Sports
+    movies-and-tv-series: Movies and TV Series
+    movies: Movies
+    tv-series: TV Series
+    games-and-toys: Games and Toys
+    building-toys: Building Toys
+    dolls-puppets: Dolls & Puppets
+    electronic-games: Electronic Games
+    learning-education: Learning & Education
+    puzzles: Puzzles
+    sports-outdoor-play: Sports & Outdoor Play
+    other: Other
+    antique-and-collectible: antique and collectible
+    automobiles: Automobiles
+    sports-cars: Sports Cars
+    luxury-cars: Luxury Cars
+    large-cars: Large Cars
+    midsize-cars: Midsize Cars
+    small-cars: Small Cars
+    trucks-1: Trucks
+    motorcycles-1: Motorcycles
+    bikes-1: Bikes
+    arts: Arts
+    painting: Painting
+    sculpting: Sculpting
+    photography: Photography
+    calligraphy: Calligraphy
+    mosaic: Mosaic
+    books-and-manuscripts: Books and Manuscripts
+    agriculture: Agriculture
+    architecture: Architecture
+    art: Art
+    biography-and-memoir: Biography and Memoir
+    business: Business
+    children-fiction: Children Fiction
+    children-non-fiction: Children Non-Fiction
+    cooking-and-food: Cooking and Food
+    crafts-and-hobbies: Crafts and Hobbies
+    family-and-parenting: Family and Parenting
+    fiction: Fiction
+    fun-and-games: Fun and Games
+    gardening: Gardening
+    health-mind-and-body: Health, Mind, and Body
+    history: History
+    home-reference-how-to: Home Reference / How-To
+    humor: Humor
+    magasine: Magasine
+    medical: Medical
+    music: Music
+    newspapers: Newspapers
+    performing-arts: Performing Arts
+    pets-1: Pets
+    philosophy: Philosophy
+    photography-1: Photography
+    reference: Reference
+    religion: Religion
+    self-help: Self-Help
+    social-science: Social Science
+    sports-and-recreation: Sports and Recreation
+    transportation: Transportation
+    travel: Travel
+    furniture-and-decor: Furniture and Décor
+    armoires-warddresss-1: Armoires & WardDresss
+    chairs-bar-stools-benches-1: Chairs, Bar Stools & Benches
+    bean-bags-inflatables-1: Bean Bags & Inflatables
+    beds-mattresses-1: Beds & Mattresses
+    bookcases-1: Bookcases
+    cabinet-cupboards-1: Cabinet & Cupboards
+    desks-home-office-furniture-1: Desks & Home Office Furniture
+    dining-sets-1: Dining Sets
+    entertainment-units-tv-stands-1: Entertainment Units, TV Stands
+    ottomans-footstools-poufs-1: Ottomans, Footstools & Poufs
+    sofas-loveseats-1: Sofas, Loveseats
+    tables-1: Tables
+    afghans-throw-blankets-1: Afghans & Throw Blankets
+    candles-candle-holders-accessories-1: Candles, Candle Holders & Accessories
+    carpets-and-rugs-1: carpets and rugs
+    clocks-1: Clocks
+    decals-stickers-vinyl-art-1: Decals, Stickers & Vinyl Art
+    floral-decor-1: Floral Décor
+    frames-1: Frames
+    mirrors-1: Mirrors
+    vases-1: Vases
+    musical-instruments-1: Musical Instruments
+    brass-2: Brass
+    percussion-1: Percussion
+    strings-1: Strings
+    woodwinds-1: Woodwinds
+    lighting-1: Lighting
+    indoor: Indoor
+    outdoor: Outdoor
+    jewelry: Jewelry
+    women-jewelry: Women Jewelry
+    men-jewelry: Men Jewelry
+    women-watches: Women Watches
+    men-watches: Men Watches
+    clothing: Clothing
+    men: Men
+    women: Women
+    girl: Girl
+    boy: Boy
+    baby: Baby
+    ceramics-and-pottery: Ceramics and Pottery
+    ceramics: Ceramics
+    pottery: Pottery
+matejer_place:
+    country: Pays
+    country_placeholder: Sélectionnez le pays
+    state: Gouvernorat/Région
+    state_placeholder: Gouvernorat/Région
+    city: Ville
+    city_placeholder: Ville
+    street: Addresse
+    street_placeholder: Adresse
+    postalCode: Code postal
+    postalCode_placeholder: Code postal
+    TN: Tunisia
+    AF: Afghanistan
+    AX: Åland Islands
+    AL: Albania
+    DZ: Algeria
+    AS: American Samoa
+    AD: Andorra
+    AO: Angola
+    AI: Anguilla
+    AQ: Antarctica
+    AG: Antigua & Barbuda
+    AR: Argentina
+    AM: Armenia
+    AW: Aruba
+    AC: Ascension Island
+    AU: Australia
+    AT: Austria
+    AZ: Azerbaijan
+    BS: Bahamas
+    BH: Bahrain
+    BD: Bangladesh
+    BB: Barbados
+    BY: Belarus
+    BE: Belgium
+    BZ: Belize
+    BJ: Benin
+    BM: Bermuda
+    BT: Bhutan
+    BO: Bolivia
+    BA: Bosnia & Herzegovina
+    BW: Botswana
+    BR: Brazil
+    IO: British Indian Ocean Territory
+    VG: British Virgin Islands
+    BN: Brunei
+    BG: Bulgaria
+    BF: Burkina Faso
+    BI: Burundi
+    KH: Cambodia
+    CM: Cameroon
+    CA: Canada
+    IC: Canary Islands
+    CV: Cape Verde
+    BQ: Caribbean Netherlands
+    KY: Cayman Islands
+    CF: Central African Republic
+    EA: Ceuta & Melilla
+    TD: Chad
+    CL: Chile
+    CN: China
+    CX: Christmas Island
+    CC: Cocos (Keeling) Islands
+    CO: Colombia
+    KM: Comoros
+    CG: Congo - Brazzaville
+    CD: Congo - Kinshasa
+    CK: Cook Islands
+    CR: Costa Rica
+    CI: Côte d’Ivoire
+    HR: Croatia
+    CU: Cuba
+    CW: Curaçao
+    CY: Cyprus
+    CZ: Czech Republic
+    DK: Denmark
+    DG: Diego Garcia
+    DJ: Djibouti
+    DM: Dominica
+    DO: Dominican Republic
+    EC: Ecuador
+    EG: Egypt
+    SV: El Salvador
+    GQ: Equatorial Guinea
+    ER: Eritrea
+    EE: Estonia
+    ET: Ethiopia
+    FK: Falkland Islands
+    FO: Faroe Islands
+    FJ: Fiji
+    FI: Finland
+    FR: France
+    GF: French Guiana
+    PF: French Polynesia
+    TF: French Southern Territories
+    GA: Gabon
+    GM: Gambia
+    GE: Georgia
+    DE: Germany
+    GH: Ghana
+    GI: Gibraltar
+    GR: Greece
+    GL: Greenland
+    GD: Grenada
+    GP: Guadeloupe
+    GU: Guam
+    GT: Guatemala
+    GG: Guernsey
+    GN: Guinea
+    GW: Guinea-Bissau
+    GY: Guyana
+    HT: Haiti
+    HN: Honduras
+    HK: Hong Kong SAR China
+    HU: Hungary
+    IS: Iceland
+    IN: India
+    ID: Indonesia
+    IR: Iran
+    IQ: Iraq
+    IE: Ireland
+    IM: Isle of Man
+    IL: Israel
+    IT: Italy
+    JM: Jamaica
+    JP: Japan
+    JE: Jersey
+    JO: Jordan
+    KZ: Kazakhstan
+    KE: Kenya
+    KI: Kiribati
+    XK: Kosovo
+    KW: Kuwait
+    KG: Kyrgyzstan
+    LA: Laos
+    LV: Latvia
+    LB: Lebanon
+    LS: Lesotho
+    LR: Liberia
+    LY: Libya
+    LI: Liechtenstein
+    LT: Lithuania
+    LU: Luxembourg
+    MO: Macau SAR China
+    MK: Macedonia
+    MG: Madagascar
+    MW: Malawi
+    MY: Malaysia
+    MV: Maldives
+    ML: Mali
+    MT: Malta
+    MH: Marshall Islands
+    MQ: Martinique
+    MR: Mauritania
+    MU: Mauritius
+    YT: Mayotte
+    MX: Mexico
+    FM: Micronesia
+    MD: Moldova
+    MC: Monaco
+    MN: Mongolia
+    ME: Montenegro
+    MS: Montserrat
+    MA: Morocco
+    MZ: Mozambique
+    MM: Myanmar (Burma)
+    NA: Namibia
+    NR: Nauru
+    NP: Nepal
+    NL: Netherlands
+    NC: New Caledonia
+    NZ: New Zealand
+    NI: Nicaragua
+    NE: Niger
+    NG: Nigeria
+    NU: Niue
+    NF: Norfolk Island
+    KP: North Korea
+    MP: Northern Mariana Islands
+    NO: Norway
+    OM: Oman
+    PK: Pakistan
+    PW: Palau
+    PS: Palestinian Territories
+    PA: Panama
+    PG: Papua New Guinea
+    PY: Paraguay
+    PE: Peru
+    PH: Philippines
+    PN: Pitcairn Islands
+    PL: Poland
+    PT: Portugal
+    PR: Puerto Rico
+    QA: Qatar
+    RE: Réunion
+    RO: Romania
+    RU: Russia
+    RW: Rwanda
+    WS: Samoa
+    SM: San Marino
+    ST: São Tomé & Príncipe
+    SA: Saudi Arabia
+    SN: Senegal
+    RS: Serbia
+    SC: Seychelles
+    SL: Sierra Leone
+    SG: Singapore
+    SX: Sint Maarten
+    SK: Slovakia
+    SI: Slovenia
+    SB: Solomon Islands
+    SO: Somalia
+    ZA: South Africa
+    GS: South Georgia & South Sandwich Islands
+    KR: South Korea
+    SS: South Sudan
+    ES: Spain
+    LK: Sri Lanka
+    BL: St. Barthélemy
+    SH: St. Helena
+    KN: St. Kitts & Nevis
+    LC: St. Lucia
+    MF: St. Martin
+    PM: St. Pierre & Miquelon
+    VC: St. Vincent & Grenadines
+    SD: Sudan
+    SR: Suriname
+    SJ: Svalbard & Jan Mayen
+    SZ: Swaziland
+    SE: Sweden
+    CH: Switzerland
+    SY: Syria
+    TW: Taiwan
+    TJ: Tajikistan
+    TZ: Tanzania
+    TH: Thailand
+    TL: Timor-Leste
+    TG: Togo
+    TK: Tokelau
+    TO: Tonga
+    TT: Trinidad & Tobago
+    TA: Tristan da Cunha
+    TR: Turkey
+    TM: Turkmenistan
+    TC: Turks & Caicos Islands
+    TV: Tuvalu
+    UM: U.S. Outlying Islands
+    VI: U.S. Virgin Islands
+    UG: Uganda
+    UA: Ukraine
+    AE: United Arab Emirates
+    GB: United Kingdom
+    US: United States
+    UY: Uruguay
+    UZ: Uzbekistan
+    VU: Vanuatu
+    VA: Vatican City
+    VE: Venezuela
+    VN: Vietnam
+    WF: Wallis & Futuna
+    EH: Western Sahara
+    YE: Yemen
+    ZM: Zambia
+    ZW: Zimbabwe

@@ -1,0 +1,20 @@
+{%- block form_row -%}
+    {{- form_widget(form) -}}
+    {{- form_errors(form) -}}
+{%- endblock form_row -%}
+
+{%- block form_errors -%}
+    {%- if errors|length > 0 -%}
+    <tr class="bg-danger">
+        <td>
+            {%- for error in errors -%}
+                <span><i class="fa fa-minus-circle"></i> {{ error.message }}</span>{% if not loop.last %}<br />{% endif %}
+            {%- endfor -%}
+        </td>
+    </tr>
+    {%- endif -%}
+{%- endblock form_errors -%}
+
+{%- block textarea_widget -%}
+<tr><td review-comment comment-name="{{ full_name }}" comment-id="{{ id }}" comment-ph="{{ label|trans }}" {{ block('widget_attributes') }} comment-value="{{ value }}"></td></tr>
+{%- endblock textarea_widget -%}

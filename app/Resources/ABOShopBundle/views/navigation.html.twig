@@ -1,0 +1,84 @@
+<section class="sidebar">
+	<img src="{{ get_image(shop.image.source, 'dash_logo', shop.image.gcs) }}" class="img-responsible bg-gray-light" alt="User Image" style="height: 200px;width: 230px">
+    {#<form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Search {{ shop.name }}...">
+            <span class="input-group-btn">
+            	<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </form>#}
+    <ul class="sidebar-menu">
+        <li>
+            <a href="{{ path('abo_shop_show_home', {'slug': shop.slug}) }}"><i class="fa fa-university"></i><span>{{ shop.name }}</span></a>
+        </li>
+        <li>
+            <a href="{{ path('abo_shop_product_allproducts', {'slug': shop.slug}) }}"><i class="fa fa-tags"></i><span>{{ 'matejer_main.all_product'|trans }}</span></a>
+        </li>
+        <li class="treeview">
+            <a href="#"><i class="fa fa-cubes"></i><span>{{ 'matejer_collection.collections'|trans }}</span><i class="fa pull-right fa-angle-left"></i></a>    
+            <ul class="treeview-menu">
+                {% if collections is not defined or collections is empty %}
+                    <li><a href="#"><i class="fa fa-angle-double-right"></i>{{ 'matejer_collection.no_shop'|trans }}</a></li>
+                {% else %}
+                    {% for slugL, arrL in collections %}
+                        <li>
+                            {% if arrL.parent %}
+                                <a href="#"><i class="fa fa-angle-double-right"></i>{{ arrL.name }}<i class="fa pull-right fa-angle-left"></i></a>
+                                {% if arrL.children is not empty %}
+                                    <ul class="treeview-menu">
+                                        {% for slugLL, arrLL in arrL.children %}
+                                            <li>
+                                                {% if arrLL.parent %}
+                                                    <a href="#"><i class="fa fa-angle-double-right"></i>{{ arrLL.name }}<i class="fa pull-right fa-angle-left"></i></a>
+                                                    {% if arrLL.children is not empty %}
+                                                        <ul class="treeview-menu">
+                                                            {% for slugLLL, arrLLL in arrL.children %}
+                                                                <li><a href="{{ path('abo_shop_product_prodbycollection', {'slug': shop.slug, 'slug_col': slugLLL }) }}"><i class="fa fa-angle-right"></i>{{ arrLLL.name }}<span class="badge" style="float: right">{{ arrLLL.productNb }}</span></a></li>
+                                                            {% endfor %}
+                                                        </ul>
+                                                    {% endif %}
+                                                {% else %}
+                                                    <a href="{{ path('abo_shop_product_prodbycollection', {'slug': shop.slug, 'slug_col': slugLL }) }}"><i class="fa fa-angle-right"></i>{{ arrLL.name }}<span class="badge" style="float: right">{{ arrLL.productNb }}</span></a>
+                                                {% endif %}
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            {% else %}
+                                <a href="{{ path('abo_shop_product_prodbycollection', {'slug': shop.slug, 'slug_col': slugL }) }}"><i class="fa fa-angl-right"></i>{{ arrL.name }}<span class="badge" style="float: right">{{ arrL.productNb }}</span></a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                {% endif %}
+            </ul>
+        </li>
+        <li class="treeview">
+            <a href="#"><i class="fa fa-sitemap"></i><span>{{ 'matejer_category.categories'|trans }}</span><i class="fa pull-right fa-angle-left"></i></a>
+            <ul class="treeview-menu">
+                {% if categories is empty %}
+                    <li class="treeview"><a href="#"><i class="fa fa-angle-double-right"></i><span>{{ 'shop_navigation.no_cats'|trans }}</span><i class="fa pull-right fa-angle-left"></i></a></li>
+                {% else %}
+                    {% for parent, group in categories %}
+                        <li>
+                            <a href="#"><i class="fa fa-angle-double-right"></i>{% set cc = 'matejer_category.'~parent %}{{ cc|trans }}<i class="fa pull-right fa-angle-left fa-lg"></i></a>
+                            <ul class="treeview-menu">
+                                {% for cat in group %}
+                                    <li><a href="{{ path('abo_shop_product_prodbycategory', {'slug': shop.slug, 'slug_cat': cat.category.slug }) }}"><i class="fa fa-angle-right"></i>{{ cat.category.translatable|trans }}<span class="badge pull-right">{{ cat.productNb }}</span></a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% endfor %}
+                {% endif %}
+            </ul>
+        </li>
+        <li class="header">{{ 'matejer_shop.know_shop'|trans({'%shopname%': shop.name }) }}</li>
+        <li class="treeview">
+            <a href="{{ path('abo_shop_show_reviews', {'slug': shop.slug}) }}"><i class="fa fa-edit"></i><span>{{ 'matejer_review.reviews'|trans }}</span></a>
+        </li>
+        <li class="treeview">
+            <a href="{{ path('abo_shop_show_about', {'slug': shop.slug}) }}"><i class="fa fa-info-circle"></i><span>{{ 'matejer_shop.about'|trans({'%shopname%': shop.name}) }}</span></a>
+        </li>
+    </ul>
+</section>
+

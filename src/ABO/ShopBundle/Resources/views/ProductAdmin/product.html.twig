@@ -1,0 +1,151 @@
+{% extends "ABOShopBundle::dashShopAdmin.html.twig" %}
+
+{% block title %}{{ 'product_shop_page.title'|trans({ '%shopname%': shop.name, '%prodname%': offer.categoryProduct.fullName }) }}{% endblock %}
+{% block meta_description %}{{ descGS(offer.categoryProduct.generalSpecs) }}{% endblock %}
+{% block options %}options={token:true, check:{id:{{ offer.categoryProduct.id }},entity:'product'}, select: true};{% endblock %}
+
+{% block meta_tags %}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@{{ tw_handle }}">
+    <meta name="twitter:title" content="{{ 'product_page.share_title'|trans({ '%prodname%': offer.categoryProduct.fullName }) }}" />
+    <meta name="twitter:description" content="{{ descGS(offer.categoryProduct.generalSpecs, 200) }}">
+    <meta name="twitter:creator" content="{{ offer.categoryProduct.brand }}">
+    <meta name="twitter:image:src" content="{{ get_image(offer.categoryProduct.image.source, 'prod_modal', offer.categoryProduct.image.gcs) }}">
+    <meta property="og:title" content="{{ 'product_page.share_title'|trans({ '%prodname%': offer.categoryProduct.fullName }) }}" />
+    <meta property="og:type" content="product" />
+    <meta property="product:brand" content="{{ offer.categoryProduct.brand }}" />
+    <meta property="product:category" content="{{ offer.categoryProduct.category.translatable|trans }}" />
+    <meta property="product:retailer_title" content="{{ shop.name }}" />
+    <meta property="product:price:amount" content="{{ offer.price|number_format(2, '.', ' ') }}" />
+    <meta property="product:price:currency" content="{{ shop.transCurrency|trans }}" />
+    <meta property="product:condition" content="new" />
+    <meta property="og:url" content="{{ url('abo_shop_product_product', {'slug': shop.slug, 'slug_prod': offer.categoryProduct.product.slug }) }}" />
+    <meta property="og:image" content="{{ get_image(offer.categoryProduct.image.source, 'prod_gallery', offer.categoryProduct.image.gcs) }}" />
+    <meta property="og:description" content="{{ descGS(offer.categoryProduct.generalSpecs, 200) }}" />
+    <meta property="og:site_name" content="{{ 'matejer_main.matejer'|trans }}" />
+    <meta property="fb:app_id" content="{{ fb_app_id }}" />
+{% endblock %}
+
+{% block content_header %}
+    <div class="bread-btn">
+        <ol class="mbreadcrumb hidden-xs" vocab="http://schema.org/" typeof="BreadcrumbList">
+            <li property="itemListElement" typeof="ListItem">
+                <a property="item" typeof="WebPage"
+                   href="{{ url('abo_shop_show_homeadmin') }}">
+                    <span property="name">{{ shop.name }}</span></a>
+                <meta property="position" content="1">
+            </li>
+            <li property="itemListElement" typeof="ListItem">
+                <a property="item" typeof="WebPage"
+                   href="{{ url('abo_shop_productadmin_prodbycategory', {'slug': offer.categoryProduct.category.slug}) }}">
+                    <span property="name">{{ offer.categoryProduct.category.translatable|trans }}</span></a>
+                <meta property="position" content="2">
+            </li>
+            <li class="active" property="itemListElement" typeof="ListItem">
+                <a property="item" typeof="WebPage"
+                   href="{{ url('abo_shop_productadmin_product', {'slug': offer.categoryProduct.product.slug}) }}">
+                    <span property="name">{{ offer.categoryProduct.product.reference }}</span></a>
+                <meta property="position" content="3">
+            </li>
+        </ol>
+        <div like like-id="{{ offer.categoryProduct.id }}" theme="{[{ theme }]}"></div>
+        <div ng-controller="ShareController" class="addthis_sharing_toolbox pull-right"></div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div style="margin-bottom: 25px;" ng-controller="ProductController">
+        {{ render_esi(url('abo_main_product_description', {'id': offer.categoryProduct.id})) }}
+        <div class="box box-{[{ theme }]} box-shadow" style="padding: 0;padding-top: 10px;">
+            <div class="box-body" ng-controller="SPAOfferFormController">
+                <div ng-show="showForm" class="ng-hide">
+                    {{ render(url('abo_shop_productadmin_offerform', {'id': offer.id }) ) }}
+                </div>
+                <div ng-hide="showForm">
+                    <div class="col-xs-12" style="margin-bottom: 10px;">
+                        <a class="btn btn-danger btn-flat pull-right medium-btn" ng-click="toggleForm()">{{ 'matejer_main.edit_btn'|trans }}</a>
+                    </div>
+                    {{ render_esi(url('abo_shop_product_offerinfo', {'slug': offer.shop.slug, 'id': offer.id }) ) }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12" style="margin-bottom: 15px;">
+            <ul class="nav nav-tabs nav-justified box-shadow">
+                <li role="presentation" class="active "><a data-toggle="tab" href="#specs">{{ 'matejer_genspecs.specifications'|trans }}</a></li>
+                <li role="presentation"><a data-toggle="tab" href="#feature">{{ 'matejer_feature.features'|trans }}</a></li>
+                <li role="presentation"><a data-toggle="tab" href="#review">{{ 'matejer_review.reviews'|trans }}</a></li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div id="specs" class="tab-pane fade in active">
+                {{ render_esi(url('abo_main_product_fiches', {'id': offer.categoryProduct.id }) ) }}
+            </div>
+            <div id="feature" class="tab-pane fade">
+                {% for feature in features %}
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        {{ render_esi(url('abo_main_product_feature', {'id': feature.feature.id }) ) }}
+                    </div>
+                    {% if loop.index is even == 0 %}<div class="clearfix visible-sm-block"></div>{% endif %}
+                    {% if loop.index % 3 == 0 %}<div class="clearfix visible-md-block visible-lg-block"></div>{% endif %}
+                {% endfor %}
+            </div>
+            <div id="review" class="tab-pane fade" ng-controller="ReviewController" ng-init="init('product');title();">
+                <div class="col-md-6">
+                    {{ render_esi(url('main_review_prodratestat', {'id': offer.categoryProduct.id }) ) }}
+                </div>
+                <div id="prod_reviews_container">
+                    {{ render_esi(url('abo_main_product_productreviews', {'id': offer.categoryProduct.id }) ) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56fe9bbffa8766a6"></script>
+{% endblock %}
+
+{% block page_seo %}
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Executive Anvil",
+        "image": "https://www.matejer.com/anvil_executive.jpg",
+        "category": "Category name",
+        "description": "Sleeker than ACME's Classic Anvil, the Executive Anvil is perfect for the business traveler looking for something to drop from a height.",
+        "brand": {
+            "@type": "Thing",
+            "name": "ACME",
+            "url": "http://www.example.com/ACME"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.4",
+            "reviewCount": "89"
+        },
+        "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": "119.99",
+            "warranty": {
+                "@type": "WarrantyPromise",
+                "durationOfWarranty": {
+                    "@type": "QuantitativeValue",
+                    "value": "12",
+                    "unitText": "Months"
+                }
+            },
+            "itemCondition": "http://schema.org/NewCondition",{#UsedCondition#}
+            "availability": "http://schema.org/InStock",{#PreOrder, OutOfStock,#}
+            "seller": {
+                "@type": "Organization",
+                "name": "Executive Objects",
+                "url": "http://www.example.com/ACME"
+            }
+        }
+    }
+    </script>
+{% endblock %}

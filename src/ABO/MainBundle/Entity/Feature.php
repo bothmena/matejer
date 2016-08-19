@@ -1,0 +1,242 @@
+<?php
+
+namespace ABO\MainBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Gedmo\Translatable\Translatable;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * Feature
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="ABO\MainBundle\Entity\FeatureRepository")
+ */
+class Feature implements Translatable {
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="ABO\MainBundle\Entity\Category")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $category;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="ABO\TrademarkBundle\Entity\Trademark")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $trademark;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="ABO\MainBundle\Entity\Image")
+     */
+    private $image;
+
+    /**
+     * @var string
+     *
+     * @Gedmo\Translatable
+     * @ORM\Column(name="name", type="string", length=60)
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 60,
+     *      minMessage = "Feature name must be at least {{ limit }} characters long",
+     *      maxMessage = "Feature name cannot be longer than {{ limit }} characters",
+     * )
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @Gedmo\Translatable
+     * @ORM\Column(name="description", type="text", nullable=true)
+     * @Assert\Length(
+     *      min = 0,
+     *      max = 2500,
+     *      minMessage = "Feature description must be at least {{ limit }} characters long",
+     *      maxMessage = "Feature description cannot be longer than {{ limit }} characters",
+     * )
+     */
+    private $description;
+
+    /**
+     * @Gedmo\Slug(fields={"name"})
+     * @ORM\Column(length=80, unique=true)
+     */
+    private $slug;
+
+    /**
+     * @Gedmo\Locale
+     */
+    private $locale;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setTranslatableLocale($locale) {
+        
+        $this->locale = $locale;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Feature
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Feature
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set category
+     *
+     * @param \ABO\MainBundle\Entity\Category $category
+     *
+     * @return Feature
+     */
+    public function setCategory(\ABO\MainBundle\Entity\Category $category)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \ABO\MainBundle\Entity\Category
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Set trademark
+     *
+     * @param \ABO\TrademarkBundle\Entity\Trademark $trademark
+     *
+     * @return Feature
+     */
+    public function setTrademark(\ABO\TrademarkBundle\Entity\Trademark $trademark)
+    {
+        $this->trademark = $trademark;
+
+        return $this;
+    }
+
+    /**
+     * Get trademark
+     *
+     * @return \ABO\TrademarkBundle\Entity\Trademark
+     */
+    public function getTrademark()
+    {
+        return $this->trademark;
+    }
+
+    /**
+     * Set image
+     *
+     * @param \ABO\MainBundle\Entity\Image $image
+     *
+     * @return Feature
+     */
+    public function setImage(\ABO\MainBundle\Entity\Image $image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \ABO\MainBundle\Entity\Image
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     *
+     * @return Feature
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+}

@@ -1,0 +1,9 @@
+{% extends "::formPage.html.twig" %}
+
+{% block title %}{{ 'fos_user_resetting_reset.title'|trans }}{% endblock %}
+{% block meta_description %}{{ 'fos_user_resetting_reset.description'|trans }}{% endblock %}
+
+{% block form_box %}
+    {% include "FOSUserBundle:Resetting:reset_content.html.twig" %}
+{% endblock form_box %}
+

@@ -1,0 +1,27 @@
+<div class="register-box-body">
+    <p class="login-box-msg">{{ 'fos_user_resetting_reset.enter_pass'|trans }}</p>
+    
+    {% form_theme form ':Form:abo_registration_form.html.twig' %}
+    {{ form_start(form, { 'action': path('abo_user_resetting_reset', {'token': token}), 'attr': { 'class': 'fos_user_resetting_reset' } }) }}
+    	<div class="form-group has-feedback{% if not form.plainPassword.first.vars.valid %} has-error{% endif %}">
+            {{ form_widget(form.plainPassword.first, {'attr': {'class': 'form-control','placeholder': 'fos_user_resetting_reset.new_pass'|trans} } ) }}
+            <span class="fa fa-unlock-alt form-control-feedback"></span>
+        </div>
+        {{ form_errors(form.plainPassword.first) }}
+        <div class="form-group has-feedback{% if not form.plainPassword.second.vars.valid %} has-error{% endif %}">
+            {{ form_widget(form.plainPassword.second, {'attr': {'class': 'form-control','placeholder': 'fos_user_resetting_reset.re_new_pass'|trans} } ) }}
+        	<span class="fa fa-unlock-alt form-control-feedback"></span>
+        </div>
+        {{ form_errors(form.plainPassword.second) }}
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-xs-offset-6 col-xs-6">
+            	<button type="submit" class="btn btn-primary btn-block btn-flat">{{ 'fos_user_resetting_reset.submit'|trans }}</button>
+            </div><!-- /.col -->
+        </div>
+    {{ form_end(form) }}
+    <div class="btn-group btn-group-justified" style="margin-top: 50px;" role="group" aria-label="...">
+        <a type="button" class="btn btn-link btn-flat" href="{{ path('abo_user_security_login') }}">{{ 'user_security_login.login'|trans }}</a>
+        <a type="button" class="btn btn-link btn-flat" href="{{ path('abo_user_registration_register') }}">{{ 'user_security_login.signup'|trans }}</a>
+    </div>
+</div>
+

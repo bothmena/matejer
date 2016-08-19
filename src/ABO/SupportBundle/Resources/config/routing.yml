@@ -1,0 +1,23 @@
+support_support_home:
+    path: /support
+    defaults:
+        controller: ABOSupprtBundle:Support:home
+_home:
+    path:     /
+    defaults: { _controller: ABOSupportBundle:Main:Home }
+
+help:
+    path:     /help-center
+    defaults: { _controller: ABOSupportBundle:Main:help }
+
+guide:
+    path:     /buyer-guide
+    defaults: { _controller: ABOSupportBundle:Main:guide }
+
+story:
+    path:     /story
+    defaults: { _controller: ABOSupportBundle:Main:story }
+
+contact:
+    path:     /contact-us
+    defaults: { _controller: ABOSupportBundle:Contact:contact }

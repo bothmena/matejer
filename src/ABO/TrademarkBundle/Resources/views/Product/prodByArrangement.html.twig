@@ -1,0 +1,73 @@
+{% extends "ABOTrademarkBundle::dashBase.html.twig" %}
+
+{% block title %}{{ trademark.name }} all '{{ arrangement.name }}' products{% endblock %}
+
+{% block stylesheets %}
+    {% stylesheets 'bundles/AdminLTE_2_3_0/plugins/datatables/dataTables.bootstrap.css' filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+    {% javascripts 'bundles/AdminLTE_2_3_0/plugins/datatables/jquery.dataTables.min.js'
+    'bundles/AdminLTE_2_3_0/plugins/datatables/dataTables.bootstrap.min.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">All Products List</h3>
+                </div>
+                <div class="box-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Parent ?</th>
+                            <th>Registration Date</th>
+                            <th>Specification</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for product in products %}
+                            <tr>
+                                <td>{{ product.id }}</td>
+                                <td>{{ product.product.name }}</td>
+                                <td>{{ product.anyParent }}</td>
+                                <td>{{ product.product.date | date('d M Y') }}</td>
+                                <td><a href="{{ path('abo_trademark_product_specification', {'slug': trademark.slug, 'slug_prod': product.product.slug }) }}"> {{ product.product.slug }} </a></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Parent ?</th>
+                            <th>Registration Date</th>
+                            <th>Specification</th>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $('#example1').DataTable({
+                "paging": true,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true
+            });
+        });
+    </script>
+{% endblock %}

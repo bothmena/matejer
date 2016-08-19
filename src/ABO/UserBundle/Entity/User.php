@@ -1,0 +1,640 @@
+<?php
+
+namespace ABO\UserBundle\Entity;
+
+use ABO\MainBundle\Entity\Address;
+use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Model\User as BaseUser;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * User
+ * 
+ * @ORM\Table()
+ * @ORM\HasLifecycleCallbacks()
+ * @ORM\Entity(repositoryClass="ABO\UserBundle\Entity\UserRepository")
+ * @UniqueEntity(fields={"folder"},message="user.folder.unique_entity")
+ * @UniqueEntity(fields={"email"},message="user.email.unique_entity")
+ */
+class User extends BaseUser {
+
+    /**
+    * @ORM\PrePersist
+    */
+    public function changeUsername(){
+        if ($this->username === '' || $this->username === null){
+            $this->username = $this->email;
+            $this->usernameCanonical = $this->emailCanonical;
+        }
+    }
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="ABO\ShopBundle\Entity\Shop")
+     */
+    private $myShop;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="ABO\MainBundle\Entity\Address",cascade={"persist","remove"})
+     */
+    private $address;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="ABO\MainBundle\Entity\Image")
+     */
+    private $image;
+    
+    /**
+     * @Assert\Regex(
+     *  pattern="/(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{7,}/",
+     *  message="user.password.regex"
+     * )
+     * @Assert\Length(
+     *      min = 8,
+     *      max = 20,
+     *      minMessage = "user.password.length_min",
+     *      maxMessage = "user.password.length_max",
+     * )
+     */
+    protected $plainPassword;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="firstname", type="string", length=31)
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 30,
+     *      minMessage = "user.firstname.length_min",
+     *      maxMessage = "user.firstname.length_max",
+     * )
+     */
+    private $firstname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lastname", type="string", length=31)
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 30,
+     *      minMessage = "user.lastname.length_min",
+     *      maxMessage = "user.lastname.length_max",
+     * )
+     */
+    private $lastname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="newEmail", type="string", length=255, nullable=true)
+     * @Assert\Email(
+     *     message = "user.email.email",
+     *     checkMX = true
+     * )
+     */
+    private $newEmail;
+    
+    /**
+    * @ORM\Column(name="profileImg", type="string", length=255, nullable=true)
+    */
+    private $profileImg;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="birthday", type="date", nullable=true)
+     * @Assert\Date(
+     *     message="user.birthday.date",
+     * )
+     */
+    private $birthday;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="inscriptionDate", type="datetime")
+     * @Assert\Date(),
+     */
+    private $inscriptionDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="gender", type="string", length=6, nullable=true)
+     * @Assert\Choice(
+     *     choices = { "male", "female" },
+     *     message = "user.gender.choice",
+     * )
+     */
+    private $gender;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="language", type="string", length=2, nullable=true)
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 2,
+     *      exactMessage = "user.language.length",
+     * )
+     */
+    private $language;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="folder", type="string", length=32, unique=true, nullable=true)
+     */
+    private $folder;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="facebook_id", type="bigint", options={"unsigned"=true}, nullable=true)
+     */
+    private $facebook_id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="facebook_access_token", type="string", length=255, nullable=true)
+     */
+    private $facebookAccessToken;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="google_id", type="string", length=255, nullable=true)
+     */
+    private $google_id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="google_access_token", type="string", length=255, nullable=true)
+     */
+    private $googleAccessToken;
+    
+    public function __construct() {
+        
+        parent::__construct();
+        $this->inscriptionDate = new \DateTime;
+        $this->address = new Address();
+        $this->language = 'fr';
+    }
+
+    /**
+     * Get fullname
+     *
+     * @return string
+     */
+    public function getFullname() {
+        
+        if ( $this->username === $this->email )
+            return $this->lastname.' '.$this->firstname;
+        else
+            return $this->username;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName() {
+        
+        return $this->lastname.' '.$this->firstname;
+    }
+
+    public function confirm() {
+        
+        $this->confirmationToken = '';
+        $this->locked = false;
+        
+        return $this;
+    }
+    
+    public function getClassName() {
+        
+        return 'UserEntity';
+    }
+    
+    public function isPrimaryEmailConfirmed() {
+        
+        if(!empty($this->newEmail))
+            return true;
+        else if($this->confirmationToken === null)
+            return true;
+        else if($this->expiresAt === null)
+            return true;
+        else
+            return false;
+    }
+    
+    public function isEmailConfirmed() {
+        
+        if($this->confirmationToken === null)
+            return true;
+        else if($this->expiresAt === null)
+            return true;
+        else
+            return false;
+    }
+
+    /**
+     * Set firstname
+     *
+     * @param string $firstname
+     *
+     * @return User
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    /**
+     * Get firstname
+     *
+     * @return string
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * Set lastname
+     *
+     * @param string $lastname
+     *
+     * @return User
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    /**
+     * Get lastname
+     *
+     * @return string
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * Set newEmail
+     *
+     * @param string $newEmail
+     *
+     * @return User
+     */
+    public function setNewEmail($newEmail)
+    {
+        $this->newEmail = $newEmail;
+
+        return $this;
+    }
+
+    /**
+     * Get newEmail
+     *
+     * @return string
+     */
+    public function getNewEmail()
+    {
+        return $this->newEmail;
+    }
+
+    /**
+     * Set birthday
+     *
+     * @param \DateTime $birthday
+     *
+     * @return User
+     */
+    public function setBirthday($birthday)
+    {
+        $this->birthday = $birthday;
+
+        return $this;
+    }
+
+    /**
+     * Get birthday
+     *
+     * @return \DateTime
+     */
+    public function getBirthday()
+    {
+        return $this->birthday;
+    }
+
+    /**
+     * Set inscriptionDate
+     *
+     * @param \DateTime $inscriptionDate
+     *
+     * @return User
+     */
+    public function setInscriptionDate($inscriptionDate)
+    {
+        $this->inscriptionDate = $inscriptionDate;
+
+        return $this;
+    }
+
+    /**
+     * Get inscriptionDate
+     *
+     * @return \DateTime
+     */
+    public function getInscriptionDate()
+    {
+        return $this->inscriptionDate;
+    }
+
+    /**
+     * Set gender
+     *
+     * @param string $gender
+     *
+     * @return User
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+
+        return $this;
+    }
+
+    /**
+     * Get gender
+     *
+     * @return string
+     */
+    public function getGender()
+    {
+        return $this->gender;
+    }
+
+    /**
+     * Set language
+     *
+     * @param string $language
+     *
+     * @return User
+     */
+    public function setLanguage($language)
+    {
+        $this->language = $language;
+
+        return $this;
+    }
+
+    /**
+     * Get language
+     *
+     * @return string
+     */
+    public function getLanguage()
+    {
+        return $this->language;
+    }
+
+    /**
+     * Set folder
+     *
+     * @param string $folder
+     *
+     * @return User
+     */
+    public function setFolder($folder)
+    {
+        $this->folder = $folder;
+
+        return $this;
+    }
+
+    /**
+     * Get folder
+     *
+     * @return string
+     */
+    public function getFolder()
+    {
+        return $this->folder;
+    }
+
+    /**
+     * Set facebookAccessToken
+     *
+     * @param string $facebookAccessToken
+     *
+     * @return User
+     */
+    public function setFacebookAccessToken($facebookAccessToken)
+    {
+        $this->facebookAccessToken = $facebookAccessToken;
+
+        return $this;
+    }
+
+    /**
+     * Get facebookAccessToken
+     *
+     * @return string
+     */
+    public function getFacebookAccessToken()
+    {
+        return $this->facebookAccessToken;
+    }
+
+    /**
+     * Set googleAccessToken
+     *
+     * @param string $googleAccessToken
+     *
+     * @return User
+     */
+    public function setGoogleAccessToken($googleAccessToken)
+    {
+        $this->googleAccessToken = $googleAccessToken;
+
+        return $this;
+    }
+
+    /**
+     * Get googleAccessToken
+     *
+     * @return string
+     */
+    public function getGoogleAccessToken()
+    {
+        return $this->googleAccessToken;
+    }
+
+    /**
+     * Set myShop
+     *
+     * @param \ABO\ShopBundle\Entity\Shop $myShop
+     *
+     * @return User
+     */
+    public function setMyShop(\ABO\ShopBundle\Entity\Shop $myShop = null)
+    {
+        $this->myShop = $myShop;
+
+        return $this;
+    }
+
+    /**
+     * Get myShop
+     *
+     * @return \ABO\ShopBundle\Entity\Shop
+     */
+    public function getMyShop()
+    {
+        return $this->myShop;
+    }
+
+    /**
+     * Set address
+     *
+     * @param \ABO\MainBundle\Entity\Address $address
+     *
+     * @return User
+     */
+    public function setAddress(Address $address = null)
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * Get address
+     *
+     * @return \ABO\MainBundle\Entity\Address
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * Set image
+     *
+     * @param \ABO\MainBundle\Entity\Image $image
+     *
+     * @return User
+     */
+    public function setImage(\ABO\MainBundle\Entity\Image $image = null) {
+        
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \ABO\MainBundle\Entity\Image
+     */
+    public function getImage() {
+        
+        return $this->image;
+    }
+
+    /**
+     * Set facebook_id
+     *
+     * @param integer $facebook_id
+     *
+     * @return User
+     */
+    public function setFacebookId($facebookId)
+    {
+        $this->facebook_id = $facebookId;
+
+        return $this;
+    }
+
+    /**
+     * Get facebook_id
+     *
+     * @return integer
+     */
+    public function getFacebookId()
+    {
+        return $this->facebook_id;
+    }
+
+    /**
+     * Set profileImg
+     *
+     * @param string $profileImg
+     *
+     * @return User
+     */
+    public function setProfileImg($profileImg)
+    {
+        $this->profileImg = $profileImg;
+
+        return $this;
+    }
+
+    /**
+     * Get profileImg
+     *
+     * @return string
+     */
+    public function getProfileImg() {
+
+        if($this->facebook_id !== null)
+            return 'http://graph.facebook.com/'. $this->facebook_id .'/picture?width=230&height=200';
+        else
+            return $this->profileImg;
+    }
+
+    /**
+     * Set googleId
+     *
+     * @param string $googleId
+     *
+     * @return User
+     */
+    public function setGoogleId($googleId)
+    {
+        $this->google_id = $googleId;
+
+        return $this;
+    }
+
+    /**
+     * Get googleId
+     *
+     * @return string
+     */
+    public function getGoogleId()
+    {
+        return $this->google_id;
+    }
+}

@@ -1,0 +1,74 @@
+{% extends "ABOUserBundle::dashboardUser.html.twig" %}
+
+{% block title %}{{ 'user_profile_edit.title'|trans({'%fullname%': user.name }) }}{% endblock %}
+
+{% block content %}
+    <div class="row" style="margin-top: 15px;" ng-controller="EditProfileController" ng-init="addressUrl = '{{ url('abo_user_profile_addressform') }}';">
+        {#<a href="{{ url('abo_user_registration_confirm', {'token': user.confirmationToken}) }}">Confirm Email</a>#}
+        <div class="col-xs-12">
+            <div class="nav-tabs-custom box-shadow">
+                <ul class="nav nav-tabs pull-right">
+                    <li class=""><a href="#tab_contact" data-toggle="tab" aria-expanded="false">
+                        <i class="fa fa-phone"></i>  <span class="hidden-xs">{{ 'user_profile_edit.contact'|trans }}</span>
+                    </a></li>
+                    <li class=""><a href="#tab_address" data-toggle="tab" aria-expanded="false">
+                        <i class="fa fa-map-marker"></i> <span class="hidden-xs">{{ 'matejer_main.address'|trans }}</span>
+                    </a></li>
+                    <li class="active"><a href="#tab_perso" data-toggle="tab" aria-expanded="true">
+                        <i class="fa fa-{{ user.gender }}"></i> <span class="hidden-xs">{{ 'user_profile_edit.perso_info'|trans }}</span>
+                    </a></li>
+                    <li class="pull-left header"><i class="fa fa-sliders"></i> <span class="hidden-sm hidden-xs hidden-md">{{ 'user_profile_edit.edit_info'|trans }}</span></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab_perso">
+                        <div id="general_form_container" ng-show="!generalVisibile"></div>
+                        <div id="general_view_container" ng-show="generalVisibile">
+                            {% include 'FOSUserBundle:Profile:editViewRender.html.twig' with {'user': user, type: 'general' } %}
+                        </div>
+                        <div class="row-fluid text-right" ng-show="generalVisibile">
+                            <button type="button" ng-click="getForm('general')" class="btn btn-primary btn-flat wide-btn"><i class="fa fa-spinner fa-spin" ng-show="generalLoding"></i> {{ 'user_profile_edit.edit_perso_info'|trans }}</button>
+                        </div>
+                        <div class="row-fluid text-right" ng-show="!generalVisibile">
+                            <button type="button" ng-click="generalLoding||cancelForm('general')" ng-disabled="generalLoding" class="btn btn-default btn-flat medium-btn">{{ 'matejer_main.cancel_btn'|trans }}</button>
+                            <button type="button" ng-click="submitForm('general',$event);" class="btn btn-primary btn-flat medium-btn"><i class="fa fa-spinner fa-spin" ng-show="generalLoding"></i> {{ 'matejer_main.save_btn'|trans }}</button>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab_address">
+                        <div id="address_form_container" ng-show="!addressVisibile"></div>
+                        <div id="address_view_container" ng-show="addressVisibile">
+                            {% include 'FOSUserBundle:Profile:editViewRender.html.twig' with {'address': user.address, type: 'address' } %}
+                        </div>
+                        <div class="row-fluid text-right" ng-show="addressVisibile">
+                            <button type="button" ng-click="getForm('address')" class="btn btn-primary btn-flat wide-btn"><i class="fa fa-spinner fa-spin" ng-show="addressLoding"></i> {{ 'user_profile_edit.change_address'|trans }}</button>
+                        </div>
+                        <div class="row-fluid text-right" ng-show="!addressVisibile">
+                            <button type="button" ng-click="addressLoding||cancelForm('address')" ng-disabled="addressLoding" class="btn btn-default btn-flat medium-btn">{{ 'matejer_main.cancel_btn'|trans }}</button>
+                            <button type="button" ng-click="submitForm('address',$event)" ng-disabled="refreshingForm" class="btn btn-primary btn-flat medium-btn"><i class="fa fa-spinner fa-spin" ng-show="addressLoding||refreshingForm"></i> {{ 'matejer_main.save_btn'|trans }}</button>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab_contact">
+                        <div id="contact_form_container" ng-show="!contactVisibile"></div>
+                        <div id="contact_view_container" ng-show="contactVisibile">
+                            {% include 'FOSUserBundle:Profile:editViewRender.html.twig' with {'user': user, 'phones': phones, type: 'contact' } %}
+                        </div>
+                        <div class="row-fluid text-right" ng-show="contactVisibile">
+                            <button type="button" ng-click="getForm('contact')" class="btn btn-primary btn-flat wide-btn"><i class="fa fa-spinner fa-spin" ng-show="contactLoding"></i> {{ 'matejer_phone.edit_phone'|trans }}</button>
+                        </div>
+                        <div class="row-fluid text-right" ng-show="!contactVisibile">
+                            <button type="button" ng-click="contactLoding||cancelForm('contact')" ng-disabled="contactLoding" class="btn btn-default btn-flat medium-btn">{{ 'matejer_main.cancel_btn'|trans }}</button>
+                            <button type="button" ng-click="submitForm('contact',$event)" class="btn btn-primary btn-flat medium-btn"><i class="fa fa-spinner fa-spin" ng-show="contactLoding"></i> {{ 'matejer_main.save_btn'|trans }}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if user.myShop is null %}
+        <div class="row">
+            <div class="alert bg-teal-active box-shadow">
+                {{ 'user_profile_edit.addShop_text'|trans}} <a href='{{ path('abo_shop_registration_register') }}' class='alert-link'>{{ 'user_profile_edit.addShop_button'|trans }}</a>
+            </div>
+        </div>
+    {% endif %}
+{% endblock content %}
+

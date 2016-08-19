@@ -1,0 +1,36 @@
+{% extends "ABOShopBundle::dashShopAdmin.html.twig" %}
+
+{% block title %}{{ 'shop_show_followers.title'|trans({'%shopname%': shop.name }) }}{% endblock %}
+{% block options %}options = {token: true};{% endblock %}
+
+{% block content %}
+	<div class="row">
+		<div class="col-xs-12">
+            <div class="box box-danger box-shadow">
+                <div class="box-header">
+                    <h3 class="box-title">{{ 'shop_show_followers.follower_list'|trans }}</h3>
+                </div>
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <th>#</th>
+                                <th>{{ 'matejer_user.username'|trans }}</th>
+                                <th>{{ 'shop_show_followers.follower_from'|trans }}</th>
+                                <th>{{ 'shop_show_followers.follower_date'|trans }}</th>
+                            </tr>
+                            {% for usershop in followers %}
+                                <tr>
+                                    <td>{{ loop.index }}</td>
+                                    <td>{{ usershop.user.fullname }}</td>
+                                    <td>{{ usershop.user.address.city }}, {{ usershop.user.address.state }}, {{ usershop.user.address.countryTrans|trans }}</td>
+                                    <td>{{ usershop.date|date('d/m/Y') }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+	</div>
+{% endblock %}

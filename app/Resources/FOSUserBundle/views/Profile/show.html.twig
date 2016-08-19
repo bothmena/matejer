@@ -1,0 +1,9 @@
+{% extends "ABOUserBundle::dashboardUser.html.twig" %}
+
+{% block title %}{{ 'user_profile_show.title'|trans({'%fullname%': app.user.name }) }}{% endblock %}
+{% block options %}options = {token: true};{% endblock %}
+
+{% block content %}
+    {{ render_esi(url('abo_user_profile_profilecontent', {'id': app.user.id})) }}
+{% endblock %}
+

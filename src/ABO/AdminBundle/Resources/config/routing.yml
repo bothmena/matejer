@@ -1,0 +1,31 @@
+admin_site_categories:
+    path:     /categories
+    defaults: { _controller: ABOAdminBundle:Site:categories }
+
+admin_site_places:
+    path:     /places
+    defaults: { _controller: ABOAdminBundle:Site:places }
+
+admin_admin_dashboard:
+    path:     /dashboard
+    defaults: { _controller: ABOAdminBundle:Admin:dashboard }
+
+admin_admin_add_trademark:
+    path:     /new_tm
+    defaults: { _controller: ABOAdminBundle:Admin:addTrademark }
+
+admin_admin_all_trademark:
+    path:     all_tm
+    defaults: { _controller: ABOAdminBundle:Admin:allTrademark }
+
+admin_admin_all_shop:
+    path:     all_shop
+    defaults: { _controller: ABOAdminBundle:Admin:allShop }
+
+admin_admin_all_user:
+    path:     all_user
+    defaults: { _controller: ABOAdminBundle:Admin:allUser }
+
+admin_admin_all_product:
+    path:     all_prod
+    defaults: { _controller: ABOAdminBundle:Admin:allProduct }

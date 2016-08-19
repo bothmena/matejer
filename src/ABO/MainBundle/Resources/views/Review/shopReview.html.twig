@@ -1,0 +1,24 @@
+<div class="box box-{[{ theme }]} box-solid box-shadow">
+	<div class="box-header">
+		<h3 class="box-title">{{ ratingShop.user.fullname }}</h3>
+		<span class="pull-right"><i class="fa fa-clock-o"></i> {{ ratingShop.date|date('d/m/Y') }}</span>
+	</div>
+	<div class="box-body no-padding">
+		<table class="table table-hover">
+			<tbody>
+			<tr><td COLSPAN=2 class="bg-gray-light rate-value">{{ 'matejer_review.shop.value'|trans }}<span class="pull-right" rate-star rate-value="{{ ratingShop.rate.value }}"></span></td></tr>
+			<tr>
+				<td class="col-xs-6{% if ratingShop.rate.valueOne == 0 %} text-muted{% endif %}">{{ 'matejer_review.shop.valueOne'|trans }}<br /><span rate-star star-size="sm" rate-value="{{ ratingShop.rate.valueOne }}"></span></td>
+				<td class="col-xs-6{% if ratingShop.rate.valueTwo == 0 %} text-muted{% endif %}">{{ 'matejer_review.shop.valueTwo'|trans }}<br /><span rate-star star-size="sm" rate-value="{{ ratingShop.rate.valueTwo }}"></span></td>
+			</tr>
+			<tr>
+				<td class="col-xs-6{% if ratingShop.rate.valueThree == 0 %} text-muted{% endif %}">{{ 'matejer_review.shop.valueThree'|trans }}<br /><span rate-star star-size="sm" rate-value="{{ ratingShop.rate.valueThree }}"></span></td>
+				<td class="col-xs-6{% if ratingShop.rate.valueFour == 0 %} text-muted{% endif %}">{{ 'matejer_review.shop.valueFour'|trans }}<br /><span rate-star star-size="sm" rate-value="{{ ratingShop.rate.valueFour }}"></span></td>
+			</tr>
+			{% if ratingShop.rate.comment|length > 1 %}
+				<tr><td COLSPAN=2>{{ ratingShop.rate.comment }}</td></tr>
+			{% endif %}
+			</tbody>
+		</table>
+	</div>
+</div>

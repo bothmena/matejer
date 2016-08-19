@@ -1,0 +1,26 @@
+{% extends "ABOShopBundle::dashShopAdmin.html.twig" %}
+
+{% block title %}{{ 'shop_productadmin_pre_add.title'|trans }}{% endblock %}
+{% block options %}options = {select: true,token: true};{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row-fluid">
+	        <div class="col-xs-12 col-md-offset-3 col-md-6">
+		        <div class="box box-danger box-shadow" style="margin-top: 80px;">
+			        <div class="box-header">
+				        <h3 class="box-title"><i class="fa fa-sitemap"></i> {{ 'shop_productadmin_pre_add.panel_header'|trans }}</h3>
+			        </div>
+			        <div class="box-body">
+				        {{ form_start(form, { 'method': 'POST', 'action': path('abo_shop_productadmin_preadd') }) }}
+				        {{ form_widget(form) }}
+				        <div class="row-fluid">
+					        <input type="submit" style="margin-top: 30px;" class="btn btn-danger btn-flat medium-btn pull-right" value="{{ 'matejer_main.select_btn'|trans }}">
+				        </div>
+				        {{ form_end(form) }}
+			        </div>
+		        </div>
+	        </div>
+        </div>
+    </div>
+{% endblock %}

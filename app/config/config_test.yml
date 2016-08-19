@@ -1,0 +1,25 @@
+imports:
+    - { resource: config_dev.yml }
+
+framework:
+    test: ~
+    session:
+        storage_id: session.storage.mock_file
+    profiler:
+        collect: false
+
+web_profiler:
+    toolbar: false
+    intercept_redirects: false
+
+swiftmailer:
+    disable_delivery: true
+
+fos_http_cache:
+    test:
+        proxy_server:
+            varnish:
+                binary: /usr/sbin/varnishd
+                port: 8080
+                config_file: /etc/varnish/default.vcl
+

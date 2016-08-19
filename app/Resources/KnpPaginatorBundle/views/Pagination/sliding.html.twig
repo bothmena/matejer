@@ -1,0 +1,32 @@
+{# default Sliding pagination control implementation #}
+
+
+<div class="row"><div class="col-xs-12" style="width: 100%;text-align: center;"><div class="navigation" style="display: inline-block;"><nav>
+    {% if pageCount > 1 %}
+        <ul class="pagination">
+        {% if first is defined and current != first and first not in pagesInRange %}
+            <li class="pointer-link" ng-click="getPage('{{ path(route, query|merge({(pageParameterName): first})) }}', '{{ first }}')">
+                <a><i class="fa fa-spin fa-spinner" ng-show="isLoading('{{ first }}')"></i><span ng-hide="isLoading('{{ first }}')">{{ first }}</span></a>
+            </li><li><a>..</a></li>
+        {% endif %}
+
+        {% for page in pagesInRange %}
+            {% if page != current %}
+                <li class="pointer-link" ng-click="getPage('{{ path(route, query|merge({(pageParameterName): page})) }}', '{{ page }}')">
+                    <a><i class="fa fa-spin fa-spinner" ng-show="isLoading('{{ page }}')"></i><span ng-hide="isLoading('{{ page }}')">{{ page }}</span></a>
+                </li>
+            {% else %}
+                <li class="active"><span>{{ page }}</span></li>
+            {% endif %}
+        {% endfor %}
+
+        {% if last is defined and current != last and last not in pagesInRange %}
+            <li><a>..</a></li>
+            <li class="pointer-link" ng-click="getPage('{{ path(route, query|merge({(pageParameterName): last})) }}', '{{ last }}')">
+                <a><i class="fa fa-spin fa-spinner" ng-show="isLoading('{{ last }}')"></i><span ng-hide="isLoading('{{ last }}')">{{ last }}</span></a>
+            </li>
+        {% endif %}
+    </ul>
+    {% endif %}
+</nav></div></div></div>
+

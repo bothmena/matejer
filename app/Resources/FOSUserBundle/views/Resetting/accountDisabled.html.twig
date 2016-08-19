@@ -1,0 +1,20 @@
+{% extends "::formPage.html.twig" %}
+
+{% block title %}{{ 'fos_user_resetting_request.disabled.title'|trans }}{% endblock %}
+
+{% block form_box %}
+    <div class="register-box-body">
+    
+        <div class="callout callout-danger box-shadow" style="margin-top: 10px;">
+            <h3 class="box-title"><i class="fa fa-warning"></i> {{ 'fos_user_resetting_request.disabled.box_title'|trans }}</h3>
+            {{ 'fos_user_resetting_request.disabled.error'|trans }} <br />
+            {{ 'fos_user_resetting_request.disabled.contact'|trans }}
+        </div>
+        
+        <div class="btn-group btn-group-justified" style="margin-top: 50px;" role="group" aria-label="...">
+            <a type="button" class="btn btn-link btn-flat" href="{{ path('abo_user_security_login') }}">{{ 'user_security_login.login'|trans }}</a>
+            <a type="button" class="btn btn-link btn-flat" href="{{ path('abo_user_registration_register') }}">{{ 'user_security_login.signup'|trans }}</a>
+        </div>
+    </div>
+{% endblock form_box %}
+

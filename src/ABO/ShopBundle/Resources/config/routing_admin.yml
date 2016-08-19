@@ -1,0 +1,179 @@
+shop_productadmin_add_prod_shop: 
+    path:     /add_prod_shop/{id}
+    defaults: 
+        _controller: ABOShopBundle:ProductAdmin:addProdShop
+    requirements:
+        _method: POST
+        page: \d+
+
+shop_productadmin_pre_add:
+    path:     /new_product/select_category
+    defaults: 
+        _controller: ABOShopBundle:ProductAdmin:preAdd
+
+shop_productadmin_add:
+    path:     /new_product/{slug}
+    defaults:
+        _controller: ABOShopBundle:ProductAdmin:add
+
+shop_productadmin_offer_form:
+    path:     /prod_offer/{shopId}/{catProdId}
+    defaults:
+        _controller: ABOShopBundle:ProductAdmin:offerForm
+    requirements:
+        _method: POST
+        shopId: \d+
+        catProdId: \d+
+
+shop_productadmin_product:
+    path:     /product/{slug}
+    defaults:
+        _controller: ABOShopBundle:ProductAdmin:product
+
+shop_productadmin_product_ajax:
+    path:     /product/{slug}/{field}/{value}
+    defaults:
+        _controller: ABOShopBundle:ProductAdmin:productAjax
+    requirements:
+        _method: POST
+        field: price|warranty|discount|collection|payment|availability|change_field
+
+shop_productadmin_all_products:
+    path:     /all_products/{page}
+    defaults:
+        _controller: ABOShopBundle:ProductAdmin:allProducts
+        page: 1
+    requirements:
+        page: \d+
+
+shop_productadmin_prod_by_category:
+    path:     /category/{slug}/{page}
+    defaults:
+        _controller: ABOShopBundle:ProductAdmin:prodByCategory
+        page: 1
+    requirements:
+        page: \d+
+
+shop_productadmin_prod_by_collection:
+    path:     /collection/{slug}/{page}
+    defaults:
+        _controller: ABOShopBundle:ProductAdmin:prodByCollection
+        page: 1
+    requirements:
+        page: \d+
+
+shop_admin_setting: 
+    path:     /edit
+    defaults:
+        _controller: ABOShopBundle:Admin:setting
+        
+# $http => EditProfileController
+shop_admin_edit_general:
+    path:     /edit/general
+    defaults: { _controller: ABOShopBundle:Admin:generalForm }
+    requirements:
+        _method:  GET|POST
+        
+# $http => EditProfileController
+shop_admin_edit_address:
+    path:     /edit/address
+    defaults: { _controller: ABOShopBundle:Admin:addressForm }
+    requirements:
+        _method:  GET|POST
+        
+# $http => EditProfileController
+shop_admin_edit_contact:
+    path:     /edit/contact
+    defaults: { _controller: ABOShopBundle:Admin:contactForm }
+    requirements:
+        _method:  GET|POST
+        
+# $http => directive confirmEmail
+shop_admin_edit_confirm_mail:
+    path:     /edit/confirm_mail/{id}
+    defaults: { _controller: ABOShopBundle:Admin:confirmEmail, id :0 }
+    requirements:
+        _method:  GET|POST
+        id: \d+
+        
+# $http => directive confirmEmail
+shop_admin_edit_send_code:
+    path:     /edit/send_code/{id}
+    defaults: { _controller: ABOShopBundle:Admin:sendCode }
+    requirements:
+        _method:  POST
+        id: \d+
+
+shop_admin_set_categories:
+    path:     /categories
+    defaults:
+        _controller: ABOShopBundle:Admin:setCategories
+#$http directive colPay
+shop_admin_remove_category:
+    path:     /categories/remove/{id}
+    defaults: {_controller: ABOShopBundle:Admin:removeCategory }
+    requirements:
+        _method: GET|POST
+        id: \d+
+
+shop_admin_collections:
+    path:     /collections
+    defaults:
+        _controller: ABOShopBundle:Admin:collections
+        
+# $http => directive colPay
+shop_admin_collection_edit:
+    path:     /collections/edit/{id}
+    defaults: { _controller: ABOShopBundle:Admin:collectionEdit }
+    requirements:
+        _method:  GET|POST
+        id: \d+
+        
+# $http => directive colPay
+shop_admin_collection_remove:
+    path:     /collections/remove/{id}
+    defaults: { _controller: ABOShopBundle:Admin:collectionRemove }
+    requirements:
+        _method:  GET|POST
+        id: \d+
+
+shop_admin_payments:
+    path:     /payments
+    defaults:
+        _controller: ABOShopBundle:Admin:payments
+        
+# $http => directive colPay
+shop_admin_payment_edit:
+    path:     /payments/edit/{id}
+    defaults: { _controller: ABOShopBundle:Admin:paymentEdit }
+    requirements:
+        _method:  GET|POST
+        id: \d+
+        
+# $http => directive colPay
+shop_admin_payment_remove:
+    path:     /payments/remove/{id}
+    defaults: { _controller: ABOShopBundle:Admin:paymentRemove }
+    requirements:
+        _method:  GET|POST
+        id: \d+
+
+shop_show_home_admin: 
+    path:     /
+    defaults:
+        _controller: ABOShopBundle:Show:homeAdmin
+
+shop_show_reviews_admin:
+    path:     /reviews
+    defaults:
+        _controller: ABOShopBundle:Show:reviewsAdmin
+
+shop_show_about_admin:
+    path:     /about
+    defaults:
+        _controller: ABOShopBundle:Show:aboutAdmin
+
+shop_show_followers_admin:
+    path:     /followers
+    defaults:
+        _controller: ABOShopBundle:Show:followersAdmin

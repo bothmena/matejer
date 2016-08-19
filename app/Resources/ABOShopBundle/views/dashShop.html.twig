@@ -1,0 +1,6 @@
+{% extends "::dashBase.html.twig" %}
+
+{% block sidebar %}
+    {{ render_esi(url('abo_shop_show_navigation', {'slug': shop.slug})) }}
+{% endblock sidebar %}
+

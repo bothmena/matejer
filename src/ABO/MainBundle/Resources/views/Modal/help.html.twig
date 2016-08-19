@@ -1,0 +1,33 @@
+<div data-stat="success" data-template="true">
+    <div class="modal-body" style="padding-bottom: 0;">
+        <div class="row" style="height: 50px;width: 100%; padding: 15px 0 10px 10px;">
+            <button type="button" class="close" ng-click="dismiss()" style="position: absolute;right: 8px;top: 5px;" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h3 class="modal-title text-capitalize text-center text-info">{{ 'matejer_help.modal_title'| trans }}</h3>
+        </div>
+        <hr class="divider" style="margin: 5px 0 10px 0;">
+        <div class="row">
+            {% for item in data %}
+                <div class="col-xs-12">
+                    <div class="box box-info box-shadow">
+                        <div class="box-header">
+                            <h3 class="box-title">{{ item.title| trans }}</h3>
+                        </div>
+                        <div class="box-body">
+                            {{ item.content| trans }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="col-xs-12">
+                <div class="box box-success box-shadow">
+                    <div class="box-header">
+                        <h3 class="box-title">{{ 'matejer_help.qts_title'| trans }}</h3>
+                    </div>
+                    <div class="box-body">
+                        {{ 'matejer_help.pre_qts'| trans }} <a href="{{ path('matejer_support_contact_us') }}" target="_blank">{{ 'matejer_help.qts'| trans }}</a>{{ 'matejer_help.post_qts'| trans }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

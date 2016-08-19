@@ -1,0 +1,24 @@
+<div class="box box-{[{ theme }]} box-shadow">
+	<div class="box-header">
+		<h3 class="box-title"><i class="fa fa-line-chart"></i> {{ 'shop_show_about.followers_reviews'|trans }}</h3>
+	</div>
+	<div class="box-body">
+		<table class="table table-hover">
+			<tbody>
+				<tr>
+					<td>{{ 'shop_show_about.followers'|transchoice(shop.clientNb) }}</td>
+				</tr>
+				<td>
+					{{ 'shop_show_about.reviews'|transchoice(shop.rateStat.valueNb) }}
+				</td>
+			{% for i in 0..4 %}
+				<tr>
+					<td{% if loop.first %} class="bg-gray-light rate-value"{% endif %}>
+						{{ shop.rateStat.transValue(i, 'shop')|trans }}<span class="pull-right">({{ shop.rateStat.valueNbr(i) }}) <span rate-star rate-value="{{ shop.rateStat.valueSwitch(i) }}"></span></span>
+					</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>

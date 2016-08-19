@@ -1,0 +1,20 @@
+{% extends "ABOTrademarkBundle::dashBase.html.twig" %}
+
+{% block title %}ABOTrademarkBundle:Show:home{% endblock %}
+{% block options %}options = {imagePicker: true};{% endblock %}
+
+{% block content %}
+    <style>li div.thumbnail{ height: 130px; }</style>
+    <div class="row">
+        {{ form_start(form, { 'method': 'POST', 'action': form.vars.action }) }}
+            <div class="col-xs-12">
+                {{ form_label(form.feature) }}
+                {{ form_widget(form.feature) }}
+                {{ form_errors(form.feature) }}
+            </div>
+            <div class="col-xs-6 col-md-4 pull-right">
+                <button type="submit" class="btn btn-success btn-lg btn-block btn-flat">Save</button>
+            </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

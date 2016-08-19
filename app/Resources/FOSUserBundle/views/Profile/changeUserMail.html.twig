@@ -1,0 +1,41 @@
+{% extends "ABOUserBundle::dashboardUser.html.twig" %}
+
+{% block title %}{{ 'main_email_change_email.title'|trans }}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+        	{% if email_success is defined %}
+        		<div class="callout callout-success">
+                    <h4>{{ email_success }}</h4>
+                    <p>{{ email_confirm }}</p>
+                </div>
+            {% elseif form is defined %}
+                <div class="box box-primary box-shadow">
+                    <div class="box-header with-border">
+                    	<h3 class="box-title">{{ 'main_email_change_email.panel_header'|trans }}</h3>
+                    </div>
+                    {% form_theme form ':Form:abo_form_simple.html.twig' %}
+                    {{ form_start(form) }}
+                        <div class="box-body">
+                            <div class="callout callout-info box-shadow">
+                                <i class="fa fa-info-circle"></i> {{ 'main_email_change_email.note'|trans }}
+                            </div>
+                            {{ form_row(form.current_email) }}
+                            {% if email_error is defined %}<div class="callout callout-danger box-shadow"><i class="fa fa-minus-circle"></i> {{ email_error }}</div>{% endif %}
+                            {{ form_row(form.new_email) }}
+                            {% if new_email_error is defined %}<div class="callout callout-danger box-shadow"><i class="fa fa-minus-circle"></i> {{ new_email_error }}</div>{% endif %}
+                            {{ form_row(form.current_password) }}
+                            {% if password_error is defined %}<div class="callout callout-danger box-shadow"><i class="fa fa-minus-circle"></i> {{ password_error }}</div>{% endif %}
+                            {{ form_row(form._token) }}
+                        </div>
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-primary btn-flat pull-right">{{ 'matejer_main.change_email_btn'|trans }}</button>
+                        </div>
+                    {{ form_end(form) }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}
+

@@ -1,0 +1,18 @@
+<table class="table table-hover">
+    <tbody>
+        <tr>
+            <th class="col-xs-3">{{ 'matejer_main.name'|trans }}</th>
+            <th class="col-xs-3">{{ 'matejer_shop.slogan'|trans }}</th>
+            <th class="col-xs-3">{{ 'matejer_shop.location'|trans }}</th>
+            <th class="col-xs-3">{{ 'matejer_main.date'|trans }}</th>
+        </tr>
+        {% for shop in lastShops %}
+            <tr>
+                <td class="col-xs-3"><a href="{{ path('abo_shop_show_home', {'slug': shop.shop.slug}) }}" class="btn-link">{{ shop.shop.name }}</a></td>
+                <td class="col-xs-3">{{ shop.shop.slogan }}</td>
+                <td class="col-xs-3">{{ shop.shop.address.city }}, {{ shop.shop.address.state }}, {{ shop.shop.address.countryTrans|trans }}</td>
+                <td class="col-xs-3">{{ shop.date|date('d/m/Y') }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

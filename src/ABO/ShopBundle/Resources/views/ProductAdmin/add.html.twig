@@ -1,0 +1,60 @@
+{% extends "ABOShopBundle::dashShopAdmin.html.twig" %}
+
+{% block title %}{{ 'shop_productadmin_add.title'|trans({'%category%': category.translatable|trans }) }}{% endblock %}
+{% block options %}options = {select: true, imagePicker: false, postImgPckr: true, checkbox: true, checkClass: 'pull-left', fileStyle: true };{% endblock %}
+
+{% block content %}
+    <div class="row">
+    	{% form_theme form ':Form:abo_form_simple.html.twig' %}
+        {{ form_start(form, {'action': form.vars.action, 'method': 'POST' }) }}
+        
+        	<div class="col-xs-12 col-md-6">
+                    <div class="box box-danger box-shadow">
+                        <div class="box-header">
+                            <h3 class="box-title">{{ 'matejer_product.product_details'|trans }}</h3>
+                        </div>
+                        <div class="box-body">
+                            {{ form_row(form.product.reference) }}
+                            {{ form_row(form.product.name) }}
+                            {% if form.trademark is defined  %}
+                                {{ form_row(form.trademark) }}
+                            {% endif %}
+                            {{ form_row(form.product.mark) }}
+                            {% if form.size is defined  %}
+                                {% for field in form.size %}
+                                    {{ form_row(field) }}
+                                {% endfor %}
+                            {% endif %}
+	                        <div class="row-fluid" style="margin-top: 10px;">
+		                        {{ form_label(form.colors) }}
+		                        <div color color-btn="{[{theme}]}" color-fullname="{{ form.colors.vars.prototype.code.vars.full_name }}">
+			                        {{ form_widget(form.colors) }}
+		                        </div>
+		                        {{ form_errors(form.colors) }}
+	                        </div>
+                            {{ form_row(form.image.file) }}
+                            {{ form_row(form.image.files) }}
+                        </div>
+                    </div>
+        	</div>
+        	<div class="col-xs-12 col-md-6">
+        		<div class="box box-danger box-shadow">
+                    <div class="box-header">
+                        <h3 class="box-title">{{ 'matejer_genspecs.genspecs'|trans }}</h3>
+                    </div>
+                    <div class="box-body">
+                        {% for field in form.generalSpecs %}
+                            {{ form_row(field) }}
+                        {% endfor %}
+                        {{ form_row(form.afterSubmit) }}
+                        {{ form_row(form._token) }}
+                    </div>
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-danger btn-flat pull-right">{{ 'matejer_main.submit_prod_btn'| trans }}</button>
+                    </div>
+                </div>
+        	</div>
+        
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

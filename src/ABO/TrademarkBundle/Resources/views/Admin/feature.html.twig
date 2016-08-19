@@ -1,0 +1,37 @@
+{% extends "ABOTrademarkBundle::dashBase.html.twig" %}
+
+{% block title %}{{ 'New Features | Matejer'|trans }}{% endblock %}
+{% block options %}options = {select: true, fileStyle: true, ckeditor: true };{% endblock %}
+
+{% block javascripts %}
+    <script src="https://cdn.ckeditor.com/4.4.3/standard/ckeditor.js"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="row" style="margin-top: 25px;">
+        <div class="col-xs-12 col-md-offset-2 col-md-8">
+            <div class="box box-warning box-shadow">
+                <div class="box-header">
+                    <h3 class="box-title">{{ 'matejer_feature.new'|trans }}</h3>
+                </div>
+                <div class="box-body">
+                    {% form_theme form ':Form:abo_form_simple.html.twig' %}
+                    {{ form_start(form) }}
+                        {{ form_row(form.name) }}
+                        {{ form_row(form.description) }}
+                        {{ form_row(form.nameFr) }}
+                        {{ form_row(form.descriptionFr) }}
+                        {{ form_row(form.nameAr) }}
+                        {{ form_row(form.descriptionAr) }}
+                        {{ form_row(form.category) }}
+                        {{ form_row(form.image.file) }}
+                        {{ form_row(form._token) }}
+                    </div>
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-warning btn-flat medium-btn pull-right">{{ 'matejer_main.submit_btn'|trans }}</button>
+                    </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

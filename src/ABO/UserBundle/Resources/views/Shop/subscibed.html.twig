@@ -1,0 +1,23 @@
+{% extends "ABOUserBundle::dashboardUser.html.twig" %}
+
+{% block title %}{{ 'user_subscribed_shop.title'|trans({ '%username%': user.name }) }}{% endblock %}
+{% block options %}{% if shops is empty %}options = {token: true};{% endif %}{% endblock %}
+
+{% block content %}
+	{% if shops is empty %}
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="callout callout-warning box-shadow">
+					<i class="fa fa-warning"></i> {{ 'user_subscribed_shop.empty'|trans }}
+				</div>
+			</div>
+		</div>
+	{% else %}
+		<div class="row" ng-controller="GalleryController" style="padding: 0 10px;">
+			{% for shop in shops %}
+				{{ render_esi(url('abo_main_card_shop', {'id': shop.shop.id}) ) }}
+			{% endfor %}
+		</div>
+		<div class="row"><div class="col-xs-12"><div class="navigation">{{ knp_pagination_render(shops) }}</div></div></div>
+	{% endif %}
+{% endblock %}

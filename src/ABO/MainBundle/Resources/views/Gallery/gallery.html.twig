@@ -1,0 +1,24 @@
+{% extends "::mainBase.html.twig" %}
+
+{% block title %}{{ 'gallery_page.title'| trans }}{% endblock %}
+{% block meta_description %}{{ 'gallery_page.description'| trans }}{% endblock %}
+{% block options %}options = { {% if is_granted('ROLE_USER') %}userdata: true, {% endif %}token: true};{% endblock %}
+
+{% block content %}
+    <div class="row" ng-controller="GalleryController" ng-init="search = '{{ search }}';">
+        <div class="col-xs-12 five-pad" style="margin-bottom: 15px;">
+            <ul class="nav nav-tabs main-nav nav-justified box-shadow">
+                <li role="presentation" class="active"><a data-toggle="tab" href="#gallery_products">{{ 'gallery_page.products'|trans }}</a></li>
+                <li role="presentation"><a data-toggle="tab" ng-click="loadData('shop');" href="#gallery_shops"><i class="fa fa-spinner fa-spin pull-left" ng-show="loadingShops"></i>{{ 'gallery_page.shops'|trans }}</a></li>
+                <li role="presentation"><a data-toggle="tab" ng-click="loadData('offer');" href="#gallery_offers"><i class="fa fa-spinner fa-spin pull-left" ng-show="loadingOffers"></i>{{ 'gallery_page.offers'|trans }}</a></li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div id="gallery_products" class="tab-pane fade in active">
+                {{ render_esi(url('abo_main_gallery_galleryproduct', { 'search': search, 'page': 1 })) }}
+            </div>
+            <div id="gallery_shops" class="tab-pane fade in"></div>
+            <div id="gallery_offers" class="tab-pane fade in"></div>
+        </div>
+    </div>
+{% endblock %}

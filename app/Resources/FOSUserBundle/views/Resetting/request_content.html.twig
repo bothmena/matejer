@@ -1,0 +1,29 @@
+<div class="register-box-body">
+    <p class="login-box-msg">{{ 'fos_user_resetting_request.pre_form'|trans }}</p>
+    <form action="{{ path('abo_user_resetting_sendemail') }}" method="POST" role="form" class="form-signin">
+    	
+    	<div class="form-group has-feedback{% if invalid_username is defined %} has-error{% endif %}">
+            <input type="text" id="username" name="username" required="required" class="form-control" placeholder="{{ 'user_security_login.username_mail'|trans }}" />
+            <span class="fa fa-envelope-o form-control-feedback"></span>
+        </div>
+        
+        {% if invalid_username is defined %}
+            <div class="callout callout-danger box-shadow" style="margin-top: 10px;">
+                <i class="fa fa-warning"></i> {{ 'fos_user_resetting_request.error'|trans({'%username%': invalid_username}) }}
+            </div>
+        {% endif %}
+        
+    	<div class="row" style="margin-top: 40px;">
+            <div class="col-xs-offset-6 col-xs-6">
+            	<input type="submit" class="btn btn-primary btn-block btn-flat" value="{{ 'fos_user_resetting_request.submit'|trans }}" />
+            </div>
+        </div>
+        
+        <div class="btn-group btn-group-justified" style="margin-top: 50px;" role="group" aria-label="...">
+            <a type="button" class="btn btn-link btn-flat" href="{{ path('abo_user_security_login') }}">{{ 'user_security_login.login'|trans }}</a>
+            <a type="button" class="btn btn-link btn-flat" href="{{ path('abo_user_registration_register') }}">{{ 'user_security_login.signup'|trans }}</a>
+        </div>
+        
+    </form>
+</div>
+

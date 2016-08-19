@@ -1,0 +1,73 @@
+{% extends "ABOAdminBundle::dashBase.html.twig" %}
+
+{% block title %}ABOAdminBundle:Admin:allTrademark{% endblock %}
+
+{% block stylesheets %}
+	{% stylesheets 'bundles/AdminLTE_2_3_0/plugins/datatables/dataTables.bootstrap.css' filter='cssrewrite' %}
+    	<link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+	{% javascripts 'bundles/AdminLTE_2_3_0/plugins/datatables/jquery.dataTables.min.js'
+	    'bundles/AdminLTE_2_3_0/plugins/datatables/dataTables.bootstrap.min.js' %}
+    	<script src="{{ asset_url }}" defer></script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% block content %}
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="box">
+           		<div class="box-header">
+                	<h3 class="box-title">Data Table With Full Features</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Slogan</th>
+                                <th>Registration Date</th>
+                                <th>Slug</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	{% for item in all %}
+                                <tr>
+                                    <td>{{ item.id }}</td>
+                                    <td>{{ item.name }}</td>
+                                    <td>{{ item.slogan }}</td>
+                                    <td>{{ item.inscriptionDate | date('d M Y') }}</td>
+                                    <td><a href="{{ path('abo_trademark_show_home', {'slug': item.slug}) }}">{{ item.slug }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Slogan</th>
+                                <th>Registration Date</th>
+                                <th>Slug</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+		</div>
+	</div>
+	<script>
+      $(function () {
+        $('#example1').DataTable({
+          "paging": true,
+          "lengthChange": true,
+          "searching": true,
+          "ordering": true,
+          "info": true,
+          "autoWidth": true
+        });
+      });
+    </script>
+{% endblock %}

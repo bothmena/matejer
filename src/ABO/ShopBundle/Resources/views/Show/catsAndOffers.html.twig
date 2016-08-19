@@ -1,0 +1,24 @@
+<div class="box box-{[{ theme }]} box-shadow">
+	<div class="box-header">
+		<h3 class="box-title"><i class="fa fa-tags"></i> {{ 'shop_show_about.shop_cat_offer'|trans }}</h3>
+	</div>
+	<div class="box-body">
+		{% set prodNb = 0 %}{% set catNb = 0 %}
+		<table class="table table-hover">
+			<tr>
+				<th>{{ 'matejer_category.category'|trans }}</th>
+				<th>{{ 'matejer_offer.offers'|trans }}</th>
+			</tr>
+			{% for catShop in categories %}
+				<tr>
+					<td>{{ catShop.category.translatable|trans }}</td>
+					<td>{{ catShop.productNb }}</td>
+				</tr>
+				{% set prodNb = prodNb + catShop.productNb %}{% set catNb = catNb + 1 %}
+			{% endfor %}
+		</table>
+	</div>
+	<div class="panel-footer">
+		{{ 'matejer_offer.offer_choice'|transchoice(prodNb) }} / {{ 'matejer_category.category_choice'|transchoice(catNb) }}
+	</div>
+</div>

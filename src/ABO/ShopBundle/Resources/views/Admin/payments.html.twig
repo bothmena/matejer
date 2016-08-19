@@ -1,0 +1,101 @@
+{% extends "ABOShopBundle::dashShopAdmin.html.twig" %}
+
+{% block title %}{{ 'matejer_payment.title'|trans({'%shopname%': shop.name}) }}{% endblock %}
+{% block options %}options = {token: true};{% endblock %}
+
+{% block content %}
+	<div class="row" ng-controller="RemoveEditController">
+        <div class="col-xs-12 col-md-6" style="margin-top: 10px;">
+            <div class="box box-danger box-shadow">
+                <div class="box-header">
+                    <h3 class="box-title">{{ 'page.payments.your_payments'|trans }}</h3>
+                    <button class="btn btn-{[{theme}]} btn-circle pull-right" ng-click="enableEdit('shop')" ng-disabled="unlocking" title="{[{ tooltip }]}"><i class="fa fa-lg" ng-class="isLocked ? 'fa-lock':'fa-unlock'"></i></button>
+                </div>
+                <div class="box-body no-padding">
+                    <table class="table table-hover">
+                        <tbody>
+                        {% for shopPay in shopPayments %}
+                            <tr><td>
+                                    <div remove-edit class="editable" item-id="{{shopPay.id}}" item-name="{{shopPay.nameOrDescription|trans}}" item-type="pay" entity="shop"><span class="editable">{{ shopPay.description }} {{ 'matejer_payment.month'|trans }}</span></div>
+                                </td></tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6" style="margin-top: 10px;">
+            <div class="box box-danger box-shadow">
+                <div class="box-header">
+                    <h3 class="box-title">{{ "page.payments.panel_form_header"|trans }}</h3>
+                </div>
+                {% form_theme form ':Form:abo_form_simple.html.twig' %}
+            	{{ form_start(form, {'action': form.vars.action, 'method': 'POST' }) }}
+                    <div class="box-body">
+                    	{{ form_row(form.name) }}
+                    	{{ form_label(form.addedValue) }}
+                    	<div class="input-group">
+                            {{ form_widget(form.addedValue) }}
+                            <span class="input-group-addon" value="percent" id="addedValue-addon"> %</span>
+                    	</div>
+                    	{{ form_errors(form.addedValue) }}
+                    	{{ form_label(form.advance) }}
+                    	<div class="input-group">
+                            {{ form_widget(form.advance) }}
+                            <span class="input-group-addon" value="percent" id="advance-addon"> %</span>
+                    	</div>
+                    	{{ form_errors(form.advance) }}
+                    	{{ form_row(form.month) }}
+                    </div>
+                    <div class="box-footer">
+                        <button type="submit" id='submit' class="btn btn-danger medium-btn btn-flat pull-right">{{ 'matejer_main.save_btn'|trans }}</button>
+                	</div>
+            	{{ form_end(form) }}
+{#             <div class="box-body">#}
+{#                 <form method="post" {{form_enctype(form) }}>#}
+{#                     <div class="row-fluid" style="margin-top: 40px;">#}
+{#                         <div class="input-group">#}
+{#                             <span class="input-group-btn">#}
+{#                                 <a class="btn btn-default" type="button" style="width: 180px;">{{ "var.payment.name.label"|trans }}</a>#}
+{#                             </span>#}
+{#                             {{ form_widget(form.name) }}#}
+{#                         </div>#}
+{#                         {{ form_widget(form.name) }}#}
+{#                     </div>#}
+{#                     <div class="row-fluid" style="margin-top: 10px;">#}
+{#                     	<label>{{ "var.payment.added_value.label"|trans }}</label>#}
+{#                         <div class="input-group">#}
+{#                             {{ form_widget(form.addedValue) }}#}
+{#                             <span class="input-group-addon" name="unitePrix" value="inch" id="basic-addon1">%</span>#}
+{#                         </div>#}
+{#                         {{ form_errors(form.addedValue) }}#}
+{#                     </div>#}
+{#                     <div class="row-fluid" style="margin-top: 10px;">#}
+{#                         <div class="input-group">#}
+{#                             <span class="input-group-btn">#}
+{#                                 <a class="btn btn-default" type="button" style="width: 180px;">{{ "var.payment.advance.label"|trans }}</a>#}
+{#                             </span>#}
+{#                             {{ form_widget(form.advance) }}#}
+{#                             <span class="input-group-addon" name="unitePrix" value="inch" id="basic-addon1"> %</span>#}
+{#                         </div>#}
+{#                         {{ form_errors(form.advance) }}#}
+{#                     </div>#}
+{#                     <div class="row-fluid" style="margin-top: 10px;">#}
+{#                         <div class="input-group">#}
+{#                             <span class="input-group-btn">#}
+{#                                 <a class="btn btn-default" type="button" style="width: 180px;">{{ "var.payment.month.label"|trans }}</a>#}
+{#                             </span>#}
+{#                             {{ form_widget(form.month) }}#}
+{#                         </div>#}
+{#                         {{ form_errors(form.month) }}#}
+{#                     </div>#}
+{#                     {{ form_rest(form) }}#}
+{#                     <div class="row-fluid" style="margin-top: 20px;">#}
+{#                         <button type="submit" id='submit' class="btn btn-success btn-block" style="height: 34px; padding: 0px;">{{ 'page.general.form.add'|trans }}</button>#}
+{#                     </div>#}
+{#                 </form>#}
+{#             </div>#}
+            </div>
+        </div>
+    </div>
+{% endblock %}

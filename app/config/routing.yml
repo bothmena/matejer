@@ -1,0 +1,49 @@
+admin:
+    resource: "@ABOAdminBundle/Controller"
+    type:     annotation
+
+user_context_hash:
+    path: /user-context-hash
+    host:     matejer.local
+
+hwi_oauth_connect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
+    host:     matejer.local
+    prefix: /login
+
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    host:     matejer.local
+    prefix: /login
+
+facebook_login:
+    path: /login/check-facebook
+    host:     matejer.local
+#, host="{host}", requirements={"host" = "matejer.local|seller.matejer.local"}
+google_login:
+    path: /login/check-google
+    host:     matejer.local
+main:
+    resource: "@ABOMainBundle/Controller"
+    type:     annotation
+support:
+    resource: "@ABOSupportBundle/Controller"
+    host:     support.matejer.local
+    type:     annotation
+trademark:
+    resource: "@ABOTrademarkBundle/Controller"
+    host:     matejer.local
+    prefix:   /TM
+    type:     annotation
+user:
+    resource: "@ABOUserBundle/Controller"
+    host:     matejer.local
+    type:     annotation
+shop:
+    resource: "@ABOShopBundle/Controller"
+    type:     annotation
+
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+    host:     matejer.local
+

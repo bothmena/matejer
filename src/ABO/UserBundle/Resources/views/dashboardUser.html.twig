@@ -1,0 +1,5 @@
+{% extends "::dashBase.html.twig" %}
+
+{% block sidebar %}
+    {{ render_esi(url('abo_user_profile_navigation', {'id': app.user.id}) ) }}
+{% endblock %}

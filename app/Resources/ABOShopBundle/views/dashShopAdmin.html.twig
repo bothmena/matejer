@@ -1,0 +1,5 @@
+{% extends "ABOShopBundle::dashBase.html.twig" %}
+
+{% block sidebar %}
+    {{ render_esi(url('abo_shop_showadmin_navigationadmin', {'id': shop.id})) }}
+{% endblock sidebar %}

@@ -1,0 +1,41 @@
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "{{ offer.categoryProduct.product.nameOrReference }}",
+        "image": "{{ absolute_url(asset(offer.categoryProduct.image.source)) }}",
+        "category": "{{ offer.categoryProduct.category.translatable|trans }}",
+        "description": "{{ descGS(offer.categoryProduct.generalSpecs, 250) }}",
+        "url": "{{ url('abo_shop_product_product', {'slug': shop.slug, 'slug_prod': offer.categoryProduct.product.slug}) }}",
+        "brand": {
+            "@type": "Thing",
+            "name": "{{ offer.categoryProduct.brand }}"{#,
+            "url": "http://www.example.com/ACME"#}
+        }{% if offer.categoryProduct.rateStat.valueNb > 0 %},
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "{{ offer.categoryProduct.rateStat.value }}",
+            "reviewCount": "{{ offer.categoryProduct.rateStat.valueNb }}"
+        }{% endif %},
+        "offers": {
+            "@type": "Offer",
+            "priceCurrency": "{{ shop.transCurrency|trans }}",
+            "price": "{{ offer.price }}",
+            "warranty": {
+                "@type": "WarrantyPromise",
+                "durationOfWarranty": {
+                    "@type": "QuantitativeValue",
+                    "value": "{{ offer.warranty }}",
+                    "unitText": "Months"
+                }
+            },
+            "itemCondition": "http://schema.org/NewCondition",{#UsedCondition#}
+            "availability": "http://schema.org/{{ offer.availabilitySEO }}",
+            "seller": {
+                "@type": "Store",
+                "name": "{{ shop.name }}",
+                "url": "{{ url('abo_shop_show_home', {'slug': shop.slug}) }}"
+            }
+        }
+    }
+</script>

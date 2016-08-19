@@ -1,0 +1,65 @@
+{% extends "ABOShopBundle::dashShop.html.twig" %}
+
+{% block title %}{{ 'shop_reviews.visitor.title'|trans({'%shopname%': shop.name}) }}{% endblock %}
+{% block options %}{% if is_granted('ROLE_USER') %}options={token:true, check:{id:{{ shop.id }},entity:'shop'}};{% endif %}{% endblock %}
+
+{% block content_header %}
+    <div class="bread-btn">
+        <ol class="mbreadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+            <li property="itemListElement" typeof="ListItem">
+                <a href="{{ url('abo_shop_show_home', {'slug': shop.slug}) }}" property="item" typeof="WebPage">
+                    <span property="name">{{ shop.name }}</span>
+                </a>
+                <meta property="position" content="1">
+            </li>
+            <li property="itemListElement" typeof="ListItem">
+                <a href="{{ url('abo_shop_show_reviews', {'slug': shop.slug}) }}" property="item" typeof="WebPage">
+                    <span property="name">{{ 'matejer_review.reviews'|trans }}</span>
+                </a>
+                <meta property="position" content="2">
+            </li>
+        </ol>
+        {% if is_granted('ROLE_USER') %}<div subscribe subscribe-entity="shop" subscribe-slug="{{ shop.slug }}" theme="{[{ theme }]}"></div>{% endif %}
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="row" ng-controller="ReviewController" ng-init="init('shop');title();">
+        {{ render_esi(url('shop_show_userreviewrs', {'slug': shop.slug})) }}
+        {% if reviews is empty %}
+            <div class="row-fluid">
+                <div class="col-xs-12">
+                    <div class="callout callout-info box-shadow">
+                        <i class="fa fa-times"></i> {{ 'shop_reviews.visitor.empty'|trans }}
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <div class="row-fluid">
+                <div class="col-xs-12">
+                    <div class="callout callout-info box-shadow"><i class="fa fa-edit"></i> {{ 'shop_reviews.visitor.reviews'|trans }}</div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="col-xs-12 col-md-6">
+                    {% for review in reviews %}
+                        {% if loop.index0 is even %}
+                            {{ render_esi(url('abo_main_review_shopreview', {'id': review.id }) ) }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    {% for review in reviews %}
+                        {% if loop.index0 is odd %}
+                            {{ render_esi(url('abo_main_review_shopreview', {'id': review.id }) ) }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row"><div class="col-xs-12"><div class="navigation">{{ knp_pagination_render(reviews) }}</div></div></div>
+        {% endif %}
+    </div>
+{% endblock %}
+{% block page_seo %}
+    {{ render_esi(url('abo_shop_show_shopseo', {'slug': shop.slug})) }}
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends "::formPage.html.twig" %}
+
+{% block title %}{{ 'user_security_login.title'|trans }}{% endblock %}
+{% block meta_description %}{{ 'user_security_login.description'|trans }}{% endblock %}
+
+{% block form_box %}
+	<div class="register-box-body" ng-controller="LoginController">
+        <p class="login-box-msg">{{ 'user_security_login.pre_form'|trans }}</p>
+        <form action="{{ path("abo_user_security_check") }}" method="post" role="form" class="form-signin" >
+        	
+            <div class="form-group has-feedback{% if error %} has-error{% endif %}">
+                <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" class="form-control" placeholder="{{ 'user_security_login.username_mail'|trans }}" />
+                <span class="fa fa-envelope-o form-control-feedback"></span>
+            </div>
+            
+            <div class="form-group has-feedback{% if error %} has-error{% endif %}">
+                <input type="password" id="password" name="_password" required="required" class="form-control" placeholder="{{ 'user_security_login.password'|trans }}" />
+                <span class="fa fa-unlock-alt form-control-feedback"></span>
+            </div>
+            
+            {% if error %}
+                <div class="callout callout-danger box-shadow" style="margin-top: 10px;">
+                    <i class="fa fa-warning"></i> {{ error.messageKey|trans(error.messageData, 'security') }}
+                </div>
+            {% endif %}
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" class="form-control"/>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="checkbox icheck">
+                        <label>
+                            <input type="checkbox" id="remember_me" name="_remember_me" value="on"> {{ 'user_security_login.remember_me'|trans }} 
+                        </label>
+                    </div>
+                </div>
+                <div class="col-xs-offset-6 col-xs-6">
+                    <button type="submit" id="_submit" name="_submit" class="btn btn-primary btn-block btn-flat"><i class='fa fa-sign-in'></i> {{ 'user_security_login.login'|trans }}</button>
+                </div>
+            </div>
+        </form>
+        
+        <div class="social-auth-links text-center" id="loginfbgp">
+            <p>- {{ 'user_security_login.or'|trans }} -</p>
+            {{ render(controller('HWIOAuthBundle:Connect:connect' )) }}
+        </div>
+        <div class="btn-group btn-group-justified" style="margin-top: 50px;" role="group" aria-label="...">
+            <a type="button" class="btn btn-link btn-flat" href="{{ path('abo_user_resetting_request') }}">{{ 'user_security_login.forgotten_password'|trans }}</a>
+            <a type="button" class="btn btn-link btn-flat" href="{{ path('abo_user_registration_register') }}">{{ 'user_security_login.signup'|trans }}</a>
+        </div>
+    </div>
+{% endblock form_box %}
+{% block page_seo %}
+    <script type="application/ld+json">
+        {
+            "@context" : "http://schema.org",
+            "@type" : "WebSite",
+            "name" : "{{ 'seo.website.name'|trans }}",
+            "alternateName" : "{{ 'seo.website.alternateName'|trans }}",
+            "url" : "{{ url('abo_main_home_home') }}",
+            "genre": "{{ 'seo.website.genre'|trans }}",
+            "image": "{{ asset('/images/logo.png') }}",
+            "sameAs" : [
+			    "{{ fb_profile }}",
+			    "{{ gp_profile }}",
+			    "{{ tw_profile }}",
+			    "{{ in_profile }}",
+			    "{{ yt_profile }}"
+		  	],
+            "about": {
+                "@type": "Thing",
+                "name": "{{ 'seo.website.about.name'|trans }}",
+                "description": "{{ 'seo.website.about.description'|trans }}",
+                "url": "{{ url('abo_support_main_aboutus') }}"
+            },
+            "creator": {
+                "@type": "Person",
+                "name": "{{ 'seo.website.creator.first_name'|trans }}",
+                "familyName": "{{ 'seo.website.creator.last_name'|trans }}",
+                "birthDate": "{{ 'seo.website.creator.birthday'|trans }}",
+                "birthPlace": {
+                    "@type": "Place",
+                    "address": {
+                      "@type": "PostalAddress",
+                      "addressCountry": "{{ 'seo.website.creator.birth_place.country'|trans }}",
+                      "addressLocality": "{{ 'seo.website.creator.birth_place.locality'|trans }}"
+                    }
+                },
+                "email": "{{ 'seo.website.creator.email'|trans }}",
+                "telephone": "{{ 'seo.website.creator.telephone'|trans }}",
+                "description": "{{ 'seo.website.creator.description'|trans }}",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "{{ 'seo.website.creator.address.country'|trans }}",
+                    "addressLocality": "{{ 'seo.website.creator.address.locality'|trans }}",
+                    "streetAddress": "{{ 'seo.website.creator.address.street'|trans }}",
+                    "postalCode": "{{ 'seo.website.creator.address.postal_code'|trans }}"
+                },
+                "image": "{{ asset('/images/website.creator.jpg') }}"{#,
+                "url": "https://www.matejer.com" creator url#}
+            },
+            "keywords": "{{ 'seo.website.keywords'|trans }}",
+            "inLanguage": [{
+                    "@type": "Language",
+                    "name": "{{ 'seo.website.language.en'|trans }}"
+                },{
+                    "@type": "Language",
+                    "name": "{{ 'seo.website.language.fr'|trans }}"
+                },{
+                    "@type": "Language",
+                    "name": "{{ 'seo.website.language.ar'|trans }}"
+                }]
+        }
+    </script>
+{% endblock %}
+

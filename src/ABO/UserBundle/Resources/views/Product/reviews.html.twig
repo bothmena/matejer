@@ -1,0 +1,40 @@
+{% extends "ABOUserBundle::dashboardUser.html.twig" %}
+
+{% block title %}{{ 'user_reviews.product.title'|trans({ '%username%': user.name }) }}{% endblock %}
+{% block options %}options = {token: true};{% endblock %}
+
+{% block content %}
+    {% if reviews is empty %}
+        <div class="row">
+        	<div class="col-xs-12">
+                <div class="callout callout-warning box-shadow">
+                    {{ 'user_reviews.product.empty'|trans() }}
+                </div>
+            </div>
+        </div>
+    {% else %}
+	    <div class="row" ng-controller="ReviewController" ng-init="init('product');">
+		    <div class="col-xs-12 col-md-6">
+			    {% for review in reviews %}
+				    {% if loop.index0 is even %}
+					    <div id="user_review_container_{{ review.id }}" ng-hide="show({{ review.id }})">
+						    {{ render_esi(url('abo_main_review_userprodreview', {'id': review.id}) ) }}
+					    </div>
+					    <div id="review_form_container_{{ review.id }}" ng-show="show({{ review.id }})"></div>
+				    {% endif %}
+			    {% endfor %}
+		    </div>
+		    <div class="col-xs-12 col-md-6">
+			    {% for review in reviews %}
+				    {% if loop.index0 is odd %}
+					    <div id="user_review_container_{{ review.id }}" ng-hide="show({{ review.id }})">
+							{{ render_esi(url('abo_main_review_userprodreview', {'id': review.id}) ) }}
+					    </div>
+					    <div id="review_form_container_{{ review.id }}" ng-show="show({{ review.id }})"></div>
+				    {% endif %}
+			    {% endfor %}
+		    </div>
+	    </div>
+	    <div class="row"><div class="col-xs-12"><div class="navigation">{{ knp_pagination_render(reviews) }}</div></div></div>
+    {% endif %}
+{% endblock %}

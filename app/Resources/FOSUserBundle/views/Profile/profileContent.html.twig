@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-lg-3">
+        <div class="info-box">
+            <span class="info-box-icon bg-yellow"><i class="fa fa-heart-o"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">{{ 'profile_boxes.prod.one'|trans }}</span>
+                <span class="info-box-text">{{ 'profile_boxes.prod.two'|trans }}</span>
+                <span class="info-box-number">{{ render_esi(url('user_profile_prodsnb', {'id': user.id})) }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-lg-3">
+        <div class="info-box">
+            <span class="info-box-icon bg-red-active"><i class="fa fa-star-o"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">{{ 'profile_boxes.shop.one'|trans }}</span>
+                <span class="info-box-text">{{ 'profile_boxes.shop.two'|trans }}</span>
+                <span class="info-box-number">{{ render_esi(url('user_profile_shopsnb', {'id': user.id})) }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-lg-3">
+        <div class="info-box">
+            <span class="info-box-icon bg-orange-active"><i class="fa fa-sitemap"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">{{ 'profile_boxes.cats.one'|trans }}</span>
+                <span class="info-box-text">{{ 'profile_boxes.cats.two'|trans }}</span>
+                <span class="info-box-number">{{ render_esi(url('user_profile_catsnb', {'id': user.id})) }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-lg-3">
+        <div class="info-box">
+            <span class="info-box-icon bg-teal-active"><i class="fa fa-edit"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">{{ 'profile_boxes.reviews.one'|trans }}</span>
+                <span class="info-box-text">{{ 'profile_boxes.reviews.two'|trans }}</span>
+                <span class="info-box-number">{{ render_esi(url('user_profile_reviewsnb', {'id': user.id})) }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="box box-{[{theme}]} box-shadow">
+            <div class="box-header">
+                <h3 class="box-title">{{ 'user_profile_show.last_products'|trans }}</h3>
+            </div>
+            <div class="box-body table-responsive no-padding">
+                {{ render_esi(url('user_profile_lastprods', {'id': user.id})) }}
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="box box-{[{theme}]} box-shadow">
+            <div class="box-header">
+                <h3 class="box-title">{{ 'user_profile_show.last_shops'|trans }}</h3>
+            </div>
+            <div class="box-body table-responsive no-padding">
+                {{ render_esi(url('user_profile_lastshops', {'id': user.id})) }}
+            </div>
+        </div>
+    </div>
+</div>

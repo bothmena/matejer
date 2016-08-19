@@ -1,0 +1,69 @@
+<div data-stat="{{ stat }}"><div class="injection" data-id="review_form_container_{{ id }}">
+	<div class="box box-{[{ theme }]} box-solid box-shadow">
+		<div class="box-header" style="min-height: 50px;">
+			<h3 class="box-title">
+				{% if isNew %}
+					{{ 'matejer_review.write'|trans }} <small class="label">{{ reviewed }}</small>
+				{% else %}
+					{{ 'matejer_review.edit'|trans }} <small class="label">{{ reviewed }}</small>
+				{% endif %}
+			</h3>
+			{% if not isNew %}<a class="btn btn-sm btn-warning btn-flat pull-right" ng-click="cancelEdit()">
+				<i class="fa fa-times"></i> {{ 'matejer_main.cancel_btn'|trans }}
+			</a>{% endif %}
+		</div>
+		{% form_theme form ':Form:abo_form_review.html.twig' %}
+		{{ form_start(form) }}
+			<div class="box-body no-padding" ng-init="setIds('{{ form.rate.value.vars.id }}', '{{ form.rate.comment.vars.id }}');">
+				<table class="table table-hover">
+					<tbody>
+						<tr>
+							<th class="bg-gray-light rate-value" review-rate review-label="{{ form.rate.value.vars.label|trans }}" {% if form.rate.value.vars.value == null %}review-value="0"{% else %}review-value="{{ form.rate.value.vars.value }}"{% endif %} {{ block('widget_attributes') }}>
+								{{ form_widget(form.rate.value) }}
+							</th>
+						</tr>
+						{{ form_errors(form.rate.value) }}
+						<tr>
+							<td class="bg-danger" ng-show="valueError">
+								<i class="fa fa-minus-circle"></i> {{ 'matejer_review.form.value_error'|trans }}
+							</td>
+						</tr>
+						<tr>
+							<td review-rate review-label="{{ form.rate.valueOne.vars.label|trans }}" {% if form.rate.valueOne.vars.value == null %}review-value="0"{% else %}review-value="{{ form.rate.valueOne.vars.value }}"{% endif %} {{ block('widget_attributes') }}>
+								{{ form_widget(form.rate.valueOne) }}
+							</td>
+						</tr>
+						{{ form_errors(form.rate.valueOne) }}
+						<tr>
+							<td review-rate review-label="{{ form.rate.valueTwo.vars.label|trans }}" {% if form.rate.valueTwo.vars.value == null %}review-value="0"{% else %}review-value="{{ form.rate.valueTwo.vars.value }}"{% endif %} {{ block('widget_attributes') }}>
+								{{ form_widget(form.rate.valueTwo) }}
+							</td>
+						</tr>
+						{{ form_errors(form.rate.valueTwo) }}
+						<tr>
+							<td review-rate review-label="{{ form.rate.valueThree.vars.label|trans }}" {% if form.rate.valueThree.vars.value == null %}review-value="0"{% else %}review-value="{{ form.rate.valueThree.vars.value }}"{% endif %} {{ block('widget_attributes') }}>
+								{{ form_widget(form.rate.valueThree) }}
+							</td>
+						</tr>
+						{{ form_errors(form.rate.valueThree) }}
+						<tr>
+							<td review-rate review-label="{{ form.rate.valueFour.vars.label|trans }}" {% if form.rate.valueFour.vars.value == null %}review-value="0"{% else %}review-value="{{ form.rate.valueFour.vars.value }}"{% endif %} {{ block('widget_attributes') }}>
+								{{ form_widget(form.rate.valueFour) }}
+							</td>
+						</tr>
+						{{ form_errors(form.rate.valueFour) }}
+						{{ form_row(form.rate.comment) }}
+						<tr>
+							<td class="bg-danger" ng-show="commentError">
+								<i class="fa fa-minus-circle"></i> {{ 'matejer_review.form.comment_error'|trans({'%max_length%': form.rate.comment.vars.attr.length }) }}
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="box-footer">
+				<a class="btn btn-success btn-flat medium-btn pull-right" ng-click="submitReview();"><i class="fa fa-spinner fa-spin" ng-show="loading"></i>{{ 'matejer_main.submit_btn'|trans }}</a>
+			</div>
+		{{ form_end(form) }}
+	</div>
+</div></div>

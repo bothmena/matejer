@@ -1,0 +1,51 @@
+{% extends "ABOShopBundle::dashShop.html.twig" %}
+
+{% block title %}{{ 'shop_product_by_cat.title'|trans({ '%shopname%': shop.name, '%category%': category.translatable|trans }) }}{% endblock %}
+{% block options %}{% if is_granted('ROLE_USER') %}options={token:true, check:{id:{{ shop.id }},entity:'shop'}};{% endif %}{% endblock %}
+
+{% block content_header %}
+	<div class="bread-btn">
+		<ol class="mbreadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+			<li property="itemListElement" typeof="ListItem">
+				<a href="{{ url('abo_shop_show_home', {'slug': shop.slug}) }}" property="item" typeof="WebPage">
+					<span property="name">{{ shop.name }}</span>
+				</a>
+				<meta property="position" content="1">
+			</li>
+			<li property="itemListElement" typeof="ListItem">
+				<a href="{{ url('abo_shop_product_allproducts', {'slug': shop.slug}) }}" property="item" typeof="WebPage">
+					<span property="name">{{ 'matejer_main.all_product'|trans }}</span>
+				</a>
+				<meta property="position" content="2">
+			</li>
+			<li property="itemListElement" typeof="ListItem">
+				<a href="{{ url('abo_shop_product_prodbycategory', {'slug': shop.slug, 'slug_cat': category.slug}) }}" property="item" typeof="WebPage">
+					<span property="name">{{ category.translatable|trans }}</span>
+				</a>
+				<meta property="position" content="3">
+			</li>
+		</ol>
+		{% if is_granted('ROLE_USER') %}<div subscribe subscribe-entity="shop" subscribe-slug="{{ shop.slug }}" theme="{[{ theme }]}"></div>{% endif %}
+	</div>
+{% endblock %}
+{% block content %}
+	{% if products is empty %}
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="callout callout-warning box-shadow">
+					<i class="fa fa-warning"></i> {{ 'shop_product_by_cat.no_product'|trans({ '%category%': category.translatable|trans }) }}
+				</div>
+			</div>
+		</div>
+	{% else %}
+		<div class="row" ng-controller="GalleryController" style="padding: 0 10px;">
+			{% for prod in products %}
+				{{ render_esi(url('abo_main_card_offer', {'id': prod.id }) ) }}
+			{% endfor %}
+		</div>
+		<div class="row"><div class="col-xs-12"><div class="navigation">{{ knp_pagination_render(products) }}</div></div></div>
+	{% endif %}
+{% endblock %}
+{% block page_seo %}
+    {{ render_esi(url('abo_shop_show_shopseo', {'slug': shop.slug})) }}
+{% endblock %}

@@ -1,0 +1,31 @@
+<div class="row-fluid">
+    <div class="col-xs-12">
+        <table class="table table-responsive table-fiche" style="background-color: #fff">
+            <tbody>
+            {% for groupName, fiche in fiches %}
+                {% set even = loop.index0 is even %}
+                {% if fiche.type == 'simple' %}
+                    {% for item in fiche.fiches %}
+                        <tr{% if even %} class="active"{% endif %}>
+                            {% if loop.first %}
+                                <td rowspan="{{ fiche.fiches|length }}" class="col-lg-3 vcenter"><h4>{{ groupName }}</h4></td>
+                            {% endif %}
+                            <td colspan="2" class="col-lg-9">{{ item }}</td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    {% for key, value in fiche.fiches %}
+                        <tr{% if even %} class="active"{% endif %}>
+                            {% if loop.first %}
+                                <th rowspan="{{ fiche.fiches|length }}" class="col-lg-3 vcenter">{{ groupName }}</th>
+                            {% endif %}
+                            <th class="col-lg-3">{{ key }}</th>
+                            <td class="col-lg-6">{{ value }}</td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

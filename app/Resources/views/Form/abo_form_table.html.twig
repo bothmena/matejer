@@ -1,0 +1,72 @@
+{%- block form_row -%}
+	<tr><td>{{- form_label(form) -}}</td>
+	<td>
+        {% if block_prefixes.2 == 'birthday' %}
+            <div class="row-fluid">
+                <span class="col-xs-4 no-padding">
+                    {{- form_widget(form.children.day) -}}
+                </span>
+                <span class="col-xs-4 no-padding">
+                    {{- form_widget(form.children.month) -}}
+                </span>
+                <span class="col-xs-4 no-padding">
+                    {{- form_widget(form.children.year) -}}
+                </span>
+            </div>
+            <div class="row-fluid">
+            	{{- form_errors(form) -}}
+            </div>
+        {% else %}
+            <div class="form-group no-margin{%- if errors|length > 0 -%} has-error{%- endif -%}">
+              	{{- form_widget(form) -}}
+              	{{- form_errors(form) -}}
+            </div>
+        {% endif %}
+    </td></tr>
+{%- endblock form_row -%}
+
+{%- block form_errors -%}
+    {%- if errors|length > 0 -%}
+    	<div class="callout callout-danger box-shadow" style="margin-top: 5px;">
+        	{%- for error in errors -%}
+                <p><i class="fa fa-minus-circle"></i> {{ error.message }}</p>
+            {%- endfor -%}
+  		</div>
+    {%- endif -%}
+{%- endblock form_errors -%}
+
+{%- block form_label -%} 
+    {% if label is empty -%}
+        {%- if label_format is not empty -%}
+            {% set label = label_format|replace({ 
+                '%name%': name, 
+                '%id%': id, 
+            }) %} 
+        {%- else -%}
+            {% set label = name|humanize %}
+        {%- endif -%}
+    {%- endif -%}
+    {% if label is not same as(false) -%}
+        <b>{{ translation_domain is same as(false) ? label : label|trans({}, translation_domain) }}</b>
+    {%- endif -%}
+{%- endblock form_label -%}
+
+{%- block choice_widget_collapsed -%}
+    {%- if required and placeholder is none and not placeholder_in_choices and not multiple -%}
+        {% set required = false %}
+    {%- endif -%}
+    <select {{ block('widget_attributes') }} class="form-control" {% if multiple %} multiple="multiple"{% endif %}>
+        {%- if placeholder is not none -%}
+            <option value=""{% if required and value is empty %} selected="selected"{% endif %}>{{ placeholder != '' ? placeholder|trans({}, translation_domain) }}</option>
+        {%- endif -%}
+        {%- if preferred_choices|length > 0 -%}
+            {% set options = preferred_choices %}
+            {{- block('choice_widget_options') -}}
+            {%- if choices|length > 0 and separator is not none -%}
+                <option disabled="disabled">{{ separator }}</option>
+            {%- endif -%}
+        {%- endif -%}
+        {%- set options = choices -%}
+        {{- block('choice_widget_options') -}}
+    </select>
+{%- endblock choice_widget_collapsed -%}

@@ -1,0 +1,48 @@
+<div data-stat="success"><div class="row-fluid">
+    {% if is_granted('ROLE_USER') %}
+        {% if shop.rateStat.valueNb == 0 %}
+            <div class="col-xs-12">
+                <div class="callout callout-info box-shadow">
+                    <i class="fa fa-thumbs-up"></i> {{ 'shop_reviews.visitor.be_the_first'|trans }}
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 injection" id="shop_stats_container" data-id="shop_stats_container">
+                {{ render_esi(url('main_review_shopratestat', {'id': shop.id})) }}
+            </div>
+            <div class="col-xs-12 col-md-6 injection" id="user_review_container_{{ id }}" data-id="user_review_container_{{ id }}" ng-hide="show(0)"></div>
+            <div class="col-xs-12 col-md-6" id="review_form_container_{{ id }}" ng-init="edit = true;" ng-show="show(0)">
+                {{ render_esi(url('abo_main_review_newshopreview', {'slug': shop.slug }) ) }}
+            </div>
+        {% elseif userReview is null %}
+            <div class="col-xs-12">
+                <div class="callout callout-info box-shadow">
+                    <i class="fa fa-thumbs-up"></i> {{ 'shop_reviews.visitor.review'|trans }}
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 injection" data-id="shop_stats_container" id="shop_stats_container">
+                {{ render_esi(url('main_review_shopratestat', {'id': shop.id})) }}
+            </div>
+            <div class="col-xs-12 col-md-6 injection" data-id="user_review_container_{{ id }}" id="user_review_container_{{ id }}" ng-hide="show(0)"></div>
+            <div class="col-xs-12 col-md-6" id="review_form_container_{{ id }}" ng-init="edit = true;" ng-show="show(0)">
+                {{ render_esi(url('abo_main_review_newshopreview', {'slug': shop.slug }) ) }}
+            </div>
+        {% else %}
+            <div class="col-xs-12 col-md-6 injection" data-id="shop_stats_container" id="shop_stats_container">
+                {{ render_esi(url('main_review_shopratestat', {'id': shop.id})) }}
+            </div>
+            <div class="col-xs-12 col-md-6 injection" data-id="user_review_container_{{ id }}" id="user_review_container_{{ id }}" ng-hide="show({{ id }})">
+                {{ render_esi(url('abo_main_review_usershopreview', {'id': userReview.id }) ) }}
+            </div>
+            <div class="col-xs-12 col-md-6 injection" data-id="review_form_container_{{ id }}" id="review_form_container_{{ id }}" ng-show="show({{ id }})"></div>
+        {% endif %}
+    {% else %}
+        <div class="col-xs-12">
+            <div class="callout callout-info box-shadow">
+                <i class="fa fa-sign-in"></i> {{ 'shop_reviews.visitor.login_to_rvw'|trans }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            {{ render_esi(url('main_review_shopratestat', {'id': shop.id})) }}
+        </div>
+    {% endif %}
+</div></div>

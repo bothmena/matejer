@@ -1,0 +1,7 @@
+{{ form_start(form, {'attr': {'class': 'form-inline', 'role': 'form'}}) }}
+    <i class="fa fa-language"></i>
+    <div class="form-group">
+        {{ form_widget(form.language, {'attr': {'class': 'form-control footer-slc'}}) }}
+    </div>
+    <button type="submit" class="btn btn-flat footer-btn"><span class="fa fa-arrow-right fa-lg"></span></button>
+{{ form_end(form) }}

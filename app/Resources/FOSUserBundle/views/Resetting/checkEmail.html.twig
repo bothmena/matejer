@@ -1,0 +1,20 @@
+{% extends "::formPage.html.twig" %}
+
+{% block title %}{{ 'fos_user_resetting_request.password_requested.title_email'|trans }}{% endblock %}
+
+{% block form_box %}
+    <div class="register-box-body">
+        
+            <div class="callout callout-info box-shadow" style="margin-top: 10px;">
+                <i class="fa fa-thumbs-up"></i> {{ 'fos_user_resetting_request.password_requested.email_sent'|trans({'%email%': email}) }}
+            </div>
+            
+            <div class="btn-group btn-group-justified" style="margin-top: 50px;" role="group" aria-label="...">
+                <a type="button" class="btn btn-success btn-flat" href="{{ path('abo_user_security_login') }}">{{ 'user_security_login.login'|trans }}</a>
+                <a type="button" class="btn btn-success btn-flat" href="{{ path('abo_user_registration_register') }}">{{ 'user_security_login.signup'|trans }}</a>
+            </div>
+            
+        </form>
+    </div>
+{% endblock form_box %}
+

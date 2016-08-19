@@ -1,0 +1,98 @@
+{%- block form_row -%}
+    {% if name == 'file' or name == 'files' %}
+        <div class="row-fluid input-file-cont" data-label="{{ label|trans }}" style="margin-top: 10px;">
+            {{ form_widget(form) }}
+        </div>
+        <div class="row-fluid well box-shadow" id="{{ attr['well'] }}" style="margin-top: 5px;"></div>
+    {% elseif name == 'parentColors' %}
+	    {{- form_label(form) -}}<br>
+	    {% for color in form %}
+		    <label class="color-label">{{- form_widget(color) -}}<div class="color" style="background-color: #{{ color.vars.label }}"></div></label>
+	    {% endfor %}
+    {% elseif attr['data-render'] is defined %}
+        {% if attr['data-render'] ==  'addon' %}
+            <div class="form-group{% if errors|length > 0 %} has-error{% endif %}">
+                {{- form_label(form) -}}
+                <div class="input-group">
+                    {{- form_widget(form) -}}
+                    <span class="input-group-addon" id="{{ attr['aria-describedby'] }}">{{ attr['data-addon']|trans }}</span>
+                </div>
+                {{- form_errors(form) -}}
+            </div>
+        {% elseif attr['data-render'] ==  'first-half' %}
+            {{- form_label(form) -}}
+            <div class="row">
+                <div class="col-sm-12 col-lg-6">
+                    <div class="form-group{% if errors|length > 0 %} has-error{% endif %}">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="{{ attr['aria-describedby'] }}">{{ attr['data-addon'] | trans }}</span>
+                            {{- form_widget(form) -}}
+                        </div>
+                        {{- form_errors(form) -}}
+                    </div>
+                </div>
+        {% elseif attr['data-render'] ==  'second-half' %}
+                <div class="col-sm-12 col-lg-6">
+                    <div class="form-group{% if errors|length > 0 %} has-error{% endif %}">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="{{ attr['aria-describedby'] }}">{{ attr['data-addon'] | trans }}</span>
+                            {{- form_widget(form) -}}
+                        </div>
+                        {{- form_errors(form) -}}
+                    </div>
+                </div>
+            </div>
+        {% elseif attr['data-render'] ==  'radio-inline' %}
+            <div class="form-group{% if errors|length > 0 %} has-error{% endif %}">
+                {{- form_label(form) -}}
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label class="btn btn-default btn-flat btn-block">
+                            {{- form_widget(form.0) -}}{{ form.0.vars.label | trans }}
+                        </label>
+                    </div>
+                    <div class="col-lg-6">
+                        <label class="btn btn-default btn-flat btn-block">
+                            {{- form_widget(form.1) -}}{{ form.1.vars.label | trans }}
+                        </label>
+                    </div>
+                </div>
+                {{- form_errors(form) -}}
+            </div>
+        {% endif %}
+    {% else %}
+    	<div class="form-group{% if errors|length > 0 %} has-error{% endif %}">
+            {{- form_label(form) -}}
+            {{- form_widget(form) -}}
+            {{- form_errors(form) -}}
+        </div>
+    {% endif %}
+{%- endblock form_row -%}
+
+{%- block form_errors -%}
+    {%- if errors|length > 0 -%}
+        <div class="row-fluid" style="margin-top: 5px;">
+            <div class="callout callout-danger box-shadow">
+                {%- for error in errors -%}
+                    <p><i class="fa fa-minus-circle"></i> {{ error.message }}</p>
+                {%- endfor -%}
+            </div>
+        </div>
+    {%- endif -%}
+{%- endblock form_errors -%}
+
+{%- block form_label -%} 
+    {% if label is empty -%}
+        {%- if label_format is not empty -%}
+            {% set label = label_format|replace({ 
+                '%name%': name, 
+                '%id%': id, 
+            }) %} 
+        {%- else -%}
+            {% set label = name|humanize %}
+        {%- endif -%}
+    {%- endif -%}
+    {% if label is not same as(false) -%}
+        <label class="control-label">{{ translation_domain is same as(false) ? label : label|trans({}, translation_domain) }}</label>
+    {%- endif -%}
+{%- endblock form_label -%}

@@ -1,0 +1,70 @@
+<a href="{{ path('abo_main_home_home') }}" class="logo">
+    <img src="https://matejer.storage.googleapis.com/images/dheader-compact-120.png">
+</a>
+<nav class="navbar navbar-static-top" role="navigation">
+    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </a>
+    <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+            {% if is_granted('ROLE_USER') %}
+                <li>
+                    <a href="{{ path('abo_main_gallery_gallery') }}">
+                        <i class="fa fa-th-large"></i> <span class="hidden-xs">{{ 'matejer_main.gallery'|trans }}</span>
+                    </a>
+            	</li>
+                <li class="user user-menu">
+                    <a href="{{ path('abo_user_profile_show') }}">
+                        <img src="{% if user.image == null %}{{ user.profileImg }}{% else %}{{ get_image(user.image.source, 'avatar', user.image.gcs) }}{% endif %}" class="user-image" alt="User Image">
+                        <span class="hidden-xs">{{ user.name }}</span>
+                    </a>
+                </li>
+                {% if is_granted('ROLE_TAJER') %}
+                    <li class="user user-menu">
+                        <a href="{{ path('abo_shop_show_homeadmin') }}">
+                            <img src="{{ get_image(user.myShop.image.source, 'avatar', user.myShop.image.gcs) }}" class="user-image" alt="User Image">
+                            <span class="hidden-xs">{{ user.myShop.name }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+                <li class="dropdown messages-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu scrollable-menu">
+                        <li><a href="{{ path('abo_user_profile_edit') }}"><i class="fa fa-gears"></i> {{ 'matejer_user.profile_setting'|trans }}</a></li>
+                        <li><a href="{{ path('abo_user_product_liked') }}"><i class="fa fa-heart-o"></i> {{ 'matejer_user.wishlist'|trans }}</a></li>
+                        <li><a href="{{ path('abo_user_shop_subscibed') }}"><i class="fa fa-star-o"></i> {{ 'matejer_user.fallowed_shop'|trans }}</a></li>
+                        {% if is_granted('ROLE_TAJER') %}
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header"> {{ 'page.general.shop_administration'|trans }}</li>
+                            <li><a href="{{ path('abo_shop_admin_setting') }}"><i class="fa fa-gears"></i> {{ 'matejer_shop.shop_setting'|trans }}</a></li>
+                            <li><a href="{{ path('abo_shop_productadmin_allproducts') }}"><i class="fa fa-cubes"></i> {{ 'matejer_main.all_product'|trans }}</a></li>
+                            <li><a href="{{ path('abo_shop_productadmin_preadd') }}"><i class="fa fa-plus-square-o"></i> {{ 'matejer_main.new_product'|trans }}</a></li>
+                        {% endif %}
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">{{ 'matejer_main.administration'|trans }}</li>
+                            <li><a href="{{ path('abo_admin_admin_dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                            <li><a href="{{ path('abo_admin_admin_addtrademark') }}"><i class="fa fa-plus-square-o"></i> New Trademark</a></li>
+                            <li><a href="{{ path('abo_admin_admin_alltrademark') }}"><i class="fa fa-trademark"></i> Trademarks List</a></li>
+                            <li><a href="{{ path('abo_admin_admin_allshop') }}"><i class="fa fa-university"></i> Shops List</a></li>
+                            <li><a href="{{ path('abo_admin_admin_alluser') }}"><i class="fa fa-users"></i> Users List</a></li>
+                            <li><a href="{{ path('abo_admin_admin_allproduct') }}"><i class="fa fa-tags"></i> Products List</a></li>
+                        {% endif %}
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{{ path('abo_user_security_logout') }}"><i class="fa fa-sign-out"></i> {{ 'matejer_main.logout'|trans }}</a></li>
+                    </ul>
+                </li>
+            {% else %}
+            	<li><a href="{{ path('abo_main_gallery_gallery') }}"><i class="fa fa-th-large"></i> <span class="hidden-xs">{{ 'matejer_main.gallery'|trans }}</span></a></li>
+                <li><a href="{{ path('abo_user_security_login') }}"><i class="fa fa-sign-in"></i> {{ 'user_security_login.login'|trans }}</a></li>
+                <li><a href="{{ path('abo_user_registration_register') }}"><i class="fa fa-user-plus"></i> {{ 'user_security_register.signup'|trans }}</a></li>
+            {% endif %}
+        </ul>
+    </div>
+{#         {% endif %}#}
+</nav>

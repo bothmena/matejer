@@ -1,0 +1,93 @@
+{% if type == 'general' %}
+    <table class="table table-bordered table-hover">
+        <tbody>
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_user.firstname'|trans }}</b></td>
+                <td class="col-xs-7 col-md-9">{{ user.firstname }}</td>
+            </tr>
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_user.lastname'|trans }}</b></td>
+                <td class="col-xs-7 col-md-9">{{ user.lastname }}</td>
+            </tr>
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_user.username'|trans }}</b></td>
+                <td class="col-xs-7 col-md-9">{% if user.username != user.email %}{{ user.username }}{% endif %}</td>
+            </tr>
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_user.birthday'|trans }}</b></td>
+                <td class="col-xs-7 col-md-9">{{ user.birthday|date('d/m/Y') }}</td>
+            </tr>
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_user.gender'|trans }}</b></td>
+                <td class="col-xs-7 col-md-9">{% set gnd = 'matejer_main.gender_' ~ user.gender %}{{ gnd|trans }}</td>
+            </tr>
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_language.language'|trans }}</b></td>
+                <td class="col-xs-7 col-md-9">{% set lang = 'matejer_language.'~user.language %}{{ lang|trans }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% elseif type == 'address' %}
+    <table class="table table-bordered table-hover">
+        <tbody>
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_place.country'|trans }}</b></td>
+                <td class="col-xs-7 col-md-9">{% if address.country != '' and address.country != null %}{{ address.countryTrans|trans }}{% endif %}</td>
+            </tr>
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_place.state'|trans }}</b></td>
+                <td class="col-xs-7 col-md-9">{{ address.state }}</td>
+            </tr>
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_place.city'|trans }}</b></td>
+                <td class="col-xs-7 col-md-9">{{ address.city }}</td>
+            </tr>
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_place.street'|trans }}</b></td>
+                <td class="col-xs-7 col-md-9">{{ address.street }}</td>
+            </tr>
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_place.postalCode'|trans }}</b></td>
+                <td class="col-xs-7 col-md-9">{{ address.postalCode }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% elseif type == 'contact' %}
+    <table class="table table-bordered table-hover">
+        <tbody>
+            {% set unconfirmed = false %}
+            {% if user.confirmationToken != null and user.newEmail == '' %}{% set unconfirmed = true %}{% endif %}
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_email.email'|trans }}{% if unconfirmed %}<span class="text-danger"> ( {{ 'matejer_email.unconfirmed'|trans }} * )</span>{% endif %}</b></td>
+                <td class="col-xs-7 col-md-9">{{ user.email }}</td>
+            </tr>
+            {% if user.newEmail != '' %}
+            <tr>
+                <td class="col-xs-5 col-md-3"><b>{{ 'matejer_email.new_email'|trans }}<span class="text-danger"> ( {{ 'matejer_email.unconfirmed'|trans }} * )</span></b></td>
+                <td class="col-xs-7 col-md-9">{{ user.newEmail }}</td>
+            </tr>
+            {% endif %}
+            {% if phones|length == 0 %}
+                <tr>
+                    <td class="col-xs-5 col-md-3"><b>{{ 'matejer_phone.user_phones'|trans }}</b></td>
+                    <td class="col-xs-7 col-md-9">{{ 'matejer_phone.no_phone_user'|trans }}</td>
+                </tr>
+            {% else %}
+                {% for phone in phones %}
+                    {% if loop.first %}
+                        <tr>
+                            <td class="col-xs-5 col-md-3"><b>{{ 'matejer_phone.user_phones'|trans }}</b></td>
+                            <td class="col-xs-7 col-md-9">({{ phone.phoneCode }}) {{ phone.subscriber }}</td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td class="col-xs-5 col-md-3"></td>
+                            <td class="col-xs-7 col-md-9">({{ phone.phoneCode }}) {{ phone.subscriber }}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+{% endif %}
+

@@ -1,0 +1,9 @@
+1
+/uploads/website/website/male.png
+2
+/uploads/website/website/female.png
+3
+/uploads/website/website/shop-logo.png
+4
+/uploads/website/website/shop-cover.jpg
+5

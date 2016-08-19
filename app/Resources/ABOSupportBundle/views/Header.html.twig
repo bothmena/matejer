@@ -1,0 +1,139 @@
+<header class="main-header">
+    <nav class="navbar navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="{{ path('abo_main_home_home') }}" class="navbar-brand">
+                    <img src="https://matejer.storage.googleapis.com/images/header-compact-120.png">
+                </a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                <ul class="nav navbar-nav">
+                    {% if is_granted('ROLE_USER') %}
+                        <li>
+                            <a href="{{ path('abo_main_gallery_gallery') }}">
+                                <i class="fa fa-th-large"></i> <span class="hidden-sm">{{ 'matejer_main.gallery'|trans }}</span>
+                            </a>
+                        </li>
+                        <li class="user user-menu">
+                            <a href="{{ path('abo_user_profile_show') }}">
+                                <img src="{% if user.image == null %}{{ user.profileImg }}{% else %}{{ get_image(user.image.source, 'avatar', user.image.gcs) }}{% endif %}" class="user-image" alt="User Image"> <span class="hidden-sm">{{ user.name }}</span>
+                            </a>
+                        </li>
+                        {% if is_granted('ROLE_TAJER') %}
+                            <li class="user user-menu">
+                                <a href="{{ path('abo_shop_show_homeadmin') }}">
+                                    <img src="{{ get_image(user.myShop.image.source, 'avatar', user.myShop.image.gcs) }}" class="user-image" alt="User Image"> <span class="hidden-sm">{{ user.myShop.name }}</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% else %}
+                        <li><a href="{{ path('abo_main_gallery_gallery') }}">
+                                <i class="fa fa-th-large"></i> {{ 'matejer_main.gallery'|trans }}{% if page is defined %} <span class="sr-only">(current)</span>{% endif %}
+                            </a></li>
+                        <li><a href="{{ path('abo_user_security_login') }}"><i class="fa fa-sign-in"></i> {{ 'user_security_login.login'|trans }}</a></li>
+                        <li><a href="{{ path('abo_user_registration_register') }}"><i class="fa fa-user-plus"></i> {{ 'user_security_register.signup'|trans }}</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            {% if is_granted('ROLE_USER') %}
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown messages-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu scrollable-menu">
+                                <li><a href="{{ path('abo_user_profile_edit') }}"><i class="fa fa-gears"></i> {{ 'matejer_user.profile_setting'|trans }}</a></li>
+                                <li><a href="{{ path('abo_user_product_liked') }}"><i class="fa fa-heart-o"></i> {{ 'matejer_user.wishlist'|trans }}</a></li>
+                                <li><a href="{{ path('abo_user_shop_subscibed') }}"><i class="fa fa-star-o"></i> {{ 'matejer_user.fallowed_shop'|trans }}</a></li>
+                                {% if is_granted('ROLE_TAJER') %}
+                                    <li role="separator" class="divider"></li>
+                                    <li class="dropdown-header"> {{ 'page.general.shop_administration'|trans }}</li>
+                                    <li><a href="{{ path('abo_shop_admin_setting') }}"><i class="fa fa-gears"></i> {{ 'matejer_shop.shop_setting'|trans }}</a></li>
+                                    <li><a href="{{ path('abo_shop_productadmin_allproducts') }}"><i class="fa fa-cubes"></i> {{ 'matejer_main.all_product'|trans }}</a></li>
+                                    <li><a href="{{ path('abo_shop_productadmin_preadd') }}"><i class="fa fa-plus-square-o"></i> {{ 'matejer_main.new_product'|trans }}</a></li>
+                                {% endif %}
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <li role="separator" class="divider"></li>
+                                    <li class="dropdown-header">{{ 'matejer_main.administration'|trans }}</li>
+                                    <li><a href="{{ path('abo_admin_admin_dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                                    <li><a href="{{ path('abo_admin_admin_addtrademark') }}"><i class="fa fa-plus-square-o"></i> New Trademark</a></li>
+                                    <li><a href="{{ path('abo_admin_admin_alltrademark') }}"><i class="fa fa-trademark"></i> Trademarks List</a></li>
+                                    <li><a href="{{ path('abo_admin_admin_allshop') }}"><i class="fa fa-university"></i> Shops List</a></li>
+                                    <li><a href="{{ path('abo_admin_admin_alluser') }}"><i class="fa fa-users"></i> Users List</a></li>
+                                    <li><a href="{{ path('abo_admin_admin_allproduct') }}"><i class="fa fa-tags"></i> Products List</a></li>
+                                {% endif %}
+                                <li role="separator" class="divider"></li>
+                                <li><a href="{{ path('abo_user_security_logout') }}"><i class="fa fa-sign-out"></i> {{ 'matejer_main.logout'|trans }}</a></li>
+                            </ul>
+                        </li>
+                        {#<li class="dropdown messages-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            	<i class="fa fa-envelope-o"></i><span class="label label-success">4</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have 4 messages</li>
+                                <li>
+                                    <ul class="menu">
+                                        <li>
+                                            <a href="#">
+                                                <div class="pull-left">
+                                                    <img src="{{ get_image(user.image.source, 'avatar', user.image.gcs) }}" class="img-circle" alt="User Image">
+                                                </div>
+                                                <h4> Support Team <small><i class="fa fa-clock-o"></i> 5 mins</small></h4>
+                                                <p>Why not buy a new awesome theme?</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="#">See All Messages</a></li>
+                            </ul>
+                        </li>#}
+                        {#<li class="dropdown notifications-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bell-o"></i><span class="label label-warning">10</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have 10 notifications</li>
+                                <li>
+                                    <ul class="menu">
+                                        <li>
+                                        	<a href="#"><i class="fa fa-users text-aqua"></i> 5 new members joined today</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="#">View all</a></li>
+                            </ul>
+                        </li>#}
+                    </ul>
+                </div>
+            {% endif %}
+        </div>
+    </nav>
+</header>
+<style>
+    .business-header {margin-top: 50px;height: 400px;background: url("https://matejer.storage.googleapis.com/images/support-cover.jpg") center center no-repeat scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;}
+</style>
+<div class="business-header">
+    <div class="container">
+        <div class="row" style="margin-top: 250px;">
+            <div class="col-lg-12">
+                <h1 class="text-center">How Can We Help You ?</h1>
+            </div>
+        </div>
+        <div class="row" style="">
+            <div class="col-lg-offset-3 col-lg-6">
+                <div class="input-group">
+                    <input type="search" placeholder="Search..." class="form-control input-lg">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-lg btn-success btn-flat"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

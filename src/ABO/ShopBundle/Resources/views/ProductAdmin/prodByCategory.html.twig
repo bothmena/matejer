@@ -1,0 +1,23 @@
+{% extends "ABOShopBundle::dashShopAdmin.html.twig" %}
+
+{% block title %}{{ 'shop_productadmin_by_cat.title'|trans({ '%shopname%': shop.name,'%category%': category.translatable|trans }) }}{% endblock %}
+{% block options %}options = {token: true};{% endblock %}
+
+{% block content %}
+	{% if products is empty %}
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="callout callout-warning box-shadow">
+					<i class="fa fa-warning"></i> {{ 'shop_productadmin_by_cat.no_product'|trans({ '%category%': category.translatable|trans }) }}
+				</div>
+			</div>
+		</div>
+	{% else %}
+		<div class="row" ng-controller="GalleryController" style="padding: 0 10px;">
+			{% for prod in products %}
+				{{ render_esi(url('abo_main_card_offer', {'id': prod.id }) ) }}
+			{% endfor %}
+		</div>
+		<div class="row"><div class="col-xs-12"><div class="navigation">{{ knp_pagination_render(products) }}</div></div></div>
+	{% endif %}
+{% endblock %}

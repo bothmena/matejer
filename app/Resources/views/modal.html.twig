@@ -1,0 +1,73 @@
+{# 
+    parameters :
+    size = sm|lg
+    close = hide|remove
+    footer_btn = html|undefined
+    body = html|undefined
+    header = header|undefined
+    spin = true|false
+#}
+{% if size == 'sm' %}
+    {% set modalId = 'mySmModal' %}
+    <div id="mySmModal" class="modal fade" role="dialog" style="z-index: 2000">
+        <div class="modal-dialog">
+            <div class="modal-content box-shadow">
+                <div class="modal-header">
+                    <button type="button" class="close abo_hide_modal" data-modal-id="mySmModal" aria-hidden="true"><i class="fa fa-times"></i></button>
+                    <h4 class="modal-title text-primary text-center"><i class="fa fa-spinner fa-spin {%if not spin%}hidden{%endif%}" style="float: left"></i>{% block sm_modal_header %}{{ 'matejer_main.loading'|trans }}{% endblock %}</h4>
+                </div>
+                <div class="modal-body" style="min-height: 100px;">
+                    {% block sm_modal_body %}{% endblock %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default abo_hide_modal" data-modal-id="mySmModal">{{ 'matejer_main.cancel_btn'|trans }}</button>
+                    {% block sm_modal_footer %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% elseif size =='lg' %}
+    {% set modalId = 'myModal' %}
+    <div id="myModal" class="modal fade" role="dialog" style="z-index: 2000">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content box-shadow">
+                <div class="modal-header">
+                    <button type="button" class="close abo_hide_modal" data-modal-id="myModal" aria-hidden="true"><i class="fa fa-times"></i></button>
+                    <h4 class="modal-title text-primary text-center"><i class="fa fa-spinner fa-spin {%if not spin%}hidden{%endif%}" style="float: left"></i>{% block modal_header %}{{ 'matejer_main.loading'|trans }}{% endblock %}</h4>
+                </div>
+                <div class="modal-body" style="min-height: 100px;">
+                    {% block modal_body %}{% endblock %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default abo_hide_modal" data-modal-id="myModal">{{ 'matejer_main.cancel_btn'|trans }}</button>
+                    {% block modal_footer %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %} 
+<script>
+	$('document').ready(function(){
+		$('.abo_hide_modal').click(function(){
+            var id = $(this).attr('data-modal-id');
+            hideModal(id);
+        });
+	});
+        
+    {% if close == 'hide' %}
+        function hideModal(id){
+            $('#'+id).modal('hide');
+        }
+    {% elseif close =='remove' %}
+        var modalContent;
+        $(document).ready(function(){modalContent = $('#myModal').find('.modal-content').html();});
+        $('body').on('hidden.bs.modal', '.modal', function () {
+            $(this).removeData('bs.modal');
+        });
+        function hideModal(id){
+            $('#'+id).modal('hide');
+            modalContent = modalContent.replace('myModal',id);
+            $('#'+id).find('.modal-content').html(modalContent);
+        }
+    {% endif %} 
+</script>

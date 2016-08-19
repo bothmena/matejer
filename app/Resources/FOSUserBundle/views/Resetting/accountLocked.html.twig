@@ -1,0 +1,24 @@
+{% extends "::formPage.html.twig" %}
+
+{% block title %}{{ 'fos_user_resetting_request.locked.title'|trans }}{% endblock %}
+
+{% block form_box %}
+    <div class="register-box-body">
+        
+        <div class="callout callout-danger box-shadow" style="margin-top: 10px;">
+            <h3 class="box-title"><i class="fa fa-warning"></i> {{ 'fos_user_resetting_request.locked.box_title'|trans }}</h3>
+            <p>{{ 'fos_user_resetting_request.locked.error'|trans }}</p>
+        </div>
+    	<div class="row" style="margin-top: 40px;">
+            <div class="col-xs-offset-6 col-xs-6">
+                <a href="{{ path('abo_user_resetting_sendconfirmcode') }}" class="btn btn-primary btn-block btn-flat">{{ 'fos_user_resetting_request.confirm_email'|trans }}</a>
+            </div>
+        </div>
+        <div class="btn-group btn-group-justified" style="margin-top: 50px;" role="group" aria-label="...">
+            <a type="button" class="btn btn-link btn-flat" href="{{ path('abo_user_security_login') }}">{{ 'user_security_login.login'|trans }}</a>
+            <a type="button" class="btn btn-link btn-flat" href="{{ path('abo_user_registration_register') }}">{{ 'user_security_login.signup'|trans }}</a>
+        </div>
+    </div>
+{% endblock form_box %}
+
+
